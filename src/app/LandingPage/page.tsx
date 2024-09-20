@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
 
 
+
 const HeroSection = dynamic(()=> import('../components/landing-page/HeroSection')) 
 const Stack = dynamic(()=> import('../components/landing-page/Stack'))
 // const Solutions = dynamic(() => import('../components/landing-page/Solutions'), { ssr: false })
@@ -15,6 +16,9 @@ const Cards = dynamic(() => import('../components/landing-page/Cards'), { ssr: f
 const Article = dynamic(() => import('../components/landing-page/Articles'), { ssr: false })
 const OurServices = dynamic(() => import('../components/landing-page/OurServices'), { ssr: false })
 const OurPortfolio = dynamic(() => import('../components/landing-page/OurPortfolio'), { ssr: false })
+const ClientTestimonials = dynamic(() => import('../components/landing-page/ClientTestimonials'), { ssr: false })
+const NumberOfAchievements = dynamic(() => import('../components/landing-page/NumberOfAchievements'), { ssr: false })
+const WhyChooseUs = dynamic(() => import('../components/landing-page/WhyChooseUs'), { ssr: false })
 
 
 function page() {
@@ -39,6 +43,7 @@ function page() {
             <OurPortfolio/>
               {/* <Portfolio/> */}
               <Commitment/>
+              <NumberOfAchievements/>
             </>
           )}
         </div>
@@ -47,6 +52,8 @@ function page() {
           {inViewGroup3 && (
             <>
               <Stack/>
+              <WhyChooseUs/>
+              <ClientTestimonials/>
               <Article/>
             </>
           )}

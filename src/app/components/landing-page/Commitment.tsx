@@ -12,7 +12,7 @@ import meta from '../../../../public/images/meta.png'
 
 const Commitment:React.FC = () => {
   return (
-    <section className=' p-4'>
+    <section className=' p-4 mb-12'>
         <div className='flex flex-col md:flex-row items-center justify-center space-x-12'>
         
         <div className='relative'>

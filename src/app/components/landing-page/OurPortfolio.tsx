@@ -43,7 +43,7 @@ const OurProjects: React.FC = () => {
 //   }
 
   return (
-    <div className="flex flex-col flex-wrap justify-center gap-4 py-8 sm:gap-8 lg:gap-12 lg:py-12">
+    <div className="flex flex-col flex-wrap justify-center w-full gap-4 py-8 sm:gap-8 lg:gap-12 lg:py-12">
         <div className="ml-24">
             <HeadingText text1="Our" text2="Portfolio"/>
         </div>
@@ -51,13 +51,19 @@ const OurProjects: React.FC = () => {
           <h2 className="landing-page-heading">Some Latest Client Projects</h2>
       </div>
 
-      <OurPortfolioContent projects={projects} services={services} />
+      {/* <div className="border-2 border-black"> */}
+        <OurPortfolioContent projects={projects} services={services} />
+      {/* </div> */}
 
-      <Link href="/portfolio" className="flex justify-center">
-        <button className="block rounded-xl bg-primary px-4 py-2 text-sm font-medium text-white sm:w-36 md:w-40 md:text-base lg:w-56 lg:py-4 lg:text-lg xl:w-64 xl:text-xl 2xl:w-72 2xl:text-2xl">
-          View All
-        </button>
-      </Link>
+
+      <div className="flex justify-center">
+        <Link href="/portfolio" className="flex justify-center sm:w-36 md:w-40 md:text-base lg:w-40 lg:py-3 lg:text-lg xl:w-35 xl:text-xl 2xl:w-50 2xl:text-2xl">
+          <button className="block rounded-xl bg-primary  px-4 py-2 text-sm font-medium text-white ">
+            View All
+          </button>
+        </Link>
+      </div>
+
     </div>
   );
 };

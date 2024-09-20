@@ -66,4 +66,34 @@ export interface ContactInfo {
     link?: string; // Optional, only present in some objects
     projectStatus?: string; // Optional, only present in some objects
   }
+
+
+
+
+
+  export interface Testimonials {
+    _id: string;
+    blocked: boolean;
+    createdAt: string;
+    designation: string;
+    image: string;
+    name: string;
+    testimonial: string;
+    updatedAt: string;
+    __v: number;
+  }
+
+
+
+  export interface Article {
+    _id: string;
+    blocked: boolean;
+    blogData: string;
+    blogDescription: string;
+    blogImage: string;
+    blogTitle: string;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  }
   

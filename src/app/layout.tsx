@@ -5,8 +5,12 @@ import { ContactInfo } from '../../types';
 
 import "./globals.css";
 
-const Header = dynamic(() => import("./components/generic/header/Header"), { ssr: false });
-const Footer = dynamic(() => import("./components/landing-page/Footer"), { ssr: false });
+import Header from "./components/generic/header/Header";
+import Footer from "./components/generic/footer/Footer";
+
+// const Header = dynamic(() => import("./components/generic/header/Header"), { ssr: false });
+// const Footer = dynamic(() => import("./components/landing-page/Footer"), { ssr: false });
+// const Footer = dynamic(() => import("./components/generic/footer/footer"), { ssr: false });
 
 interface font {
   className : string
@@ -48,7 +52,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
         <Header contactInfo = {contactInfo} />
         {children}
-        <Footer/>
+        <Footer contactInfo={contactInfo}/>
       </body>
     </html>
   );

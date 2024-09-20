@@ -4,11 +4,50 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../../../public/images/logo.png";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import { Logs, X } from "lucide-react";
 import { Transition } from "@headlessui/react";  // Import Transition component
 import InfoHeader from './info-head'
 import { ContactInfo } from '../../../../../types';
+
+
+interface NavigationLinks {
+  name : string;
+  href : string;
+}
+
+const navigationLinks:NavigationLinks[] = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Services",
+    href: "/services",
+    // Custom: ServicesModal,
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    name: "Our Products",
+    href: "/products",
+  },
+  {
+    name: "Careers",
+    href: "/careers",
+  },
+  {
+    name: "About Us",
+    href: "/about-us",
+  },
+  {
+    name: "Blogs",
+    href: "/blogs",
+  },
+];
 
 
 interface HeaderProps {
@@ -16,6 +55,9 @@ interface HeaderProps {
 }
 
 const Header:React.FC<HeaderProps> = ({contactInfo}) => {
+
+    const pathname = usePathname();
+
 
     const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
     const toggleMobileMenu = () => {
@@ -31,28 +73,41 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
           </div>
 
           <div className="hidden md:block">
-            <ul className=" text-[#5A5A5A] flex text-xs font-semibold items-center justify-between">
-              <li className="mx-2">
-                <Link href="/">Home</Link>
+            <ul className=" text-[#5A5A5A] flex text-md font-semibold items-center justify-between">
+              {navigationLinks.map((item , index)=>{
+                return (
+                  <li className="mx-2 hover:text-[#A1258F]">
+                    <Link 
+                      href={item.href}
+                      key={index}
+                      className={clsx(
+                        item.href.toLocaleLowerCase() === pathname.toLowerCase() && '!text-primary' 
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </li> 
+                )
+              })}
+              
+              {/* <li className="mx-2 hover:text-[#A1258F]">
+                <Link href="/services">Services</Link>
               </li>
-              <li className="mx-2">
-                <Link href="/">Services</Link>
+              <li className="mx-2 hover:text-[#A1258F]">
+                <Link href="/portfolio">Portfolio</Link>
               </li>
-              <li className="mx-2">
-                <Link href="/">Portfolio</Link>
+              <li className="mx-2 hover:text-[#A1258F]">
+                <Link href="/portfolio">Our Products</Link>
               </li>
-              <li className="mx-2">
-                <Link href="/">Our Products</Link>
+              <li className="mx-2 hover:text-[#A1258F]">
+                <Link href="/portfolio">Careers</Link>
               </li>
-              <li className="mx-2">
-                <Link href="/">Careers</Link>
+              <li className="mx-2 hover:text-[#A1258F]">
+                <Link href="/about-us">About Us</Link>
               </li>
-              <li className="mx-2">
-                <Link href="/">About Us</Link>
-              </li>
-              <li className="mx-2">
-                <Link href="/">Blogs</Link>
-              </li>
+              <li className="mx-2 hover:text-[#A1258F]">
+                <Link href="/blogs">Blogs</Link>
+              </li> */}
             </ul>
           </div>
 
@@ -80,7 +135,23 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
         >
           <div className="md:hidden px-8 py-4 bg-gray-50">
             <ul className="text-sm flex flex-col space-y-4 text-gray-700">
-              <li>
+              {navigationLinks.map((item , index) => {
+                return(
+                  <li className="hover:text-[#A1258F]">
+                    <Link 
+                      href={item.href}
+                      key={index} 
+                      onClick={toggleMobileMenu}
+                      className={clsx(
+                        item.href.toLocaleLowerCase() === pathname.toLowerCase() && '!text-primary' 
+                      )}
+                      >
+                      {item.name}
+                    </Link>
+                  </li>
+                )
+              })}
+              {/* <li>
                 <Link href="/" onClick={toggleMobileMenu}>HOME</Link>
               </li>
               <li>
@@ -100,12 +171,12 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
               </li>
               <li>
                 <Link href="/" onClick={toggleMobileMenu}>BLOGS</Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <button className="text-white font-medium rounded-full p-1 bg-[#A1258F] w-full">
                   Contact Us
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
         </Transition>

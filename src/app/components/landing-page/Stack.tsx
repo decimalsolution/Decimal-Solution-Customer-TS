@@ -8,8 +8,11 @@ import Image from "next/image";
 
 import HeadingText from "./HeadingText";
 
+
+
 const Stack: React.FC = () => {
-  const images = [
+
+  const images: string[] = [
     "/Tools And Technologies/react.png",
     "/Tools And Technologies/nextjs.png",
     "/Tools And Technologies/vuejs.png",
@@ -40,7 +43,7 @@ const Stack: React.FC = () => {
   const settings: Settings = {
     infinite: true,
     speed: 3000,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1,
@@ -49,13 +52,13 @@ const Stack: React.FC = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
@@ -75,19 +78,18 @@ const Stack: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#E3F0FF] p-6 lg:px-[100px]">
+    <section className="bg-[#E3F0FF] p-6 lg:px-[100px] h-[400px]  ">
       <div className="flex flex-col items-left w-full p-6 rounded-md">
       <div className="mb-12">
         <HeadingText text1="Technology" text2="Stack"/>
       </div>
 
         <style jsx>{`
-          /* Reduce size of the image containers */
           .image-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80px; /* Reduced height */
+            height: 120px; 
             width: 100%;
             overflow: hidden;
           }
@@ -95,29 +97,30 @@ const Stack: React.FC = () => {
           .image-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Ensures image fits while maintaining aspect ratio */
+            // border-radius: 10px;
+            object-fit: contain; 
           }
 
           /* Adding margin between the slides */
           .slick-slide > div {
-            margin: 10px 10px; /* Apply margin to create gap */
+            margin: 10px 10px; 
             border: 1px black solid;
           }
         `}</style>
 
-        <Slider {...settings} className="gap-4">
+        <Slider {...settings} className=" py-6 mt-4">
           {images.map((img, index) => (
             <div
               key={index}
-              className="  w-[200px]  px-8 rounded-lg"
+              className="  w-[300px]  p-8 rounded-lg"
             >
-              <div className="image-container">
+              <div className="image-container py-4">
                 <Image
                   src={img}
                   alt={`logo-${index}`}
-                  width={120} // Reduced width
-                  height={120} // Reduced height
-                  className="rounded-lg"
+                  width={800} // Reduced width
+                  height={200} // Reduced height
+                  className=" px-2  py-16 "
                 />
               </div>
             </div>

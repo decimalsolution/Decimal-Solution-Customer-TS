@@ -1,0 +1,10 @@
+#testimonial-carousel .swiper-pagination-bullet {
+    @apply w-5 h-2 bg-primary rounded-md transition-all duration-200;
+  }
+  
+  #testimonial-carousel .swiper-pagination-bullet-active {
+    @apply bg-primary w-10;
+    /* border-radius: 5px; */
+  }
+  
+

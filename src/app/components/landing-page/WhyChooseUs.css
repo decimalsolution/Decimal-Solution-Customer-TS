@@ -1,0 +1,141 @@
+/* 
+
+   I am very sorry to any one reading this in the future. 
+   I had to do this this way because of the the complexity of the design.
+   This is the only way I could get it to work.
+   I am very sorry.
+   
+   Sincerely,
+   Syed Abdullah Saad - 26-09-2023
+
+   
+   Update : 
+   Hammad Zamir Khan - 20-09-2024
+
+*/
+
+.card {
+    @apply xl:absolute p-8 rounded-lg xl:shadow-xl -top-4 bg-white z-10 border-2 border-primary/50;
+  }
+  
+  .card-1 {
+    @apply xl:w-[calc(100%+34%)] row-start-1  -left-[34%];
+  }
+  
+  .card-2 {
+    @apply xl:w-[calc(100%+21%)] row-start-2  -left-[21%];
+  }
+  
+  .card-3 {
+    @apply xl:w-[calc(100%+21%)] row-start-3  -left-[21%];
+  }
+  
+  .card-4 {
+    @apply xl:w-[calc(100%+38%)] row-start-4  -left-[38%];
+  }
+  
+  @media screen and (max-width: 1880px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+31%)] row-start-1  -left-[31%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+19%)] row-start-2  -left-[19%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+19%)] row-start-3  -left-[19%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+35%)] row-start-4  -left-[35%];
+    }
+  }
+  
+  @media screen and (max-width: 1835px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+29%)] row-start-1  -left-[29%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+16%)] row-start-2  -left-[16%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+16%)] row-start-3  -left-[16%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+33%)] row-start-4  -left-[33%];
+    }
+  }
+  
+  @media screen and (max-width: 1768px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+27%)] row-start-1  -left-[27%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+13%)] row-start-2  -left-[13%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+13%)] row-start-3  -left-[13%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+31%)] row-start-4  -left-[31%];
+    }
+  }
+  
+  @media screen and (max-width: 1715px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+25%)] row-start-1  -left-[25%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+10%)] row-start-2  -left-[10%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+10%)] row-start-3  -left-[10%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+29%)] row-start-4  -left-[29%];
+    }
+  }
+  
+  @media screen and (max-width: 1680px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+23%)] row-start-1  -left-[23%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+7%)] row-start-2  -left-[7%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+7%)] row-start-3  -left-[7%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+27%)] row-start-4  -left-[27%];
+    }
+  }
+  
+  @media screen and (max-width: 1630px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+21%)] row-start-1  -left-[21%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+4%)] row-start-2  -left-[4%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+4%)] row-start-3  -left-[4%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+25%)] row-start-4  -left-[25%];
+    }
+  }
+  
+  @media screen and (max-width: 1580px) {
+    .card-1 {
+      @apply xl:w-[calc(100%+19%)] row-start-1  -left-[19%];
+    }
+    .card-2 {
+      @apply xl:w-[calc(100%+1%)] row-start-2  -left-[1%];
+    }
+    .card-3 {
+      @apply xl:w-[calc(100%+1%)] row-start-3  -left-[1%];
+    }
+    .card-4 {
+      @apply xl:w-[calc(100%+23%)] row-start-4  -left-[23%];
+    }
+  }
+  

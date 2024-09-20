@@ -19,10 +19,10 @@ const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
 
     const goNext = useCallback(() => {
       if (swiperRef !== null) {
-        console.log("Swiper ref instance:", swiperRef);
+        // console.log("Swiper ref instance:", swiperRef);
         swiperRef.slideNext();
       } else {
-        console.log("Swiper ref is null or undefined");
+        // console.log("Swiper ref is null or undefined");
       }
     }, [swiperRef]);
 

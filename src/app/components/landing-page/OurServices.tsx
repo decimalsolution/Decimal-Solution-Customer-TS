@@ -28,11 +28,11 @@ const OurServices:React.FC = async () => {
       fetchServices();
     }, []);
   
-    console.log(services)
+    // console.log(services)
 
 
     return(
-        <div className="relative flex flex-col  gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20">
+        <div className="relative flex flex-col gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20">
             
       <div className="flex flex-col ">
         <div className="ml-24 mb-8">
@@ -53,8 +53,9 @@ const OurServices:React.FC = async () => {
         fill
         className="absolute inset-0 z-0"
       />
-
-      <OurServicesContent Services={services} />
+      <div className="flex justify-center">
+        <OurServicesContent Services={services} />
+      </div>
     </div>
     )
 }
