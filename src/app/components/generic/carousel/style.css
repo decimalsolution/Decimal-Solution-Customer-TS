@@ -1,0 +1,13 @@
+.swiper {
+    @apply w-full h-full 
+    /* sm:max-w-[400px] md:max-w-none; */;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    min-height: 0;
+    min-width: 0;
+  }
+  
