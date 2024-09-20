@@ -60,6 +60,7 @@ const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
        <div className=" flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-8 ">
         {navigationLinks.map((link, i) => (
           <Link
+            key={i}
             className={cn(
               "text-base font-medium text-white transition-all hover:text-white/75 md:text-lg lg:text-xl xl:text-2xl",
               i !== navigationLinks.length - 1 ?

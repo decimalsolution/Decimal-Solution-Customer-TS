@@ -75,6 +75,7 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
             )}
             <Link href={social.href} target="_blank" rel="noopener noreferrer">
               <img
+                key={index}
                 src={social.src}
                 className="h-8 w-8 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
                 alt={social.name}

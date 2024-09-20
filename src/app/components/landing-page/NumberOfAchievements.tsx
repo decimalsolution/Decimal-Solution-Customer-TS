@@ -32,7 +32,7 @@ interface DataItem {
       amount: "07",
     },
   ];
-  
+
 
 const NumberOfAchievements:React.FC = () => {
   return (
@@ -57,6 +57,7 @@ const NumberOfAchievements:React.FC = () => {
       <div className="grid w-full max-w-[1600px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 xl:grid-cols-4">
         {data.map((item, i) => (
           <div
+            key={i}
             data-aos="flip-down"
             data-aos-once="true"
             className="before:content-[' '] relative flex aspect-square h-full w-full flex-col items-center justify-center before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-2/5 before:border before:border-b-0 before:border-white after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-2/5 after:border after:border-t-0 after:border-white after:content-['']"
