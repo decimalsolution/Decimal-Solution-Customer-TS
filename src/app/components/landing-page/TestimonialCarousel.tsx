@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./testimonial-carousel.css";
 import { Testimonials } from "../../../../types";
-import { string } from "zod";
+// import { string } from "zod";
 
 interface TestimonialCarouselProps {
     testimonials : Testimonials[];

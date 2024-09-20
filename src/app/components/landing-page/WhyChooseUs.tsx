@@ -59,7 +59,7 @@ const WhyChooseUs:React.FC = () => {
             <p className="lg:text-md text-sm md:text-base 2xl:text-lg">
               Our team performs strict product testing to ensure reliability,
               quality, cost-effectiveness, and product life expectancy while
-              reducing customers' aftercare needs.
+              reducing customers&apos; aftercare needs.
             </p>
           </div>
         </div>

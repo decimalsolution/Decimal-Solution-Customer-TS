@@ -21,7 +21,7 @@ const NumberOfAchievements = dynamic(() => import('../components/landing-page/Nu
 const WhyChooseUs = dynamic(() => import('../components/landing-page/WhyChooseUs'), { ssr: false })
 
 
-function page() {
+function Page() {
 
   // const { ref: refGroup1, inView: inViewGroup1 } = useInView({ triggerOnce: true });
 
@@ -63,4 +63,4 @@ function page() {
   )
 }
 
-export default page
+export default Page;

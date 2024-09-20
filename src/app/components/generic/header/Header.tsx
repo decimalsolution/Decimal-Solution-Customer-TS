@@ -76,10 +76,12 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
             <ul className=" text-[#5A5A5A] flex text-md font-semibold items-center justify-between">
               {navigationLinks.map((item , index)=>{
                 return (
-                  <li className="mx-2 hover:text-[#A1258F]">
+                  <li 
+                    key={index}
+                    className="mx-2 hover:text-[#A1258F]">
                     <Link 
                       href={item.href}
-                      key={index}
+                      
                       className={clsx(
                         item.href.toLocaleLowerCase() === pathname.toLowerCase() && '!text-primary' 
                       )}
@@ -137,10 +139,11 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
             <ul className="text-sm flex flex-col space-y-4 text-gray-700">
               {navigationLinks.map((item , index) => {
                 return(
-                  <li className="hover:text-[#A1258F]">
+                  <li 
+                    key={index}
+                    className="hover:text-[#A1258F]">
                     <Link 
                       href={item.href}
-                      key={index} 
                       onClick={toggleMobileMenu}
                       className={clsx(
                         item.href.toLocaleLowerCase() === pathname.toLowerCase() && '!text-primary' 

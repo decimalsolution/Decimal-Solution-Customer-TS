@@ -1,6 +1,6 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import {  SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import Image from "next/image";

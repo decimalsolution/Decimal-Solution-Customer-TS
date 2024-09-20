@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import member from '../../../../public/images/team.png'
 import customer from '../../../../public/images/customer.png'
-import pricing from '../../../../public/images/pricing.png'
+// import pricing from '../../../../public/images/pricing.png'
 
 const Cards = () => {
   return (

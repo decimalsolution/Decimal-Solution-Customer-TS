@@ -6,7 +6,7 @@ import Carousel from "../generic/carousel";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { Link } from "lucide-react";
-import NextLink from "next/link";
+// import NextLink from "next/link";
 import { Service , Project } from '../../../../types';
 
 interface OurProjectsContentProps {
@@ -14,15 +14,15 @@ interface OurProjectsContentProps {
     services: Service[];
   }
 
-const buttons = [
-  "All",
-  "Web Development",
-  "Mobile Development",
-  "Graphic Designing",
-  "Digital Marketing",
-  "ERP & Business Solutions",
-  "AR/VR Games",
-];
+// const buttons = [
+//   "All",
+//   "Web Development",
+//   "Mobile Development",
+//   "Graphic Designing",
+//   "Digital Marketing",
+//   "ERP & Business Solutions",
+//   "AR/VR Games",
+// ];
 
 const OurProjectsContent:React.FC<OurProjectsContentProps> = ({ projects, services }) => {
   const [selected, setSelected] = useState<string>("All");

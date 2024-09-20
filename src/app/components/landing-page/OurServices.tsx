@@ -11,7 +11,7 @@ import Image from "next/image";
 
 
 
-const OurServices:React.FC = async () => {
+const OurServices:React.FC =  () => {
     const [services, setServices] = useState<Service[]>([]);
 
     useEffect(() => {

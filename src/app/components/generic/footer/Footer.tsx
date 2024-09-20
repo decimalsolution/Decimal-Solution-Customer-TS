@@ -4,15 +4,15 @@ import Link from "next/link";
 import { ContactInfo } from "../../../../../types";
 
 interface NavigationLinks {
-    name : string;
-    href : string
+  name: string;
+  href: string;
 }
 
 interface HeaderProps {
-    contactInfo: ContactInfo;
+  contactInfo: ContactInfo;
 }
 
-const navigationLinks:NavigationLinks[] = [
+const navigationLinks: NavigationLinks[] = [
   {
     name: "Home",
     href: "/",
@@ -47,7 +47,7 @@ const navigationLinks:NavigationLinks[] = [
   },
 ];
 
-const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
+const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
   return (
     <div className="relative flex flex-col items-center gap-8 pb-8 pt-12 text-white">
       <Image
@@ -57,15 +57,15 @@ const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
         loading="lazy"
         className="absolute inset-0 z-[-1] object-cover object-center"
       />
-       <div className=" flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-8 ">
+      <div className=" flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:gap-8 ">
         {navigationLinks.map((link, i) => (
           <Link
             key={i}
             className={cn(
               "text-base font-medium text-white transition-all hover:text-white/75 md:text-lg lg:text-xl xl:text-2xl",
-              i !== navigationLinks.length - 1 ?
-                "border-r border-white pr-2 md:pr-4 lg:pr-8"
-                : ''
+              i !== navigationLinks.length - 1
+                ? "border-r border-white pr-2 md:pr-4 lg:pr-8"
+                : ""
             )}
             href={link.href}
           >
@@ -105,8 +105,10 @@ const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/Social Icons/white/facebook.png"
+            width={36} // Set explicit width
+            height={36} // Set explicit height
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
             alt="Facebook"
           />
@@ -117,19 +119,24 @@ const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/Social Icons/white/instagram-2.png"
+            width={36}
+            height={36}
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
             alt="Instagram"
           />
         </Link>
+
         <Link
           href={contactInfo.linkedIn}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/Social Icons/white/linkedin.png"
+            width={36}
+            height={36}
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
             alt="LinkedIn"
           />
@@ -140,8 +147,10 @@ const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/Social Icons/white/youtube.png"
+            width={36}
+            height={36}
             className="h-9 w-9 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
             alt="Youtube"
           />
@@ -156,6 +165,6 @@ const Footer:React.FC<HeaderProps> = ({ contactInfo }) => {
       </p>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;

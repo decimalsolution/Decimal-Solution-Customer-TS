@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Swiper, SwiperSlide, SwiperProps } from "swiper/react";
+import { Swiper,  SwiperProps } from "swiper/react";
 import { Swiper as SwiperInstance } from "swiper";
 
 import "swiper/css";

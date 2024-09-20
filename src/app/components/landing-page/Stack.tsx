@@ -108,7 +108,7 @@ const Stack: React.FC = () => {
           }
         `}</style>
 
-        <Slider {...settings} className=" py-6 mt-4">
+        <Slider {...settings} className=" py-6 mt-0 md:mt-4">
           {images.map((img, index) => (
             <div
               key={index}

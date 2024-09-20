@@ -1,6 +1,7 @@
-import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import {  Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { ContactInfo } from '../../../../../types';
+import Image from "next/image";
 
 interface InfoHeaderProps {
     contactInfo: ContactInfo;
@@ -74,8 +75,10 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
               <div className="hidden h-full w-[1px] bg-gray-400 xl:block"></div>
             )}
             <Link href={social.href} target="_blank" rel="noopener noreferrer">
-              <img
+              <Image
                 key={index}
+                width={36}  // Set explicit width
+                height={36}
                 src={social.src}
                 className="h-8 w-8 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
                 alt={social.name}

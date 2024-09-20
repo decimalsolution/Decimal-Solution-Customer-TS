@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { StaticImageData } from "next/image";
-import webdev from "../../../../public/images/webdev.png";
-import cloud from "../../../../public/images/cloud.png";
-import business from "../../../../public/images/business.png";
+// import { StaticImageData } from "next/image";
+// import webdev from "../../../../public/images/webdev.png";
+// import cloud from "../../../../public/images/cloud.png";
+// import business from "../../../../public/images/business.png";
 import { ArrowRight, Navigation } from "lucide-react";
 import HeadingText from "./HeadingText";
 import { Article } from "../../../../types";
@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const Articles: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -34,9 +34,10 @@ const Articles: React.FC = () => {
         setArticles(data.data);
       } catch (error) {
         console.error("Error fetching articles:", error);
-      } finally {
-        setLoading(false);
-      }
+      } 
+      // finally {
+      //   // setLoading(false);
+      // }
     };
 
     fetchArticles();
@@ -70,43 +71,43 @@ const Articles: React.FC = () => {
   //   fetchServices();
   // }, []);
 
-  interface Card {
-    image: StaticImageData;
-    category: string;
-    date: string;
-    comments: string;
-    textcol: string;
-  }
+  // interface Card {
+  //   image: StaticImageData;
+  //   category: string;
+  //   date: string;
+  //   comments: string;
+  //   textcol: string;
+  // }
 
-  const cards: Card[] = [
-    {
-      image: webdev,
-      category: "Web Development",
-      //   desc : "",
-      date: "July 19, 2024",
-      comments: "Comments (3)",
-      textcol: "text-[#00A3FF]",
-      //   title: "Web development combines coding, design and innovation.",
-    },
-    {
-      image: cloud,
-      category: "Cloud Solution",
-      //   desc : "",
-      date: "July 19, 2024",
-      comments: "Comments (3)",
-      textcol: "text-[#FF0000]",
-      //   title: "Web development combines coding, <br/> design and innovation.",
-    },
-    {
-      image: business,
-      category: "Business Deal",
-      //   desc : "",
-      date: "July 19, 2024",
-      comments: "Comments (3)",
-      textcol: "text-[#05FF00]",
-      //   title: "Web development combines coding, <br/> design and innovation.",
-    },
-  ];
+  // const cards: Card[] = [
+  //   {
+  //     image: webdev,
+  //     category: "Web Development",
+  //     //   desc : "",
+  //     date: "July 19, 2024",
+  //     comments: "Comments (3)",
+  //     textcol: "text-[#00A3FF]",
+  //     //   title: "Web development combines coding, design and innovation.",
+  //   },
+  //   {
+  //     image: cloud,
+  //     category: "Cloud Solution",
+  //     //   desc : "",
+  //     date: "July 19, 2024",
+  //     comments: "Comments (3)",
+  //     textcol: "text-[#FF0000]",
+  //     //   title: "Web development combines coding, <br/> design and innovation.",
+  //   },
+  //   {
+  //     image: business,
+  //     category: "Business Deal",
+  //     //   desc : "",
+  //     date: "July 19, 2024",
+  //     comments: "Comments (3)",
+  //     textcol: "text-[#05FF00]",
+  //     //   title: "Web development combines coding, <br/> design and innovation.",
+  //   },
+  // ];
 
   return (
     <section className="my-16 w-full">

@@ -53,7 +53,7 @@ const SliderComponent: React.FC = () => {
     }, 400); // Short delay for fade out
   };
 
-  
+
   useEffect(() => {
     const slideInterval = setInterval(() => {
       nextSlide();
@@ -68,7 +68,7 @@ const SliderComponent: React.FC = () => {
         <div className={`p-6 flex flex-col justify-center bg-[#E3F0FF] rounded-md w-full md:w-1/2 h-[300px] sm:h-[350px] md:h-[380px] lg:h-[460px] xl:h-[500px] transition-opacity duration-700 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
           <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold my-2 leading-tight">
             <p className="text-[11px] sm:text-[12px] md:text-[10px] lg:text-[15px] xl:text-[20px] font-normal text-[#616161] mb-2">
-              Hi, We're <span className="text-[11px] sm:text-[12px] md:text-[10px] lg:text-[15px] xl:text-[20px] text-white px-1 py-0.5 rounded-md bg-[#A1258F]">DECIMAL SOLUTIONS</span> and We Offer 
+              Hi, We&apos;re <span className="text-[11px] sm:text-[12px] md:text-[10px] lg:text-[15px] xl:text-[20px] text-white px-1 py-0.5 rounded-md bg-[#A1258F]">DECIMAL SOLUTIONS</span> and We Offer 
             </p>
             <h1 className="my-6 whitespace-pre-line">
               {slides[currentSlide].title.split('\n').map((line, index) => (
