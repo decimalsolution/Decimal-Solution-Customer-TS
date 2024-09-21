@@ -1,34 +1,18 @@
-'use client'
-
-import React, { useEffect } from "react";
-import { useState } from "react";
 import HeadingText from "./HeadingText";
 import OurServicesContent from './OurServicesContent'
-
-import { Service } from '../../../../types';
-
 import Image from "next/image";
+import { Service } from "../../../../types";
 
 
-
-const OurServices:React.FC =  () => {
-    const [services, setServices] = useState<Service[]>([]);
-
-    useEffect(() => {
-      const fetchServices = async () => {
+const OurServices = async () => {
+  
         const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
           next: {
             revalidate: 300,
           },
         });
         const data = await res.json();
-        setServices(data.data); // Set the fetched data
-      };
-  
-      fetchServices();
-    }, []);
-  
-    // console.log(services)
+        const services: Service[] = data.data;
 
 
     return(

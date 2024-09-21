@@ -16,12 +16,12 @@ const Commitment:React.FC = () => {
         <div className='flex flex-col md:flex-row items-center justify-center space-x-12'>
         
         <div className='relative'>
-            <Image src={laptop} alt='laptop' className='w-[320px] sm:w-[350px] md:w-[400px] lg:w-[450px]'/>
+            <Image src={laptop} alt='laptop' priority className='w-[320px] sm:w-[350px] md:w-[400px] lg:w-[450px]'/>
 
             <Image src={signals} className='absolute bottom-6 right-6 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='signals'/>
-            <Image src={global} className='absolute bottom-12 left-0 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='signals'/>
-            <Image src={meta} className='absolute top-8 left-6 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='signals'/>
-            <Image src={paintbrush} className='absolute top-8 right-4 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='signals'/>
+            <Image src={global} className='absolute bottom-12 left-0 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='global'/>
+            <Image src={meta} className='absolute top-8 left-6 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='meta'/>
+            <Image src={paintbrush} className='absolute top-8 right-4 w-[50px] sm:w-[60px] md:w-[70px] lg:w-[80px]'  alt='paintbrush'/>
         </div>
 
         <div className='mt-16 md:mt-0'>
@@ -41,7 +41,7 @@ const Commitment:React.FC = () => {
             
             <button className="flex my-4 items-center bg-[#A1258F] text-white rounded-full font-semibold py-1 px-4 sm:py-2 md:py-3 text-[12px] sm:text-[12px] md:text-[10px] lg:text-md">
               GET STARTED
-              <Image src={arrow} width={8} alt="vector" className="ml-2" />
+              <Image src={arrow} width={8} alt="arrow" className="ml-2" />
             </button>
 
         </div>

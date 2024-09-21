@@ -14,15 +14,6 @@ interface OurProjectsContentProps {
     services: Service[];
   }
 
-// const buttons = [
-//   "All",
-//   "Web Development",
-//   "Mobile Development",
-//   "Graphic Designing",
-//   "Digital Marketing",
-//   "ERP & Business Solutions",
-//   "AR/VR Games",
-// ];
 
 const OurProjectsContent:React.FC<OurProjectsContentProps> = ({ projects, services }) => {
   const [selected, setSelected] = useState<string>("All");

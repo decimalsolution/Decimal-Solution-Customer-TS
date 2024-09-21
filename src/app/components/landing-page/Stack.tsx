@@ -8,8 +8,6 @@ import Image from "next/image";
 
 import HeadingText from "./HeadingText";
 
-
-
 const Stack: React.FC = () => {
 
   const images: string[] = [

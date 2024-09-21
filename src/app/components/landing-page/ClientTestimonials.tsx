@@ -1,42 +1,21 @@
-'use client'
-
 import { cn } from "../../../../lib/utils";
-import {useState , useEffect } from "react";
 import TestimonialCarousel from "./TestimonialCarousel";
 import Image from "next/image";
 import { Testimonials } from "../../../../types";
 
+const ClientTestimonials: React.FC = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/testimonial`, {
+    next: {
+      revalidate: 300,
+    },
+  });
 
-const ClientTestimonials:React.FC =  () => {
+  if (!res.ok) {
+    throw new Error("Failed to fetch testimonials");
+  }
 
-    const [testimonials, setTestimonials] = useState<Testimonials[]>([]);
-
-    useEffect( ()=>{
-        const fetchData = async () => {
-            try {
-              const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/testimonial`, {
-                next: {
-                  revalidate: 300,
-                },
-              });
-
-              if (!res.ok) {
-                throw new Error("Failed to fetch testimonials");
-              }
-      
-              const data = await res.json();
-              const testimonialsData = data.data;
-              setTestimonials(testimonialsData);
-            } catch (error) {
-              console.error("Error fetching testimonials:", error);
-            }
-          };
-      
-          fetchData();
-    } , [])
-
-    // console.log(testimonials)
-  
+  const data = await res.json();
+  const testimonials: Testimonials[] = data.data;
 
   return (
     <div className="relative flex flex-col items-center justify-center gap-8 px-4 py-8 lg:h-[900px]">
@@ -59,6 +38,6 @@ const ClientTestimonials:React.FC =  () => {
       <TestimonialCarousel testimonials={testimonials} />
     </div>
   );
-}
+};
 
 export default ClientTestimonials;

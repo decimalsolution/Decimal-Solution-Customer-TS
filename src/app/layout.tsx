@@ -45,7 +45,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const contactInfo = response.data[0];
 
 
-
   return (
     <html lang="en">
       <body className={`${poppins.className} overflow-x-hidden w-full`}>

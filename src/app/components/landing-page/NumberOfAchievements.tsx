@@ -9,7 +9,7 @@ interface DataItem {
     icon: string;
     amount: string;
   }
-  
+
   const data: DataItem[] = [
     {
       title: "Years of Operation",
