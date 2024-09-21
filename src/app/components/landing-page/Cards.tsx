@@ -9,7 +9,7 @@ const Cards = () => {
     <div className='flex items-center justify-around px-4 mt-6 mb-12'>
         <div className='flex items-center ' >
             <div className=' mx-1 lg:mx-2 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg bg-[#E5ECFD]'>
-                <Image src={member} className='w-[20px] sm:w-[25px] md:w-[30px]' alt='team'/>
+                <Image src={member} className='w-[20px] sm:w-[25px] md:w-[30px]' alt='Team Members'/>
             </div>
             <div className='mx-2'>
                 <h2 className='text-[11px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-semibold'>Expert Team Members</h2>
@@ -20,7 +20,7 @@ const Cards = () => {
         </div>
         <div className='flex items-center ' >
             <div className=' mx-1 lg:mx-2 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg bg-[#FEF6EB]'>
-                <Image src={customer} className='w-[20px] sm:w-[25px] md:w-[30px]' alt='team'/>
+                <Image src={customer} className='w-[20px] sm:w-[25px] md:w-[30px]' alt='Customer Service'/>
             </div>
             <div className='mx-2'>
                 <h2 className='text-[11px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-semibold'>Fastest Customer Service</h2>
@@ -31,7 +31,7 @@ const Cards = () => {
         </div>
         <div className='flex items-center ' >
             <div className=' mx-1 lg:mx-2 p-2 sm:p-3 md:p-3 lg:p-4 rounded-lg bg-[#FEECF2]'>
-                <Image src={member} className='w-[20px] sm:w-[25px] md:w-[30px]' alt='team'/>
+                <Image src={member} className='w-[20px] sm:w-[25px] md:w-[30px]' alt='Market Price'/>
             </div>
             <div className='mx-2'>
                 <h2 className='text-[11px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-semibold'>Reasonable Market Price</h2>

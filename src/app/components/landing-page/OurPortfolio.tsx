@@ -1,6 +1,6 @@
 import Link from "next/link";
 import OurPortfolioContent from "./OurPortfolioContent";
-import { Project } from "../../../../types"; // Assuming these are the correct types
+import {  Project } from "../../../../types"; // Assuming these are the correct types
 import HeadingText from "./HeadingText";
 
 const OurProjects = async () => {
@@ -12,10 +12,6 @@ const OurProjects = async () => {
       next: { revalidate: 300 },
     }),
   ]);
-
-  if (!res1.ok || !res2.ok) {
-    throw new Error('Failed to fetch data');
-  }
 
   const data1 = await res1.json();
   const data2 = await res2.json();

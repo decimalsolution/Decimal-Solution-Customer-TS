@@ -52,7 +52,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
     <div className="relative flex flex-col items-center gap-8 pb-8 pt-12 text-white">
       <Image
         src={"/footer-bg.webp"}
-        alt=""
+        alt="footer bg image"
         fill
         loading="lazy"
         className="absolute inset-0 z-[-1] object-cover object-center"

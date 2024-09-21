@@ -28,8 +28,8 @@ const OurServices = async () => {
       </div>
       <Image
         src={"/our-services-bg.webp"}
-        alt=""
-        priority={true}
+        alt="service"
+        // priority={true}
         fill
         className="absolute inset-0 z-0"
       />

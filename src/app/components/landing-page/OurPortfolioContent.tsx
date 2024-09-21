@@ -58,7 +58,6 @@ const OurProjectsContent:React.FC<OurProjectsContentProps> = ({ projects, servic
                   <Image
                     src={item.coverImage}
                     alt={item.title}
-                    priority
                     fill
                     className="h-full w-full object-cover"
                   />

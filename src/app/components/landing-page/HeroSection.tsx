@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
   const slides: Slide[] = [
     {
       image: slider1,
-      title: "Web and Mobile,\nApplication \nDevelopment",
+      title: "Web and Mobile,\nApplication Development",
     },
     {
       image: slider2,
@@ -61,7 +61,7 @@ const HeroSection: React.FC = () => {
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-x-8 gap-y-8">
 
         <div className={`p-6 flex flex-col justify-center bg-[#E3F0FF] rounded-md w-full md:w-1/2 h-[380px] lg:h-[460px] transition-opacity duration-700 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold my-2 leading-tight">
+          <div className="text-[20px] sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold my-2 leading-tight">
             <p className="text-[11px] sm:text-[12px] md:text-[10px] lg:text-[15px] xl:text-[20px] font-normal text-[#616161] mb-2">
               Hi, We&apos;re <span className="text-[11px] sm:text-[12px] md:text-[10px] lg:text-[15px] xl:text-[20px] text-white px-1 py-0.5 rounded-md bg-[#A1258F]">DECIMAL SOLUTIONS</span> and We Offer 
             </p>
