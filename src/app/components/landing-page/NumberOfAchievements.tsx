@@ -34,7 +34,7 @@ interface DataItem {
   ];
 
 
-const NumberOfAchievements:React.FC = () => {
+const NumberOfAchievements = () => {
   return (
     <div className="relative  flex flex-col items-center gap-16 bg-[url('/our-achievements-bg.webp')] bg-cover bg-center p-12 lg:p-16">
       <div className="absolute inset-0 bg-primary/80"></div>

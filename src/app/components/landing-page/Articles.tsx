@@ -44,7 +44,8 @@ const Articles = async () => {
               <div className="relative flex-grow">
                 <Image
                   src={article.blogImage}
-                  alt="img"
+                  alt="Blog Thumbnail"
+                  priority
                   width={100}
                   height={100}
                   className="w-full h-48 object-cover" // Set a fixed height for the image

@@ -46,6 +46,8 @@ function Page() {
         <HeroSection/>
         {/* <Solutions/> */}
         <OurServices/>
+              <NumberOfAchievements/>
+
         <Cards/>
 
         {/* <div ref={refGroup2} > */}
@@ -54,7 +56,6 @@ function Page() {
             <OurPortfolio/>
               {/* <Portfolio/> */}
               <Commitment/>
-              <NumberOfAchievements/>
             {/* </> */}
           {/* )} */}
         {/* </div> */}

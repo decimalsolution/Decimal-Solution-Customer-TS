@@ -21,6 +21,7 @@ const WhyChooseUs:React.FC = () => {
         <Image
           src={"/why-choose-us.webp"}
           alt="Why Choose Us"
+          priority
           fill
           className="col-span-2 col-start-1 hidden object-contain xl:block"
         />

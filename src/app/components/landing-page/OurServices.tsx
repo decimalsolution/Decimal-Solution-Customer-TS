@@ -1,23 +1,19 @@
 import HeadingText from "./HeadingText";
-import OurServicesContent from './OurServicesContent'
-import Image from "next/image";
+import OurServicesContent from "./OurServicesContent";
 import { Service } from "../../../../types";
-
+import Image from "next/image";
 
 const OurServices = async () => {
-  
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
-          next: {
-            revalidate: 300,
-          },
-        });
-        const data = await res.json();
-        const services: Service[] = data.data;
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
+    next: {
+      revalidate: 300,
+    },
+  });
+  const data = await res.json();
+  const services: Service[] = data.data;
 
-
-    return(
-        <div className="relative flex flex-col gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20">
-            
+  return (
+    <div className="relative flex flex-col gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20">
       <div className="flex flex-col ">
         <div className="ml-24 mb-8">
           <HeadingText text1="Our" text2="Services" />
@@ -41,7 +37,7 @@ const OurServices = async () => {
         <OurServicesContent Services={services} />
       </div>
     </div>
-    )
-}
+  );
+};
 
 export default OurServices;

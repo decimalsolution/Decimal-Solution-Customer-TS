@@ -1,6 +1,6 @@
 import Link from "next/link";
 import OurPortfolioContent from "./OurPortfolioContent";
-import { Service, Project } from "../../../../types"; // Assuming these are the correct types
+import { Project } from "../../../../types"; // Assuming these are the correct types
 import HeadingText from "./HeadingText";
 
 const OurProjects = async () => {
@@ -13,11 +13,17 @@ const OurProjects = async () => {
     }),
   ]);
 
+  if (!res1.ok || !res2.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
   const data1 = await res1.json();
   const data2 = await res2.json();
 
   const projects: Project[] = data1.data;
-  const services: Service[] = data2.data;
+  const services= data2.data;
+  services.unshift({ title : "All" });
+
 
   return (
     <div className="flex flex-col flex-wrap justify-center w-full gap-4 py-8 sm:gap-8 lg:gap-12 lg:py-12">
