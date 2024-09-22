@@ -21,9 +21,6 @@ export interface ContactInfo {
 
 
 
-
-
-
   export interface Service {
     _id: string;
     blocked: boolean;
@@ -36,6 +33,7 @@ export interface ContactInfo {
     updatedAt: string;
     __v: number;
   }
+  
   
 
   export interface Category {
