@@ -11,6 +11,7 @@ const OurServices = async () => {
   });
   const data = await res.json();
   const services: Service[] = data.data;
+  // console.log("Services : " , services);
 
   return (
     <div className="relative flex flex-col gap-8 py-8 lg:py-12 xl:py-16 2xl:py-20">

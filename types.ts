@@ -1,4 +1,13 @@
 
+
+
+export interface Metadata{
+  title: string;
+  description: string;
+}
+
+
+
 export interface ContactInfo {
     _id: string;
     __v: number;
@@ -66,7 +75,10 @@ export interface ContactInfo {
   }
 
 
-
+  export interface ProjectGroup {
+    category: string;
+    projects: Project[];
+  }
 
 
   export interface Testimonials {
@@ -95,3 +107,92 @@ export interface ContactInfo {
     __v: number;
   }
   
+
+
+  export interface Product {
+    blocked: boolean;
+    title: string;
+    link: string;
+    description: string;
+    category: Category;
+    coverImage: string;
+    createdAt: string;
+    updatedAt: string;
+  }
+
+
+
+
+  export interface JobCategory {
+    _id: string;
+    blocked: boolean;
+    title: string;
+    description: string;
+    shortDescription: string;
+    homeImage: string;
+    coverImage: string;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  }
+  
+  export interface Job {
+    _id: string;
+    blocked: boolean;
+    title: string;
+    type: string;
+    vacancies: number;
+    description: string;
+    category: JobCategory;
+    location: string;
+    jobLevel: string;
+    minimumQualifications: string;
+    minimumExperience: string;
+    jobApplicationDeadline: string;
+    jobRequirements: string;
+    jobResponsibilities: string;
+    minimumJobSalary: number;
+    maximumJobSalary: number;
+    jobImage: string | null; // Can be null as in the data
+    otherBenefits: string;
+    jobSkills: string;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  }
+  
+
+
+
+  export interface TeamMember {
+    _id: string;
+    blocked: boolean;
+    teamMemberName: string;
+    teamMemberTitle: string;
+    teamMemberFacebookLink: string;
+    teamMemberTwitterLink: string;
+    teamMemberLinkedInLink: string;
+    CNIC: string;
+    githubLink: string;
+    bankName: string;
+    bankBranch: string;
+    bankAccountNumber: string;
+    IBAN: string;
+    IDCardFront: string;
+    IDCardBack: string;
+    teamMemberEmail: string;
+    officialEmail: string;
+    teamMemberImage: string;
+    teamMemberPhone: string;
+    officialPhone: string;
+    memberPriority: number;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+    left: boolean;
+  }
+  
+
+
+ 
+

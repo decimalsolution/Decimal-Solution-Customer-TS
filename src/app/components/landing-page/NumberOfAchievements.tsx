@@ -50,6 +50,7 @@ const NumberOfAchievements:React.FC = () => {
           </p>
           <h2 className={cn("landing-page-heading", "!text-white")}>
             Number of Achievements
+            {/* <HeadingText text1="Number Of" text2="Achievements"/> */}
           </h2>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Navigation } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import HeadingText from "./HeadingText";
 import { Article } from "../../../../types";
 import Link from "next/link";
@@ -35,7 +35,7 @@ const Articles = async () => {
         <HeadingText text1="Latest" text2="Blogs" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
-        {articles.slice(0, 3).map((article, index) => {
+        {articles.splice(0,3).map((article, index) => {
           return (
             <div
               key={index}
@@ -51,7 +51,7 @@ const Articles = async () => {
                 />
               </div>
               <div className="p-4 flex flex-col justify-between flex-grow">
-                <div className="flex justify-between text-[#898989CC] text-[10px]">
+                <div className="flex justify-between text-[rgba(137,137,137,0.8)] text-[10px]">
                   <p>{formatDate(article.createdAt)}</p>
                 </div>
                 <h2 className="text-sm font-semibold my-[16px]">
@@ -62,13 +62,16 @@ const Articles = async () => {
                     ? article.blogDescription.slice(0, 130) + "..."
                     : article.blogDescription}
                 </p>
-                <div className="flex justify-between">
-                  <button className="text-[10px] text-[#A1258F] flex items-center">
-                    Read More <ArrowRight size={13} className="mx-1" />
-                  </button>
-                  <p>
+                <div className="flex justify-between mt-3 ">
+                 <Link href={`/blogs/${article._id}`}>
+                    <button className="text-[14px] text-[#A1258F] flex items-center">
+                      Read More <ArrowRight size={13} className="mx-1" />
+                    </button>
+                 </Link>
+                 
+                  {/* <p>
                     <Navigation size={18} className="text-[#A1258F]" />
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -78,7 +81,7 @@ const Articles = async () => {
 
       <div className="flex justify-center">
         <Link
-          href="/"
+          href="/blogs"
           className="flex justify-center mt-12 sm:w-36 md:w-40 md:text-base lg:w-40 lg:py-3 lg:text-lg xl:w-35 xl:text-xl 2xl:w-50 2xl:text-2xl"
         >
           <button className="block rounded-xl bg-primary  px-4 py-2 text-sm font-medium text-white ">

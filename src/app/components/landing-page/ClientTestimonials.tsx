@@ -18,7 +18,7 @@ const ClientTestimonials: React.FC = async () => {
   const testimonials: Testimonials[] = data.data;
 
   return (
-    <div className="relative flex flex-col items-center justify-center gap-8 px-4 py-8 lg:h-[900px]">
+    <div className="relative flex flex-col items-center justify-center gap-8 px-4 py-8 h-[500px]  lg:h-[650px]">
       <Image
         src={"/testimonial-bg.webp"}
         alt=""

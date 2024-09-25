@@ -44,7 +44,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
       <Swiper
   spaceBetween={30}
   onSwiper={(swiper) => {
-    console.log("Swiper instance received:", swiper);
+    // console.log("Swiper instance received:", swiper);
     setSwiperRef(swiper);
   }}
   loop

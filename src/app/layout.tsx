@@ -1,7 +1,11 @@
 // import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 // import dynamic from 'next/dynamic';
-// import { ContactInfo } from '../../types';
+import { Metadata } from "../../types";
+import { AOSInit } from "./aos";
+import HowCanWeHelpYou from "./how-can-we-help-you";
+import { ContactInfo } from "../../types";
+
 
 import "./globals.css";
 
@@ -23,12 +27,9 @@ const poppins:font = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-interface MetaData {
-  title : string;
-  description : string
-}
 
-export const metadata: MetaData = {
+
+export const metadata: Metadata = {
   title: "Decimal Solution",
   description: "Decimal Solution: Your partner for full-stack development, QA engineering, and Unity expertise. Elevate your digital presence with precision and innovation",
 };
@@ -42,16 +43,18 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   });
 
   const response = await data.json();
-  const contactInfo = response.data[0];
+  const contactInfo:ContactInfo = response.data[0];
 
 
   return (
     <html lang="en">
+      <AOSInit />
       <body className={`${poppins.className} overflow-x-hidden w-full`}>
 
         <Header contactInfo = {contactInfo} />
         {children}
         <Footer contactInfo={contactInfo}/>
+        <HowCanWeHelpYou contactInfo={contactInfo} />
       </body>
     </html>
   );
