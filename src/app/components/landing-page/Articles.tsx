@@ -35,7 +35,7 @@ const Articles = async () => {
         <HeadingText text1="Latest" text2="Blogs" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
-        {articles.splice(0,3).map((article, index) => {
+        {articles.reverse().splice(0,3).map((article, index) => {
           return (
             <div
               key={index}

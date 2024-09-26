@@ -98,7 +98,7 @@ const Services = async () => {
 
       <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
-      <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
+      {/* <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
         {services.map((service: Service, index: number) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
@@ -112,10 +112,10 @@ const Services = async () => {
             // }}
           >
             {/* {service.title} */}
-            All
-          </button>
-        ))}
-      </div>
+            {/* All */}
+          {/* </button> */}
+        {/* ))} */}
+      {/* // </div> */} 
 
       <div className="flex flex-col gap-8">
         {services.map((product: Service, index: number) => (

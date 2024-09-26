@@ -41,9 +41,9 @@ export default async function Blogs() {
       </div>
 
       <div className="flex items-center justify-center gap-2 px-8 md:gap-4 lg:gap-6 xl:gap-8 [&_*]:transition-all [&_*]:duration-300">
-        <div className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16">
+        {/* <div className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16">
           <ChevronLeft className="h-3/4 w-3/4 group-hover:text-white" />
-        </div>
+        </div> */}
         {/* {Array(totalPages)
           .fill()
           .map((_, index) => (
