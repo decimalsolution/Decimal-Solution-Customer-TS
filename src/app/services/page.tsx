@@ -4,7 +4,7 @@ import PageIntroduction from "../components/generic/page-introduction/index";
 import ServiceCard from "../components/generic/service-card/index";
 import { Service } from "../../../types";
 import Head from "next/head";
-import { cn } from "../../../lib/utils";
+// import { cn } from "../../../lib/utils";
 import { Metadata } from "../../../types";
 
 export const metadata: Metadata = {
