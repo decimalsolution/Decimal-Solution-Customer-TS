@@ -5,6 +5,7 @@ import { Metadata } from "../../types";
 import { AOSInit } from "./aos";
 import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
+import Head from "next/head";
 
 
 import "./globals.css";
@@ -48,6 +49,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.decimalsolution.com/" /> 
+      </Head>
       <AOSInit />
       <body className={`${poppins.className} overflow-x-hidden w-full`}>
 

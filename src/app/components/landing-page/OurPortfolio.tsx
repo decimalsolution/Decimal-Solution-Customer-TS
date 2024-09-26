@@ -22,8 +22,8 @@ const OurProjects = async () => {
 
 
   return (
-    <div className="flex flex-col flex-wrap justify-center w-full gap-4 py-8 sm:gap-8 lg:gap-12 lg:py-12">
-      <div className="ml-24">
+    <div className="flex flex-col flex-wrap justify-center w-full gap-4 py-8 sm:gap-8 lg:gap- lg:py-">
+      <div className="ml-16 lg:ml-28 mb-8">
         <HeadingText text1="Our" text2="Portfolio" />
       </div>
       <div className="flex flex-col items-center">

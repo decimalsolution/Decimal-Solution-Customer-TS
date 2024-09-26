@@ -15,7 +15,7 @@
 */
 
 .card {
-    @apply xl:absolute p-8 rounded-lg xl:shadow-xl -top-4 bg-white z-10 border-2 border-primary/50;
+    @apply xl:absolute p-4 rounded-lg xl:shadow-xl -top-4 bg-white z-10 border-2 border-primary/50;
   }
   
   .card-1 {

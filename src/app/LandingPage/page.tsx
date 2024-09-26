@@ -8,13 +8,14 @@ import React from 'react'
 import HeroSection from '../components/landing-page/HeroSection'
 import Stack from '../components/landing-page/Stack'
 // import Commitment from '../components/landing-page/Commitment'
-import Cards from '../components/landing-page/Cards'
+// import Cards from '../components/landing-page/Cards'
 import Article from '../components/landing-page/Articles'
-import OurServices from '../components/landing-page/OurServices'
+// import OurServices from '../components/landing-page/OurServices'
 import OurPortfolio from '../components/landing-page/OurPortfolio'
 import ClientTestimonials from '../components/landing-page/ClientTestimonials'
 import NumberOfAchievements from '../components/landing-page/NumberOfAchievements'
 import WhyChooseUs from '../components/landing-page/WhyChooseUs'
+import Solutions from '../components/landing-page/Solutions'
 
 
 
@@ -44,9 +45,9 @@ function Page() {
     <>
 
         <HeroSection/>
-        {/* <Solutions/> */}
-        <OurServices/>
-        <Cards/>
+        <Solutions/>
+        {/* <OurServices/> */}
+        {/* <Cards/> */}
 
         {/* <div ref={refGroup2} > */}
           {/* {inViewGroup2 && ( */}

@@ -30,8 +30,8 @@ const Articles = async () => {
   };
 
   return (
-    <section className="my-16 w-full">
-      <div className="py-12 px-24 sm:px-32">
+    <section className="my-10 w-full">
+      <div className="py-12 px-24 sm:px-32 mb-6">
         <HeadingText text1="Latest" text2="Blogs" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">

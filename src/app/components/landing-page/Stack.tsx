@@ -78,7 +78,7 @@ const Stack: React.FC = () => {
   return (
     <section className="bg-[#E3F0FF] p-6 lg:px-[100px] h-[400px]  ">
       <div className="flex flex-col items-left w-full p-6 rounded-md">
-      <div className="mb-12">
+      <div className="mb-12 ml-">
         <HeadingText text1="Technology" text2="Stack"/>
       </div>
 

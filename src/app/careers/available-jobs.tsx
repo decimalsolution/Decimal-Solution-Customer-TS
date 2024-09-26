@@ -1,6 +1,6 @@
 "use client";
 
-import JobListing from "../components/generic/job-listing";
+// import JobListing from "../components/generic/job-listing";
 import SelectMenu from "../components/generic/select-menu";
 import { cn } from "../../../lib/utils";
 import { useMemo, useState } from "react";
@@ -92,8 +92,9 @@ export default function AvailableJobs({ jobs } : AvailableJobsProps) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 p-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 gap-8">
         {filteredJobs.length ? (
-          filteredJobs.map((position, index) => (
-            <JobListing {...position} key={"job-listing-" + index} />
+          filteredJobs.map(() => (
+            // <JobListing {...position} key={"job-listing-" + index} />
+            <></>
           ))
         ) : (
           <p className="col-span-full text-center text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">

@@ -45,6 +45,26 @@ console.log(params)
     <div>
       <PageIntroduction title={''} image={blog.blogImage} />
       <div className="lg:px-36 md:px-16 px-10 py-16 ">
+         {/* Breadcrumbs */}
+      <nav className="py-4" aria-label="breadcrumb">
+        <ol className="flex space-x-2 text-sm text-gray-500">
+          <li>
+            <Link href="/" className="text-primary hover:underline">
+              Home
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href="/blogs" className="text-primary hover:underline">
+              Blog
+            </Link>
+          </li>
+          <li>/</li>
+          <li aria-current="page" className="text-gray-500">
+            {blog.blogTitle}
+          </li>
+        </ol>
+      </nav>
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between border-b border-gray-300 pb-4">
           <div className="flex items-center gap-4">
             <h2 className="landing-page-heading">{blog.blogTitle} </h2>

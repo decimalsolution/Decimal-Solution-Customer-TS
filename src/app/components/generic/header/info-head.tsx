@@ -10,6 +10,12 @@ interface InfoHeaderProps {
 const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
   const socialsData = [
     {
+      name: "Youtube",
+    //   href: '',
+      href: contactInfo.youtube,
+      src: "/Social Icons/purple/youtube.png",
+    },
+    {
       name: "facebook",
     //   href: '',
       href: contactInfo.facebook,
@@ -27,12 +33,7 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
       href: contactInfo.linkedIn,
       src: "/Social Icons/purple/linkedin.png",
     },
-    {
-      name: "Youtube",
-    //   href: '',
-      href: contactInfo.youtube,
-      src: "/Social Icons/purple/youtube.png",
-    },
+   
   ];
   
   return (
@@ -69,18 +70,18 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
       </div>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
-        {socialsData.map((social, index, socials) => (
+        {socialsData.map((social, index) => (
           <>
-            {index !== socials.length - 1 && (
-              <div className="hidden h-full w-[1px] bg-gray-400 xl:block"></div>
-            )}
+            {/* {index !== socials.length - 1 && ( */}
+              <div className="hidden h-full w-[1px] bg-gray-400  xl:block"></div>
+            {/* )} */}
             <Link href={social.href} target="_blank" rel="noopener noreferrer">
               <Image
                 key={index}
                 width={36}  // Set explicit width
                 height={36}
                 src={social.src}
-                className="h-8 w-8 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9"
+                className="h-8 w-8 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9 "
                 alt={social.name}
               />
             </Link>
