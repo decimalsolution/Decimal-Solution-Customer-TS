@@ -3,61 +3,50 @@
 import PageIntroduction from "../components/generic/page-introduction/index";
 import ServiceCard from "../components/generic/service-card/index";
 import { Service } from "../../../types";
-// import { useEffect, useMemo , useState } from "react";
+import Head from "next/head";
 import { cn } from "../../../lib/utils";
+import { Metadata } from "../../../types";
 
-// interface Metadata {
-//     title: string;
-//     description: string;
-//   }
-
-// export const metadata:Metadata = {
-//   title: "Services",
-//   description:
-//     "Unlock innovation with Decimal Solutions - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
-// };
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Unlock innovation with Decimal Solutions - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
+};
 
 const Services = async () => {
+  // const [selected, setSelected] = useState<string>("All");
+  // const [services, setServices] = useState<Service[]>([]);
 
-    // const [selected, setSelected] = useState<string>("All");
-    // const [services, setServices] = useState<Service[]>([]);
+  // useEffect(  ()=>{
+  //     const fetchData = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
+    next: {
+      revalidate: 300,
+    },
+  });
 
-    // useEffect(  ()=>{
-    //     const fetchData = async () => {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
-                next: {
-                  revalidate: 300,
-                },
-              });
+  const data = await res.json();
+  const services = data.data;
+  //         const allServices = [{ title: 'All' }, ...data.data];
+  //         setServices(allServices);
 
-            const data = await res.json();
-            const services =data.data;
-    //         const allServices = [{ title: 'All' }, ...data.data];
-    //         setServices(allServices);
+  //     }
 
-    //     }
+  //     fetchData();
+  // } , [])
 
-    //     fetchData();
-    // } , [])
+  //   const filteredProjects = useMemo(() => {
+  //     if (selected === "All") {
+  //       return services;
+  //     } else {
+  //       return services.filter(
+  //         (item:Service) =>
+  //           item.title?.toLowerCase() === selected.toLowerCase(),
+  //       );
+  //     }
+  //   }, [selected, services]);
 
-  
-
-
-
-//   const filteredProjects = useMemo(() => {
-//     if (selected === "All") {
-//       return services;
-//     } else {
-//       return services.filter(
-//         (item:Service) =>
-//           item.title?.toLowerCase() === selected.toLowerCase(),
-//       );
-//     }
-//   }, [selected, services]);
-
-
-
-  const getLink = (service:Service) => {
+  const getLink = (service: Service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {
       return "services/website-development";
@@ -78,17 +67,46 @@ const Services = async () => {
 
   return (
     <div className="flex flex-col gap-20">
+
+      <Head>
+        {services.map((service: Service, index: number) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                serviceType: service.title,
+                description: service.description,
+                provider: {
+                  "@type": "Organization",
+                  name: "Decimal Solution",
+                  url: "https://www.decimalsolution.com",
+                },
+                offers: {
+                  "@type": "Offer",
+                  url: `https://www.decimalsolution.com/${getLink(service)}`,
+                  priceCurrency: "USD",
+                  eligibleRegion: "Worldwide",
+                },
+              }),
+            }}
+          />
+        ))}
+      </Head>
+
       <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
       <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
-        {services.map((service:Service, index:number) => (
+        {services.map((service: Service, index: number) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
             className={cn(
-                "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-md",
-                // selected === service.title ? "bg-primary text-white" : ""
-              )}
-              
+              "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-md"
+              // selected === service.title ? "bg-primary text-white" : ""
+            )}
+
             // onClick={() => {
             //   setSelected(service.title);
             // }}
@@ -100,14 +118,14 @@ const Services = async () => {
       </div>
 
       <div className="flex flex-col gap-8">
-        {services.map((product:Service, index:number) => (
+        {services.map((product: Service, index: number) => (
           <ServiceCard
             key={"our-services-card-" + index + "-key"}
             title={product.title}
             description={product.description}
             image={product.coverImage}
             showButton
-            showBackground = {false}
+            showBackground={false}
             buttonText={"View More"}
             reverse={index % 2 !== 0}
             link={getLink(product)}
@@ -117,12 +135,6 @@ const Services = async () => {
       </div>
     </div>
   );
-}
+};
 
 export default Services;
-
-
-
-
-
-

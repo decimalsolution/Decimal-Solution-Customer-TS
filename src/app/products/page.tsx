@@ -1,6 +1,7 @@
 import PageIntroduction from "../components/generic/page-introduction";
 import ServiceCard from "../components/generic/service-card";
 import { Product , Metadata} from "../../../types";
+import Head from "next/head";
 
 export const metadata:Metadata = {
   title: "Products",
@@ -24,6 +25,36 @@ export default async function Products() {
 
   return (
     <div className="flex flex-col gap-20">
+
+      <Head>
+        {products.map((product, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": product.title,
+                "description": product.description,
+                "image": product.coverImage,
+                "brand": {
+                  "@type": "Organization",
+                  "name": "Decimal Solution",
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "url": product.link,
+                  "priceCurrency": "USD", 
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "availability": "https://schema.org/InStock",
+                },
+              }),
+            }}
+          />
+        ))}
+      </Head>
+
       <PageIntroduction title="Our Products" image={"/products.png"} />
 
       <div className="flex flex-col gap-8">

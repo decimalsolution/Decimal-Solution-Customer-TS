@@ -1,10 +1,24 @@
 
 
 
-export interface Metadata{
+export interface Metadata {
   title: string;
   description: string;
+  openGraph?: {
+    title?: string;
+    description?: string;
+    url?: string;
+    siteName?: string;
+    images?: Array<{
+      url: string;
+      width?: number;
+      height?: number;
+    }>;
+    type?: string;
+    locale?: string;
+  };
 }
+
 
 
 
