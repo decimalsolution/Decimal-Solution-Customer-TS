@@ -1,7 +1,8 @@
 // 'use client'
 
 import PageIntroduction from "../components/generic/page-introduction/index";
-import ServiceCard from "../components/generic/service-card/index";
+// import ServiceCard from "../components/generic/service-card/index";
+import ServicesContent from "./servicescontent";
 import { Service } from "../../../types";
 import Head from "next/head";
 // import { cn } from "../../../lib/utils";
@@ -27,24 +28,8 @@ const Services = async () => {
 
   const data = await res.json();
   const services = data.data;
-  //         const allServices = [{ title: 'All' }, ...data.data];
-  //         setServices(allServices);
 
-  //     }
-
-  //     fetchData();
-  // } , [])
-
-  //   const filteredProjects = useMemo(() => {
-  //     if (selected === "All") {
-  //       return services;
-  //     } else {
-  //       return services.filter(
-  //         (item:Service) =>
-  //           item.title?.toLowerCase() === selected.toLowerCase(),
-  //       );
-  //     }
-  //   }, [selected, services]);
+  const ServiceBar = ["All" , "Web Development " , "ERP Solutions" , "Mobile Development" , "AR/VR Game" ,  "Graphic Design" , "Digital Marketing" , "Game Development" , "Management Services"  ]
 
   const getLink = (service: Service) => {
     const title = service.title.toLowerCase();
@@ -98,27 +83,31 @@ const Services = async () => {
 
       <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
+      <ServicesContent services={services} ServiceBar={ServiceBar}/>
+
       {/* <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
-        {services.map((service: Service, index: number) => (
+        {ServiceBar.map((service: string, index: number) => (
           <button
             key={"our-projects-buttons-" + index + "-key"}
             className={cn(
-              "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-md"
-              // selected === service.title ? "bg-primary text-white" : ""
+              "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-md",
+              selected === service.title ? "bg-primary text-white" : ""
             )}
 
-            // onClick={() => {
-            //   setSelected(service.title);
-            // }}
+            onClick={() => {
+              setSelected(service.title);
+            }}
           >
-            {/* {service.title} */}
-            {/* All */}
-          {/* </button> */}
-        {/* ))} */}
-      {/* // </div> */} 
+            {service}
+          </button>
+         ))} 
+       </div>
 
       <div className="flex flex-col gap-8">
-        {services.map((product: Service, index: number) => (
+        {services.map((product: Service, index: number) => {
+        
+        return (
+
           <ServiceCard
             key={"our-services-card-" + index + "-key"}
             title={product.title}
@@ -131,8 +120,9 @@ const Services = async () => {
             link={getLink(product)}
             externalLink={false}
           />
-        ))}
-      </div>
+        )})}
+      </div> */}
+
     </div>
   );
 };

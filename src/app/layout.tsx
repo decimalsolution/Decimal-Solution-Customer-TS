@@ -16,7 +16,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Decimal Solution",
-  description: "Decimal Solution: Your partner for full-stack development...",
+  description: "Decimal Solution: Your partner for full-stack development, QA engineering, and Unity expertise. Elevate your digital presence with precision and innovation",
   openGraph: {
     title: "Decimal Solution",
     siteName: "Decimal Solution",

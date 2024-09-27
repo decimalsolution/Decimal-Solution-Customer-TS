@@ -1,6 +1,9 @@
+// 'use client'
+
 import { cn } from "../../../../../lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+// import { useState , useMemo } from "react";
 
 interface Service {
   reverse: boolean;
@@ -14,17 +17,9 @@ interface Service {
   showBackground?: boolean;
 }
 
-const ServiceCard: React.FC<Service> = ({
-  reverse,
-  title,
-  description,
-  image,
-  showButton,
-  link,
-  buttonText,
-  showBackground,
-  externalLink,
-}) => {
+const ServiceCard: React.FC<Service> = ({ reverse, title, description, image, showButton, link, buttonText, showBackground, externalLink,}) => {
+  
+  
   return (
     <div
       className={cn(
