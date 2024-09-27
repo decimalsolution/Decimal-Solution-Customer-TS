@@ -1,16 +1,12 @@
 import { Poppins } from "next/font/google";
 import { Metadata } from "../../types";
 import { AOSInit } from "./aos";
+import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
 import "./globals.css";
-import dynamic from 'next/dynamic';
-
 
 import Header from "./components/generic/header/Header";
-// import HowCanWeHelpYou from "./how-can-we-help-you";
-// import Footer from "./components/generic/footer/Footer";
-const Footer = dynamic(() => import('./components/generic/footer/Footer'), { ssr: false });
-const HowCanWeHelpYou = dynamic(() => import('./how-can-we-help-you'), { ssr: false });
+import Footer from "./components/generic/footer/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
