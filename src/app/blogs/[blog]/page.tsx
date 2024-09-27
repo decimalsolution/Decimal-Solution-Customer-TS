@@ -45,6 +45,7 @@ console.log(params)
     <div>
       <PageIntroduction title={''} image={blog.blogImage} />
       <div className="lg:px-36 md:px-16 px-10 py-16 ">
+
          {/* Breadcrumbs */}
       <nav className="py-4" aria-label="breadcrumb">
         <ol className="flex space-x-2 text-sm text-gray-500">
@@ -56,7 +57,7 @@ console.log(params)
           <li>/</li>
           <li>
             <Link href="/blogs" className="text-primary hover:underline">
-              Blog
+              Blogs
             </Link>
           </li>
           <li>/</li>

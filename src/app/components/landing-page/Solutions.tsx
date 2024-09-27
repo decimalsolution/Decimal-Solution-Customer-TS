@@ -55,7 +55,7 @@ const Solutions = async () => {
                   src={firstItem.homeImage}
                   width={100}
                   height={100}
-                  alt="web vector"
+                  alt="Web Development"
                   className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
                 />
               </div>
@@ -89,7 +89,7 @@ const Solutions = async () => {
                   src={secondItem.homeImage}
                   width={100}
                   height={100}
-                  alt="web vector"
+                  alt="ERP Solutions"
                   className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
                 />
               </div>
@@ -123,7 +123,7 @@ const Solutions = async () => {
                   src={thirdItem.homeImage}
                   width={100}
                   height={100}
-                  alt="web vector"
+                  alt="Mobile app development"
                   className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
                 />
               </div>
@@ -140,7 +140,7 @@ const Solutions = async () => {
                 <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                     <NextLink
                     href="/services/mobile-app-development"
-                    aria-label="ERP Solutions"
+                    aria-label="Mobile app development"
                     >
                     <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
                         <Link strokeWidth={3} className="h-1/2 w-1/2" />
@@ -166,7 +166,7 @@ const Solutions = async () => {
                   src={fourthItem.homeImage}
                   width={100}
                   height={100}
-                  alt="web vector"
+                  alt="Ar/Vr Games"
                   className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
                 />
               </div>
@@ -183,7 +183,7 @@ const Solutions = async () => {
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                     <NextLink
                     href="/services/ar-vr"
-                    aria-label="ERP Solutions"
+                    aria-label="Ar/Vr Games"
                     >
                     <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
                         <Link strokeWidth={3} className="h-1/2 w-1/2" />
@@ -200,7 +200,7 @@ const Solutions = async () => {
                   src={fifthItem.homeImage}
                   width={100}
                   height={100}
-                  alt="web vector"
+                  alt="Graphic Designing"
                   className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
                 />
               </div>
@@ -217,7 +217,7 @@ const Solutions = async () => {
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                     <NextLink
                     href="/services/graphics-designing"
-                    aria-label="ERP Solutions"
+                    aria-label="Graphic Designing"
                     >
                     <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
                         <Link strokeWidth={3} className="h-1/2 w-1/2" />
@@ -234,7 +234,7 @@ const Solutions = async () => {
                   src={sixthItem.homeImage}
                   width={100}
                   height={100}
-                  alt="web vector"
+                  alt="Digital Marketing"
                   className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
                 />
               </div>
@@ -251,7 +251,7 @@ const Solutions = async () => {
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                     <NextLink
                     href="/services/digital-marketing"
-                    aria-label="ERP Solutions"
+                    aria-label="Digital Marketing"
                     >
                     <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
                         <Link strokeWidth={3} className="h-1/2 w-1/2" />

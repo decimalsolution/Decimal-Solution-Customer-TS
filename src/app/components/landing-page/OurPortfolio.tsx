@@ -19,6 +19,7 @@ const OurProjects = async () => {
   const projects: Project[] = data1.data;
   const services= data2.data;
   services.unshift({ title : "All" });
+  // console.log(projects);
 
 
   return (

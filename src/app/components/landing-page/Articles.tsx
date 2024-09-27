@@ -1,8 +1,9 @@
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+// import Image from "next/image";
+// import { ArrowRight } from "lucide-react";
 import HeadingText from "./HeadingText";
 import { Article } from "../../../../types";
 import Link from "next/link";
+import BlogView from "@/app/blogs/blog-view";
 
 const Articles = async () => {
   
@@ -17,17 +18,17 @@ const Articles = async () => {
   const data = await response.json();
   const articles: Article[] = data.data;
 
-  const formatDate = (dateString: string): string => {
-    const options: Intl.DateTimeFormatOptions = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      // hour: "2-digit",
-      // minute: "2-digit",
-      // hour12: false,
-    };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+  // const formatDate = (dateString: string): string => {
+  //   const options: Intl.DateTimeFormatOptions = {
+  //     year: "numeric",
+  //     month: "long",
+  //     day: "numeric",
+  //     // hour: "2-digit",
+  //     // minute: "2-digit",
+  //     // hour12: false,
+  //   };
+  //   return new Date(dateString).toLocaleDateString(undefined, options);
+  // };
 
   return (
     <section className="my-10 w-full">
@@ -37,44 +38,45 @@ const Articles = async () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
         {articles.reverse().splice(0,3).map((article, index) => {
           return (
-            <div
-              key={index}
-              className="shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] flex flex-col h-full"
-            >
-              <div className="relative flex-grow">
-                <Image
-                  src={article.blogImage}
-                  alt="Blog image"
-                  width={100}
-                  height={100}
-                  className="w-full h-48 object-cover" // Set a fixed height for the image
-                />
-              </div>
-              <div className="p-4 flex flex-col justify-between flex-grow">
-                <div className="flex justify-between text-[rgba(137,137,137,0.8)] text-[10px]">
-                  <p>{formatDate(article.createdAt)}</p>
-                </div>
-                <h2 className="text-sm font-semibold my-[16px]">
-                  {article.blogTitle}
-                </h2>
-                <p className="text-sm">
-                  {article.blogDescription.length > 130
-                    ? article.blogDescription.slice(0, 130) + "..."
-                    : article.blogDescription}
-                </p>
-                <div className="flex justify-between mt-3 ">
-                 <Link href={`/blogs/${article._id}`}>
-                    <button className="text-[14px] text-[#A1258F] flex items-center">
-                      Read More <ArrowRight size={13} className="mx-1" />
-                    </button>
-                 </Link>
+            <BlogView key={"blog-" + index} blog={article}/>
+            // <div
+            //   key={index}
+            //   className="shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] flex flex-col h-full"
+            // >
+            //   <div className="relative flex-grow">
+            //     <Image
+            //       src={article.blogImage}
+            //       alt="Blog image"
+            //       width={100}
+            //       height={100}
+            //       className="w-full h-48 object-cover" // Set a fixed height for the image
+            //     />
+            //   </div>
+            //   <div className="p-4 flex flex-col justify-between flex-grow">
+            //     <div className="flex justify-between text-[rgba(137,137,137,0.8)] text-[10px]">
+            //       <p>{formatDate(article.createdAt)}</p>
+            //     </div>
+            //     <h2 className="text-sm font-semibold my-[16px]">
+            //       {article.blogTitle}
+            //     </h2>
+            //     <p className="text-sm">
+            //       {article.blogDescription.length > 130
+            //         ? article.blogDescription.slice(0, 130) + "..."
+            //         : article.blogDescription}
+            //     </p>
+            //     <div className="flex justify-between mt-3 ">
+            //      <Link href={`/blogs/${article._id}`}>
+            //         <button className="text-[14px] text-[#A1258F] flex items-center">
+            //           Read More <ArrowRight size={13} className="mx-1" />
+            //         </button>
+            //      </Link>
                  
-                  {/* <p>
-                    <Navigation size={18} className="text-[#A1258F]" />
-                  </p> */}
-                </div>
-              </div>
-            </div>
+            //       {/* <p>
+            //         <Navigation size={18} className="text-[#A1258F]" />
+            //       </p> */}
+            //     </div>
+            //   </div>
+            // </div>
           );
         })}
       </div>

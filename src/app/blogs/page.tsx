@@ -34,7 +34,7 @@ export default async function Blogs() {
     <div className="mb-16">
       <PageIntroduction title="Blogs" image={"/blogs.png"} />
 
-      <div className="grid grid-cols-1 gap-8 p-8 sm:p-12 md:grid-cols-2 md:p-20 lg:gap-16 lg:p-28 xl:p-32 2xl:grid-cols-3 2xl:p-36">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
         {blogs?.map((blog, index) => (
           <BlogView key={"blog-" + index} blog={blog} />
         ))}

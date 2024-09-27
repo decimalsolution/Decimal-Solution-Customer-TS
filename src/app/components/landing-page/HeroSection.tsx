@@ -79,7 +79,7 @@ const HeroSection: React.FC = () => {
         <div className={`relative w-full md:w-1/2 h-[380px] lg:h-[460px] transition-opacity duration-700 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
           <Image
             src={slides[currentSlide].image}
-            priority
+            priority={currentSlide === 0}
             alt="slider-image"
             className="object-cover w-full h-full rounded-md"
           />

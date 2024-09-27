@@ -1,12 +1,16 @@
 import { Poppins } from "next/font/google";
 import { Metadata } from "../../types";
 import { AOSInit } from "./aos";
-import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
 import "./globals.css";
+import dynamic from 'next/dynamic';
+
 
 import Header from "./components/generic/header/Header";
-import Footer from "./components/generic/footer/Footer";
+// import HowCanWeHelpYou from "./how-can-we-help-you";
+// import Footer from "./components/generic/footer/Footer";
+const Footer = dynamic(() => import('./components/generic/footer/Footer'), { ssr: false });
+const HowCanWeHelpYou = dynamic(() => import('./how-can-we-help-you'), { ssr: false });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,7 +33,6 @@ export const metadata: Metadata = {
         height: 1080,
       },
     ],
-    description: "Decimal Solution: Your partner for full-stack development...",
   },
 };
 
@@ -46,46 +49,48 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang="en">
       <head>
-      <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Decimal Solution",
-              "url": "https://www.decimalsolution.com",
-              "logo": "https://www.decimalsolution.com/logo.png",
-              "description": "Decimal Solution provides full-stack development, QA engineering, and Unity expertise.",
-              "founders": [
-                {
-                  "@type": "Person",
-                  "name": "Dr. Tehseen Riaz Abbasi",
-                  "jobTitle": "CEO"
-                }
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "I-8/4",
-                "addressLocality": "Islamabad",
-                "addressRegion": "Pakistan",
-                "postalCode": "44790 ",
-                "addressCountry": "PK"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "03331111955",
-                "contactType": "Customer Support",
-                "areaServed": "PK and US",
-                "availableLanguage": "English and Urdu"
-              },
-              "sameAs": [
-                "https://www.facebook.com/decimalsolution",
-                "https://www.instagram.com/decimalsolution",
-                "https://www.linkedin.com/company/decimalsolution",
-                "https://www.youtube.com/@decimalsolution",
-              ]
-            })
-          }}
+        <link rel="canonical" href="https://www.decimalsolution.com" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" />
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Decimal Solution",
+                "url": "https://www.decimalsolution.com",
+                "logo": "https://www.decimalsolution.com/logo.png",
+                "description": "Decimal Solution provides full-stack development, QA engineering, and Unity expertise.",
+                "founders": [
+                  {
+                    "@type": "Person",
+                    "name": "Dr. Tehseen Riaz Abbasi",
+                    "jobTitle": "CEO"
+                  }
+                ],
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "I-8/4",
+                  "addressLocality": "Islamabad",
+                  "addressRegion": "Pakistan",
+                  "postalCode": "44790 ",
+                  "addressCountry": "PK"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "03331111955",
+                  "contactType": "Customer Support",
+                  "areaServed": "PK and US",
+                  "availableLanguage": "English and Urdu"
+                },
+                "sameAs": [
+                  "https://www.facebook.com/decimalsolution",
+                  "https://www.instagram.com/decimalsolution",
+                  "https://www.linkedin.com/company/decimalsolution",
+                  "https://www.youtube.com/@decimalsolution",
+                ]
+              })
+            }}
         />
       </head>
       
