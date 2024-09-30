@@ -67,10 +67,8 @@ export default function AvailableJobs({ jobs } : AvailableJobsProps) {
             items={[
               { value: "", label: "Location" },
               { value: "Islamabad", label: "Islamabad" },
-              { value: "Rawalpindi", label: "Rawalpindi" },
-              { value: "Lahore", label: "Lahore" },
-              { value: "Peshawar", label: "Peshawar" },
-              { value: "Karachi", label: "Karachi" },
+              { value: "USA", label: "USA" },
+              
             ]}
             placeholder={"Location"}
             state={location}

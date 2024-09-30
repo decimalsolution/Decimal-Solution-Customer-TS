@@ -18,6 +18,14 @@ const Articles = async () => {
   const data = await response.json();
   const articles: Article[] = data.data;
 
+  const newblogs = articles.filter((blog) => {
+    if (blog.blocked === false) {
+      return (
+        blog
+      )
+    }
+  })
+
   // const formatDate = (dateString: string): string => {
   //   const options: Intl.DateTimeFormatOptions = {
   //     year: "numeric",
@@ -36,7 +44,7 @@ const Articles = async () => {
         <HeadingText text1="Latest" text2="Blogs" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
-        {articles.reverse().splice(0,3).map((article, index) => {
+        {newblogs.reverse().splice(0,3).map((article, index) => {
           return (
             <BlogView key={"blog-" + index} blog={article}/>
             // <div

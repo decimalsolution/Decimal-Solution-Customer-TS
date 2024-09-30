@@ -119,6 +119,7 @@ export interface ContactInfo {
     createdAt: string;
     updatedAt: string;
     __v: number;
+    slug?: string
   }
   
 

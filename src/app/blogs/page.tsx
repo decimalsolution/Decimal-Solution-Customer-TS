@@ -28,6 +28,15 @@ export default async function Blogs() {
 
   const blogs:Article[] = data.data;
 
+  const newblogs = blogs.filter((blog) => {
+      if (blog.blocked === false) {
+        return (
+          blog
+        )
+      }
+  })
+  // console.log(newblogs);
+
   // const totalPages = Math.ceil(blogs.length / 6);
 
   return (
@@ -35,12 +44,12 @@ export default async function Blogs() {
       <PageIntroduction title="Blogs" image={"/blogs.png"} />
 
       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
-        {blogs?.map((blog, index) => (
+        {newblogs?.map((blog, index) => (
           <BlogView key={"blog-" + index} blog={blog} />
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-2 px-8 md:gap-4 lg:gap-6 xl:gap-8 [&_*]:transition-all [&_*]:duration-300">
+      {/* <div className="flex items-center justify-center gap-2 px-8 md:gap-4 lg:gap-6 xl:gap-8 [&_*]:transition-all [&_*]:duration-300"> */}
         {/* <div className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16">
           <ChevronLeft className="h-3/4 w-3/4 group-hover:text-white" />
         </div> */}
@@ -59,7 +68,7 @@ export default async function Blogs() {
         {/* <div className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16">
           <ChevronRight className="h-3/4 w-3/4 group-hover:text-white" />
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 }

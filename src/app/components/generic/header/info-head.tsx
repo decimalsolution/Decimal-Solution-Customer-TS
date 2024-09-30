@@ -73,11 +73,11 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
         {socialsData.map((social, index) => (
           <>
             {/* {index !== socials.length - 1 && ( */}
-              <div className="hidden h-full w-[1px] bg-gray-400  xl:block"></div>
+              <div key={index} className="hidden h-full w-[1px] bg-gray-400  xl:block"></div>
             {/* )} */}
             <Link href={social.href} target="_blank" rel="noopener noreferrer">
               <Image
-                key={index}
+                // key={index}
                 width={36}  // Set explicit width
                 height={36}
                 src={social.src}

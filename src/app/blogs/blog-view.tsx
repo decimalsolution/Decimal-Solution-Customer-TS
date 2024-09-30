@@ -45,7 +45,7 @@ export default function BlogView({ blog }: BlogProps) {
             : blog.blogDescription}
         </p>
         <div className="flex justify-between mt-3 ">
-          <Link href={`/blogs/${blog._id}`}>
+          <Link href={`/blogs/${blog.slug}`}>
             <button className="text-[14px] text-[#A1258F] flex items-center">
               Read More <ArrowRight size={13} className="mx-1" />
             </button>

@@ -29,7 +29,7 @@ const Services = async () => {
   const data = await res.json();
   const services = data.data;
 
-  const ServiceBar = ["All" , "Web Development " , "ERP Solutions" , "Mobile Development" , "AR/VR Game" ,  "Graphic Design" , "Digital Marketing" , "Game Development" , "Management Services"  ]
+  const ServiceBar = ["All" , "Web Development " , "ERP Solutions" , "Mobile Development" , "AR/VR Game" ,  "Graphic Design" , "Digital Marketing" , "Game Development" , "Content Creation" , "Management Services"  ]
 
   const getLink = (service: Service) => {
     const title = service.title.toLowerCase();

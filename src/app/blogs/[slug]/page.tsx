@@ -13,19 +13,18 @@ import { Article } from "../../../../types";
 
 export interface Params {
     params: {
-        blog: string;  
+        slug: string;  
     };
 }
 
 const SpecificBlog:React.FC<Params> = async ({ params }) => {
-  const blogId:string = params.blog;
+  const slug:string = params.slug;
 //   const { blog }:string = params;
 
-console.log(params)
-
+console.log("Slug : " , slug)
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${blogId}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
     {
       next: {
         revalidate: 300,
@@ -34,11 +33,9 @@ console.log(params)
   );
 
   if (!res.ok) throw new Error("Something went wrong");
-
   const data = await res.json();
-
   const blog:Article = data.data;
-
+  // console.log(blog)
   const blogs = data.recentBlogs;
 
   return (
@@ -85,7 +82,7 @@ console.log(params)
                 // Write the link to to share the link of the blog on Facebook
                 "https://www.facebook.com/sharer/sharer.php?u=" +
                 "https://decimalsolution.com/blogs/" +
-                blogId
+                slug
               }
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +99,7 @@ console.log(params)
               href={
                 "https://twitter.com/intent/tweet?url=" +
                 "https://decimalsolution.com/blogs/" +
-                blogId
+                slug
               }
               target="_blank"
               rel="noopener noreferrer"
@@ -119,7 +116,7 @@ console.log(params)
               href={
                 "https://www.linkedin.com/shareArticle?mini=true&url=" +
                 "https://decimalsolution.com/blogs/" +
-                blogId
+                slug
               }
               target="_blank"
               rel="noopener noreferrer"
