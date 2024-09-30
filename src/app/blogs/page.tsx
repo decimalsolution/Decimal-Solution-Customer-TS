@@ -1,74 +1,53 @@
 import PageIntroduction from "../components/generic/page-introduction";
-// import { ChevronLeft} from "lucide-react";
-// import  { ChevronRight }  from "lucide-react";
-// import Image from "next/image";
-// import Link from "next/link";
 import BlogView from "./blog-view";
-import { Metadata , Article} from "../../../types";
+import { Metadata, Article } from "../../../types";
 
-export const metadata:Metadata = {
+export const metadata: Metadata = {
   title: "Blogs",
   description:
     "Dive into the world of insights and expertise on Decimal Solutions' Blogs Page. Explore thought-provoking content covering Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Stay informed, inspired, and ahead in the ever-evolving tech landscape.",
 };
 
 export default async function Blogs() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/blogs`,
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`, {
+      next: { revalidate: 300 },
+    });
 
-    {
-      next: {
-        revalidate: 300,
-      },
-    },
-  );
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blogs, status: ${res.status}`);
+    }
 
-  if (!res.ok) throw new Error("Something went wrong");
-  const data = await res.json();
+    // Ensure that the response is valid before parsing
+    const text = await res.text();
+    const data = text ? JSON.parse(text) : null;
 
-  const blogs:Article[] = data.data;
+    if (!data || !data.data) {
+      throw new Error("Invalid JSON structure or no data found");
+    }
 
-  const newblogs = blogs.filter((blog) => {
-      if (blog.blocked === false) {
-        return (
-          blog
-        )
-      }
-  })
-  // console.log(newblogs);
+    const blogs: Article[] = data.data;
 
-  // const totalPages = Math.ceil(blogs.length / 6);
+    const newblogs = blogs.filter((blog) => !blog.blocked);
 
-  return (
-    <div className="mb-16">
-      <PageIntroduction title="Blogs" image={"/blogs.png"} />
+    return (
+      <div className="mb-16">
+        <PageIntroduction title="Blogs" image={"/blogs.png"} />
 
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
-        {newblogs?.map((blog, index) => (
-          <BlogView key={"blog-" + index} blog={blog} />
-        ))}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-8 px-16">
+          {newblogs.map((blog, index) => (
+            <BlogView key={"blog-" + index} blog={blog} />
+          ))}
+        </div>
       </div>
-
-      {/* <div className="flex items-center justify-center gap-2 px-8 md:gap-4 lg:gap-6 xl:gap-8 [&_*]:transition-all [&_*]:duration-300"> */}
-        {/* <div className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16">
-          <ChevronLeft className="h-3/4 w-3/4 group-hover:text-white" />
-        </div> */}
-        {/* {Array(totalPages)
-          .fill()
-          .map((_, index) => (
-            <div
-              key={index}
-              className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16"
-            >
-              <p className="text-base group-hover:text-white md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-                {index + 1}
-              </p>
-            </div>
-          ))} */}
-        {/* <div className="group grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-gray-500/50 hover:bg-gray-800 md:h-12 md:w-12 lg:h-14 lg:w-14 xl:h-16 xl:w-16">
-          <ChevronRight className="h-3/4 w-3/4 group-hover:text-white" />
-        </div> */}
-      {/* </div> */}
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error("Error fetching or parsing blog data:", error);
+    return (
+      <div className="mb-16">
+        <PageIntroduction title="Blogs" image={"/blogs.png"} />
+        <p className="text-center mt-10 text-red-500">Failed to load blogs. Please try again later.</p>
+      </div>
+    );
+  }
 }
