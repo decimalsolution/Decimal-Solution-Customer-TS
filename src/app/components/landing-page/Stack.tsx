@@ -46,6 +46,7 @@ const Stack: React.FC = () => {
     autoplay: true,
     autoplaySpeed: 1,
     cssEase: 'linear',
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -99,11 +100,11 @@ const Stack: React.FC = () => {
             object-fit: contain; 
           }
 
-          /* Adding margin between the slides */
-          .slick-slide > div {
-            margin: 10px 10px; 
-            border: 1px black solid;
-          }
+          // /* Adding margin between the slides */
+          // .slick-slide > div {
+          //   margin: 10px 10px; 
+          //   border: 1px black solid;
+          // }
         `}</style>
 
         <Slider {...settings} className=" py-6 mt-0 md:mt-4">

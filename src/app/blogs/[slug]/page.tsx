@@ -8,8 +8,10 @@ import {
 } from "lucide-react";
 // import Image from "next/image";
 import Link from "next/link";
-import BlogView from "../blog-view";
+// import BlogView from "../blog-view";
 import { Article } from "../../../../types";
+// import DOMPurify from "dompurify";
+import HtmlRender from "../HtmlRender";
 
 export interface Params {
     params: {
@@ -21,7 +23,7 @@ const SpecificBlog:React.FC<Params> = async ({ params }) => {
   const slug:string = params.slug;
 //   const { blog }:string = params;
 
-console.log("Slug : " , slug)
+// console.log("Slug : " , slug)
 
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
@@ -32,11 +34,14 @@ console.log("Slug : " , slug)
     },
   );
 
+  // const rawResponse = await res.text(); 
+  // console.log("Raw Response: ", rawResponse);
+  
   if (!res.ok) throw new Error("Something went wrong");
   const data = await res.json();
   const blog:Article = data.data;
   // console.log(blog)
-  const blogs = data.recentBlogs;
+  // const blogs = data.recentBlogs;
 
   return (
     <div>
@@ -127,15 +132,18 @@ console.log("Slug : " , slug)
             </Link>
           </div>
         </div>
-        <div className="my-8 flex flex-col gap-4 text-base !leading-loose md:text-lg lg:text-xl xl:text-[17px]">
+        {/* <div className="my-8 flex flex-col gap-4 text-base !leading-loose md:text-lg lg:text-xl xl:text-[17px]">
           {blog.blogData}
+        </div> */}
+        <div className="my-8 flex flex-col gap-4 text-base !leading-loose md:text-lg lg:text-xl xl:text-[17px]">
+          <HtmlRender htmlContent={blog.blogData} />
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16 2xl:grid-cols-3">
+        {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16 2xl:grid-cols-3">
           {blogs?.map((blog:Article, index:number) => (
             <BlogView key={"blog-" + index} blog={blog} />
           ))}
-        </div>
+        </div> */}
 
         <Link
           className="my-16 block text-3xl font-medium uppercase text-primary hover:underline"

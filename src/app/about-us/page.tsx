@@ -78,7 +78,8 @@ export default async function AboutUs() {
             />
           </div>
           <p>
-            Dr. Tehseen Riaz Abbasi, <span className="text-primary">CEO</span>
+            {/* Dr. Tehseen Riaz Abbasi,  */}
+            <span className="text-primary">CEO</span>
           </p>
         </div>
 
@@ -98,7 +99,7 @@ export default async function AboutUs() {
             </h3>
             <p className="mt-2 text-center text-base !leading-loose lg:mt-8 lg:text-lg xl:text-2xl">
               We are a team of software development and testing enthusiasts,
-              working tirelessly on software quality assurance. The last 7 years
+              working tirelessly on software quality assurance. The last 10 years
               were the time we founded, developed, grew, and amazed. And we are
               still growing by working with some major clients from all over the
               world.

@@ -125,6 +125,12 @@ export const getData = (type:string) => {
           image: "/services-cover-images/ar-vr.png",
           sections: [
             {
+              title: "Google AR Core, Easy AR",
+              description:
+                "By utilizing innovative augmented reality technology, these platforms enable developers to produce smooth and captivating augmented reality experiences, paving the way for interactive apps across a range of platforms. With a focus on user engagement and immersion, our AR solutions redefine digital interactions, offering endless possibilities for industries such as gaming, education, retail, and more, creating memorable experiences that bridge the gap between the virtual and physical worlds.",
+              image: "/ar-vr/image-3.png",
+            },
+            {
               title: "VUFORIA AR",
               description:
                 "Unlocking the potential of augmented reality with Vuforia, a cutting-edge platform that empowers developers to create immersive and interactive AR experiences for various applications and industries. By seamlessly blending the digital and physical worlds, our AR solutions not only enhance user engagement but also open new possibilities for education, training, marketing, and beyond, revolutionizing the way businesses and users interact with the world around them.",
@@ -136,12 +142,12 @@ export const getData = (type:string) => {
                 "A versatile development framework that harnesses the power of augmented reality, enabling seamless creation of AR experiences across different platforms and devices for immersive and engaging applications. With its robust capabilities, our AR framework not only transforms user interactions but also provides businesses with innovative opportunities to connect with their audience, driving a new era of interactive and captivating digital experiences that extend beyond traditional boundaries.",
               image: "/ar-vr/image-2.png",
             },
-            {
-              title: "Google AR Core, Easy AR",
-              description:
-                "By utilizing innovative augmented reality technology, these platforms enable developers to produce smooth and captivating augmented reality experiences, paving the way for interactive apps across a range of platforms. With a focus on user engagement and immersion, our AR solutions redefine digital interactions, offering endless possibilities for industries such as gaming, education, retail, and more, creating memorable experiences that bridge the gap between the virtual and physical worlds.",
-              image: "/ar-vr/image-3.png",
-            },
+            // {
+            //   title: "VUFORIA AR",
+            //   description:
+            //     "Unlocking the potential of augmented reality with Vuforia, a cutting-edge platform that empowers developers to create immersive and interactive AR experiences for various applications and industries. By seamlessly blending the digital and physical worlds, our AR solutions not only enhance user engagement but also open new possibilities for education, training, marketing, and beyond, revolutionizing the way businesses and users interact with the world around them.",
+            //   image: "/ar-vr/image-1.png",
+            // },
             {
               title: "Location Marker Based Augmentation",
               description:

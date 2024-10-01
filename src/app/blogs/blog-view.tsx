@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Article } from "../../../types";
 import { ArrowRight } from "lucide-react";
+import HtmlRender from "./HtmlRender";
+
 
 interface BlogProps {
   blog: Article;
@@ -19,7 +21,10 @@ const formatDate = (dateString: string): string => {
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
 
+
+
 export default function BlogView({ blog }: BlogProps) {
+  // console.log("inside blog view page : ")
   // console.log(blog)
   return (
     <div
@@ -39,11 +44,22 @@ export default function BlogView({ blog }: BlogProps) {
           <p>{formatDate(blog.createdAt)}</p>
         </div>
         <h2 className="text-sm font-semibold my-[16px]">{blog.blogTitle}</h2>
-        <p className="text-sm">
-          {blog.blogDescription.length > 130
-            ? blog.blogDescription.slice(0, 130) + "..."
-            : blog.blogDescription}
-        </p>
+        {/* <p className="text-sm">
+          {blog.blogData.replace(/<[^>]*>?/gm, '').length > 130
+            ? blog.blogData.replace(/<[^>]*>?/gm, '').slice(0, 130) + "..."
+            : blog.blogData.replace(/<[^>]*>?/gm, '')}
+        </p> */}
+
+        <div>
+          <HtmlRender htmlContent={blog.blogData} />
+        </div>
+        
+        {/* <p className="text-sm">
+          {blog.blogData.length > 130
+            ?  blog.blogData.slice(0, 130) + "..."
+            : <HtmlRender htmlContent={blog.blogData}  />}
+        </p> */}
+
         <div className="flex justify-between mt-3 ">
           <Link href={`/blogs/${blog.slug}`}>
             <button className="text-[14px] text-[#A1258F] flex items-center">

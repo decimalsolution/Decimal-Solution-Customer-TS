@@ -39,7 +39,7 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
   return (
     <div className="flex flex-col items-center justify-between gap-4 xl:flex-row xl:items-stretch sm:px-6 border-b border-gray-400 ">
       <div className="flex flex-row items-center gap-2 max-[500px]:flex-col md:gap-4">
-        <div className="mr-4 flex items-center">
+        <div className="mr-4 mt-2 flex items-center">
           <Phone className="text-primary" fill="currentColor" strokeWidth={0} />
           <p className="ml-2 text-base text-gray-700 md:text-lg 2xl:text-xl">
             <Link href={`tel:${contactInfo.primaryContact}`}>

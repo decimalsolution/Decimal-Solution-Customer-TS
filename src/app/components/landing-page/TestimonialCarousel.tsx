@@ -7,29 +7,27 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./testimonial-carousel.css";
 import { Testimonials } from "../../../../types";
-// import { string } from "zod";
 
 interface TestimonialCarouselProps {
-    testimonials : Testimonials[];
-    // Add other properties based on your data structure
-  }
+  testimonials: Testimonials[];
+}
 
-const TestimonialCarousel:React.FC<TestimonialCarouselProps> = ({ testimonials }) => {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index:number , className:string) :string {
-      return '<span className="' + className + '">' + "</span>";
-    },
-  };
-
+const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
+  testimonials,
+}) => {
   return (
     <div className="h-[500px] w-full">
       <Swiper
-        navigation
         id="testimonial-carousel"
         modules={[Pagination]}
-        pagination={pagination}
+        pagination={{
+          clickable: true,
+          renderBullet: function (index: number, className: string): string {
+            return '<span class="' + className + '">' + "</span>";
+          },
+        }}
         slidesPerView={1}
+        className="testimonial-swiper" // Add a custom class
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className="py-4">
@@ -63,7 +61,7 @@ const TestimonialCarousel:React.FC<TestimonialCarouselProps> = ({ testimonials }
                 {testimonial.designation}
               </p>
 
-              <p className="mt-2 max-w-7xl text-center text-base leading-relaxed  md:mt-4 md:text-lg lg:mt-8 lg:text-xl 2xl:text-2xl">
+              <p className="mt-2 max-w-7xl text-center text-base leading-relaxed  md:mt-4 md:text-lg lg:mt-8 lg:text-md 2xl:text-xl">
                 {testimonial.testimonial}
               </p>
             </div>
@@ -72,6 +70,6 @@ const TestimonialCarousel:React.FC<TestimonialCarouselProps> = ({ testimonials }
       </Swiper>
     </div>
   );
-}
+};
 
 export default TestimonialCarousel;

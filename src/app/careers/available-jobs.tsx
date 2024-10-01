@@ -36,10 +36,12 @@ export default function AvailableJobs({ jobs } : AvailableJobsProps) {
         </h2>
 
         <div className="flex gap-8 mt-12 flex-wrap">
+          {/* <div className="p-2"> */}
+            {/* <h2 className="text-white text-2xl text-center">Category</h2> */}
           <SelectMenu
             items={[
-              { value: "", label: "Category" },
-              { value: "Development", label: "Development" },
+              // { value: "", label: "Category" },
+              { value: "Development", label: "Development"  },
               { value: "Designing", label: "Designing",},
               { value: "Marketing", label: "Marketing" },
               { value: "Finance", label: "Finance" },
@@ -49,9 +51,11 @@ export default function AvailableJobs({ jobs } : AvailableJobsProps) {
             state={category}
             setState={setCategory}
           />
+          {/* </div> */}
+          
           <SelectMenu
             items={[
-              { value: "", label: "Type" },
+              // { value: "", label: "Type" },
               { value: "Full Time", label: "Full Time" },
               { value: "Part Time", label: "Part Time" },
               { value: "Internship", label: "Internship" },
@@ -65,7 +69,7 @@ export default function AvailableJobs({ jobs } : AvailableJobsProps) {
           />
           <SelectMenu
             items={[
-              { value: "", label: "Location" },
+              // { value: "", label: "Location" },
               { value: "Islamabad", label: "Islamabad" },
               { value: "USA", label: "USA" },
               

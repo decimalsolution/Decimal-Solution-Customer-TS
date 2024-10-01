@@ -1,4 +1,4 @@
-import { cn } from "../../../../lib/utils";
+// import { cn } from "../../../../lib/utils";
 import TestimonialCarousel from "./TestimonialCarousel";
 import Image from "next/image";
 import { Testimonials } from "../../../../types";
@@ -27,11 +27,11 @@ const ClientTestimonials: React.FC = async () => {
         className="absolute inset-0 z-[-1] object-cover"
       />
       <div className="z-10">
-        <p
+        {/* <p
           className={cn("landing-page-subheading", "text-center !normal-case")}
         >
           Testimonials
-        </p>
+        </p> */}
         <h2 className="landing-page-heading">Client Testimonials</h2>
       </div>
 

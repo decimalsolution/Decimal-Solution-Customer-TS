@@ -62,7 +62,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
           <Link
             key={i}
             className={cn(
-              "text-base font-medium text-white transition-all hover:text-white/75 md:text-lg lg:text-xl xl:text-2xl",
+              "text-base font-medium text-white transition-all hover:text-white/75 md:text-lg lg:text-xl xl:text-xl",
               i !== navigationLinks.length - 1
                 ? "border-r border-white pr-2 md:pr-4 lg:pr-8"
                 : ""

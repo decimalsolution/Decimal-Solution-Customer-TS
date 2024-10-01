@@ -28,10 +28,26 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
     email: z.string().email({ message: "Invalid Email" }),
     gender: z.string().nonempty({ message: "Gender is required" }),
     city: z.string().nonempty({ message: "City is required" }),
-    cellNumber: z.string().nonempty({ message: "Cell Number is required" }),
-    whatsappNumber: z.string().nonempty({
-      message: "Whatsapp Number is required",
-    }), 
+
+    cellNumber: z
+    .string({
+      message:"Phone Number cannot be empty"
+    }).transform(value=> value.replace(/\_/g, "")).pipe(
+    z.string().min(
+      15, "Cell Number must be exactly 11 digits"
+    ).max(15, "Cell Number must be exactly 11 digits")),
+    // .minLength(15 , {message: "Cell Number must be exactly 11 digits" })
+    // .maxLength(15 , {message: "Cell Number must be exactly 11 digits" }),
+    // .length(15, { message: "Cell Number must be exactly 11 digits" }),
+    
+    whatsappNumber: z
+    .string({
+      message:"Phone Number cannot be empty"
+    }).transform(value=> value.replace(/\_/g, "")).pipe(
+    z.string().min(
+      15, "Cell Number must be exactly 11 digits"
+    ).max(15, "Cell Number must be exactly 11 digits")), 
+
     experience: z.string().nonempty({ message: "Experience is required" }),
     comments: z.string().optional(),
     resume: z.any().refine(
