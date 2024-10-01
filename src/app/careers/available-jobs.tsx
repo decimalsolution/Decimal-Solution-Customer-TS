@@ -18,7 +18,7 @@ export default function AvailableJobs({ jobs } : AvailableJobsProps) {
   const filteredJobs = useMemo(() => {
     return jobs.filter((job) => {
       return (
-        job.category.title.includes(category) &&
+        job.category?.title?.includes(category) &&
         job.type.includes(type) &&
         job.location.includes(location)
       );
