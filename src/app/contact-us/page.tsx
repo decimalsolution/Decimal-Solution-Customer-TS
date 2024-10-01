@@ -328,13 +328,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className="relative aspect-[1.5] md:aspect-[2.5] lg:aspect-[3]">
-        <Image
-          src="/location2.png"
-          fill
-          alt="location"
-          quality={100}
-          className="object-cover"
-        />
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.8853167590564!2d73.0739308740979!3d33.66013333833592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa21b669c4f87bdff%3A0xb82073d15173bbc5!2sDecimal%20Solution!5e0!3m2!1sen!2s!4v1727802532626!5m2!1sen!2s" width="100%" height="450"  loading="lazy" ></iframe>
       </div>
     </div>
   );
