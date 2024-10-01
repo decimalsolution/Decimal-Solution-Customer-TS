@@ -69,7 +69,9 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
         <InfoHeader contactInfo={contactInfo} />
         <div className=" flex items-center justify-between md:justify-around px-8 md:mx-0 shadow-[0_4px_4px_-2px_rgba(0,0,0,0.1)] ">
           <div className="">
-            <Image src='/logo.png' alt="Decimal Solution Logo" width={90} height={70} />
+            <Link href='/'>
+              <Image src='/logo.png' alt="Decimal Solution Logo" width={90} height={70} />
+            </Link>
           </div>
 
           <div className="hidden md:block">
