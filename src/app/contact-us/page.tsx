@@ -329,7 +329,7 @@ const ContactUs = () => {
       </div>
       <div className="relative aspect-[1.5] md:aspect-[2.5] lg:aspect-[3]">
         <Image
-          src="/location.png"
+          src="/location2.png"
           fill
           alt="location"
           quality={100}
