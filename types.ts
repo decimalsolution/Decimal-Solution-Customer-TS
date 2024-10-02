@@ -113,6 +113,7 @@ export interface ContactInfo {
     _id: string;
     blocked: boolean;
     blogData: string;
+    altText: string;
     metaDescription: string;
     blogImage: string;
     blogTitle: string;

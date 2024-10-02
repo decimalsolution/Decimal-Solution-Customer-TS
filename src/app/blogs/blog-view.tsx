@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Article } from "../../../types";
 import { ArrowRight } from "lucide-react";
-import HtmlRender from "./HtmlRender";
+// import HtmlRender from "./HtmlRender";
 
 
 interface BlogProps {
@@ -24,8 +24,8 @@ const formatDate = (dateString: string): string => {
 
 
 export default function BlogView({ blog }: BlogProps) {
-  // console.log("inside blog view page : ")
-  // console.log(blog)
+  console.log("inside blog view page : ")
+  console.log(blog.altText)
   return (
     <div
       className="shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] flex flex-col h-full"
@@ -33,7 +33,7 @@ export default function BlogView({ blog }: BlogProps) {
       <div className="relative flex-grow">
         <Image
           src={blog.blogImage}
-          alt="Blog image"
+          alt={blog?.altText}
           width={100}
           height={100}
           className="w-full h-48 object-cover" // Set a fixed height for the image
@@ -44,14 +44,17 @@ export default function BlogView({ blog }: BlogProps) {
           <p>{formatDate(blog.createdAt)}</p>
         </div>
         <h2 className="text-sm font-semibold my-[16px]">{blog.blogTitle}</h2>
+        
         {/* <p className="text-sm">
           {blog.blogData.replace(/<[^>]*>?/gm, '').length > 130
             ? blog.blogData.replace(/<[^>]*>?/gm, '').slice(0, 130) + "..."
             : blog.blogData.replace(/<[^>]*>?/gm, '')}
         </p> */}
 
-        <div>
-          <HtmlRender htmlContent={blog.blogData} />
+        <div className=" w-full ">
+          {blog.blogData.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g,
+            ''
+          ).slice(0,130)}...
         </div>
         
         {/* <p className="text-sm">
@@ -67,13 +70,11 @@ export default function BlogView({ blog }: BlogProps) {
             </button>
           </Link>
 
-          {/* <p>
-                    <Navigation size={18} className="text-[#A1258F]" />
-                  </p> */}
+
         </div>
       </div>
     </div>
-    // <Link href={`/blogs/${blog._id}`}>
+    // <Link href={/blogs/${blog._id}}>
     //   <div className="flex flex-col justify-between cursor-pointer">
     //     <div className="relative w-full aspect-[1.1]">
     //       <Image
