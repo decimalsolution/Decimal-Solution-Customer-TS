@@ -128,27 +128,27 @@ const Form = () => {
           <form onSubmit={handleSubmit}>
             <div className="grid gap-4 lg:gap-8 xl:grid-cols-2">
               {/* Input fields */}
-              <div>
+              <div className="w-full ">
                 <input
                   type="text"
                   name="quoteName"
                   placeholder="Full Name"
                   value={formData.quoteName}
                   onChange={handleInputChange}
-                  className="border-2 p-2"
+                  className="border-2 p-2 w-full"
                 />
                 {errors.quoteName && (
                   <p className="text-red-500">{errors.quoteName}</p>
                 )}
               </div>
-              <div>
+              <div className="w-full">
                 <input
                   type="email"
                   name="quoteEmail"
                   placeholder="Email"
                   value={formData.quoteEmail}
                   onChange={handleInputChange}
-                  className="border-2 p-2"
+                  className="border-2 p-2 w-full"
                 />
                 {errors.quoteEmail && (
                   <p className="text-red-500">{errors.quoteEmail}</p>
@@ -167,6 +167,7 @@ const Form = () => {
                   <p className="text-red-500">{errors.quoteMobile}</p>
                 )}
               </div>
+              
               <div className="xl:col-span-2">
                 <input
                   type="text"
@@ -196,7 +197,7 @@ const Form = () => {
             </div>
             <button
               type="submit"
-              className="self-center rounded-lg bg-primary px-6 py-2 text-base text-white"
+              className="self-center rounded-lg bg-primary px-6 py-2 text-base text-white mt-4"
             >
               Get Quote
             </button>

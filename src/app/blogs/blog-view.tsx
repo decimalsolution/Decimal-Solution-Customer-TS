@@ -34,8 +34,8 @@ export default function BlogView({ blog }: BlogProps) {
         <Image
           src={blog.blogImage}
           alt={blog?.altText}
-          width={100}
-          height={100}
+          width={200}
+          height={200}
           className="w-full h-48 object-cover" // Set a fixed height for the image
         />
       </div>

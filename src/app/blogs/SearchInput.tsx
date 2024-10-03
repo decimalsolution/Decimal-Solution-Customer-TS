@@ -1,35 +1,36 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { Article } from '../../../types';
-import BlogView from './blog-view';
+import { Article } from "../../../types";
+import BlogView from "./blog-view";
 
 interface SearchProps {
   newblogs: Article[];
 }
 
-const SearchInput = ({newblogs}:SearchProps) => {
-
+const SearchInput = ({ newblogs }: SearchProps) => {
   const [searchKey, setSearchKey] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("newest");
 
   // Create a sorted version of newblogs based on the sortOrder
-  const sortedBlogs = sortOrder === "newest" 
-    ? [...newblogs].reverse() // Create a new array and reverse it
-    : newblogs; // Default order
+  const sortedBlogs =
+    sortOrder === "newest"
+      ? [...newblogs].reverse() // Create a new array and reverse it
+      : newblogs; // Default order
 
   // Filter blogs based on search key
-  const filteredBlogs = sortedBlogs.filter((item) => 
+  const filteredBlogs = sortedBlogs.filter((item) =>
     item.blogTitle.toLowerCase().includes(searchKey.toLowerCase())
   );
 
   return (
     <div>
       {/* Search Input */}
-      <div className='flex items-center justify-around mt-10 '>
-        <div className="flex items-center w-[30%] justify-between  ml-16 border-2 border-gray-300 rounded-full px-4 py-2 bg-gray-100 shadow-sm  ">
+      <div className="flex flex-col items-center justify-center gap-4 mt-10 md:flex-row md:justify-around">
+        {/* Search bar */}
+        <div className="flex items-center w-[90%] md:w-[30%] justify-between border-2 border-gray-300 rounded-full px-4 py-2 bg-gray-100 shadow-sm mx-4 md:mx-0">
           <input
             type="search"
             className="w-full border-none outline-none bg-transparent placeholder-gray-500"
@@ -40,9 +41,11 @@ const SearchInput = ({newblogs}:SearchProps) => {
           <AiOutlineSearch className="text-gray-500" />
         </div>
 
-         {/* Sort by Newest/Oldest */}
-         <div className="ml-6">
-          <label htmlFor="sortOrder" className="mr-2">Sort By:</label>
+        {/* Sort by Newest/Oldest */}
+        <div className="flex items-center justify-center w-full md:w-auto mt-4 md:mt-0">
+          <label htmlFor="sortOrder" className="mr-2">
+            Sort By:
+          </label>
           <select
             id="sortOrder"
             value={sortOrder}
@@ -53,7 +56,6 @@ const SearchInput = ({newblogs}:SearchProps) => {
             <option value="oldest">Oldest</option>
           </select>
         </div>
-
       </div>
 
       {/* Blog Cards */}
@@ -67,7 +69,7 @@ const SearchInput = ({newblogs}:SearchProps) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SearchInput;
