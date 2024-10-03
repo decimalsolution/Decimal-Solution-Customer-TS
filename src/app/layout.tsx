@@ -4,6 +4,7 @@ import { AOSInit } from "./aos";
 import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
 import "./globals.css";
+import GoogleTag from "./google-tag";
 
 import Header from "./components/generic/header/Header";
 import Footer from "./components/generic/footer/Footer";
@@ -41,12 +42,15 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   const response = await data.json();
   const contactInfo: ContactInfo = response.data[0];
+  // console.log("Contact Info : " ,contactInfo);
 
   return (
     <html lang="en">
       <head>
         <link rel="canonical" href="https://www.decimalsolution.com" />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" />
+        <meta name="google-site-verification" content="p2wciI-nq5J_HR6l1_V40ujUDlPjtYRILg20dclno8o" />
+        {/*  Schema Markup Code  */}
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -66,7 +70,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 ],
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "I-8/4",
+                  "streetAddress": contactInfo.primaryAddress,
                   "addressLocality": "Islamabad",
                   "addressRegion": "Pakistan",
                   "postalCode": "44790 ",
@@ -74,16 +78,16 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 },
                 "contactPoint": {
                   "@type": "ContactPoint",
-                  "telephone": "03331111955",
+                  "telephone": contactInfo.primaryContact,
                   "contactType": "Customer Support",
                   "areaServed": "PK and US",
                   "availableLanguage": "English and Urdu"
                 },
                 "sameAs": [
-                  "https://www.facebook.com/decimalsolution",
-                  "https://www.instagram.com/decimalsolution",
-                  "https://www.linkedin.com/company/decimalsolution",
-                  "https://www.youtube.com/@decimalsolution",
+                  contactInfo.facebook || "https://www.facebook.com/decimalsolution",
+                  contactInfo.instagram ||"https://www.instagram.com/decimalsolution",
+                  contactInfo.linkedIn ||"https://www.linkedin.com/company/decimalsolution",
+                  contactInfo.youtube ||"https://www.youtube.com/@decimalsolution",
                 ]
               })
             }}
@@ -91,7 +95,11 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       </head>
       
       <AOSInit />
+      {/* <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} /> */}
       <body className={`${poppins.className} overflow-x-hidden w-full`}>
+      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <Header contactInfo={contactInfo} />
         {children}
         <Footer contactInfo={contactInfo} />

@@ -1,9 +1,9 @@
-// 'use client'
+'use client'
 
 import { cn } from "../../../../../lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-// import { useState , useMemo } from "react";
+import { useState } from 'react';
 
 interface Service {
   reverse: boolean;
@@ -15,11 +15,13 @@ interface Service {
   buttonText?: string;
   externalLink?: boolean;
   showBackground?: boolean;
+  // blurImage?: string; // Add a prop for the blur image
 }
 
-const ServiceCard: React.FC<Service> = ({ reverse, title, description, image, showButton, link, buttonText, showBackground, externalLink,}) => {
-  
-  
+const ServiceCard: React.FC<Service> = ({ reverse, title, description, image, showButton, link, buttonText, showBackground, externalLink, }) => {
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div
       className={cn(
@@ -34,7 +36,7 @@ const ServiceCard: React.FC<Service> = ({ reverse, title, description, image, sh
           reverse ? "items-end" : ""
         )}
       >
-        <div className=" w-24 md:w-28 xl:w-32 h-2 bg-primary"></div>
+        <div className="w-24 md:w-28 xl:w-32 h-2 bg-primary"></div>
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-[40px] uppercase font-semibold">
           {title}
         </h2>
@@ -56,16 +58,28 @@ const ServiceCard: React.FC<Service> = ({ reverse, title, description, image, sh
       </div>
       <div
         className={cn(
-          "hidden xl:block flex-1 relative xl:h-[330px] xl:w-[500px] 2xl:h-[400px] 2xl:w-[600px]  before:content-[''] before:absolute before:w-3/4 before:h-3/4 before:bg-primary before:-bottom-8 mb-8 before:blur-[1px]",
+          "hidden xl:block flex-1 relative xl:h-[330px] xl:w-[500px] 2xl:h-[400px] 2xl:w-[600px] before:content-[''] before:absolute before:w-3/4 before:h-3/4 before:bg-primary before:-bottom-8 mb-8 before:blur-[1px]",
           reverse ? "before:-right-8 mr-8" : "before:-left-8 ml-8"
         )}
       >
-        <Image
-          src={image}
-          fill
-          alt="web-development"
-          className="object-cover "
-        />
+        {/* Step 1: Show skeleton while loading */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg"></div>
+        )}
+
+        <div className={cn(
+          "absolute inset-0 transition-all duration-500 ease-in-out",
+          !imageLoaded ? "blur-sm bg-gray-200" : ""
+        )}>
+          <Image
+            src={image}
+            fill
+            loading="lazy"
+            alt={title}
+            onLoadingComplete={() => setImageLoaded(true)} // Remove blur once the image loads
+            className="object-cover rounded-lg"
+          />
+        </div>
       </div>
     </div>
   );

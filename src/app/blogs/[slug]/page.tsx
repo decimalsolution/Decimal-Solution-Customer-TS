@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     openGraph: {
       title: data.blogTitle,
       description: data.metaDescription ,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
+      url: `$www.decimalsolution.com/blogs/${slug}`,
       type: "article",
       siteName: "Decimal Solution",
       locale: "en_US",
@@ -152,6 +152,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
             </Link>
           </div>
         </div>
+        <div className="text-gray-400 mt-2">Blog Writer : {blog.authorName}</div>
 
         {/* Render the blog's HTML content safely */}
         <div className="my-8 flex flex-col gap-4 text-base !leading-loose md:text-lg lg:text-xl xl:text-[17px]">

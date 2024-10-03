@@ -18,14 +18,14 @@ const formatDate = (dateString: string): string => {
     // minute: "2-digit",
     // hour12: false,
   };
-  return new Date(dateString).toLocaleDateString(undefined, options);
+  return new Date(dateString).toLocaleDateString("en-GB" , options);
 };
 
 
 
 export default function BlogView({ blog }: BlogProps) {
-  console.log("inside blog view page : ")
-  console.log(blog.altText)
+  // console.log("inside blog view page : ")
+  // console.log("alt text : " , blog.altText)
   return (
     <div
       className="shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] flex flex-col h-full"

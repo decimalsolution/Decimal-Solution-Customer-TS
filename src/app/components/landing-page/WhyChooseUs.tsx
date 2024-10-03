@@ -43,8 +43,8 @@ const WhyChooseUs:React.FC = () => {
               Wireframe or UI/UX Design
             </h4>
             <p className="lg:text-md text-sm md:text-base 2xl:text-lg">
-              We suggest the solution or modifications to your product by
-              employing UI/UX design to make it interactive and creative.
+            We suggest solutions or modifications for your product using 
+            UI/UX design to enhance creativity and interaction
             </p>
           </div>
           <div className="card card-3">
@@ -52,8 +52,8 @@ const WhyChooseUs:React.FC = () => {
               Product Development
             </h4>
             <p className="lg:text-md text-sm md:text-base 2xl:text-lg">
-              We develop a high-quality software product according to your
-              desire which compliments your business well.
+            We develop high-quality software tailored to your needs, 
+            ensuring it complements your business effectively.
             </p>
           </div>
           <div className="card card-4">
@@ -61,9 +61,8 @@ const WhyChooseUs:React.FC = () => {
               Product Testing
             </h4>
             <p className="lg:text-md text-sm md:text-base 2xl:text-lg">
-              Our team performs strict product testing to ensure reliability,
-              quality, cost-effectiveness, and product life expectancy while
-              reducing customers&apos; aftercare needs.
+              Our team rigorously tests products for reliability, quality,
+              cost-effectiveness, and reduced aftercare.
             </p>
           </div>
         </div>

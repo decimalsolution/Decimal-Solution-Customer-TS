@@ -114,6 +114,8 @@ export interface ContactInfo {
     blocked: boolean;
     blogData: string;
     altText: string;
+    seoTitle: string;
+    authorName: string;
     metaDescription: string;
     blogImage: string;
     blogTitle: string;
