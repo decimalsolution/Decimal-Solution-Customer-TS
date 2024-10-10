@@ -47,7 +47,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://www.decimalsolution.com" />
+        <link rel="canonical" href="https://decimalsolution.com" />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" />
         <meta name="google-site-verification" content="p2wciI-nq5J_HR6l1_V40ujUDlPjtYRILg20dclno8o" />
         {/*  Schema Markup Code  */}
@@ -58,8 +58,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Decimal Solution",
-                "url": "https://www.decimalsolution.com",
-                "logo": "https://www.decimalsolution.com/logo.png",
+                "url": "https://decimalsolution.com",
+                "logo": "https://.decimalsolution.com/logo.png",
                 "description": "Decimal Solution provides full-stack development, QA engineering, and Unity expertise.",
                 "founders": [
                   {

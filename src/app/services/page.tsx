@@ -45,6 +45,12 @@ const Services = async () => {
       return "services/erp";
     } else if (title.includes("ar")) {
       return "services/ar-vr";
+    } else if (title.includes("game-development")) {
+      return "services/game-development";
+    } else if (title.includes("content-creation")) {
+      return "services/content-creation";
+    }  else if (title.includes("management-services")) {
+      return "services/management-services";
     } else {
       return "services/website-development";
     }
@@ -67,11 +73,11 @@ const Services = async () => {
                 provider: {
                   "@type": "Organization",
                   name: "Decimal Solution",
-                  url: "https://www.decimalsolution.com",
+                  url: "https://decimalsolution.com",
                 },
                 offers: {
                   "@type": "Offer",
-                  url: `https://www.decimalsolution.com/${getLink(service)}`,
+                  url: `https://decimalsolution.com/${getLink(service)}`,
                   priceCurrency: "USD",
                   eligibleRegion: "Worldwide",
                 },

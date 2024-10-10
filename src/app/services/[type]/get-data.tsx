@@ -181,6 +181,31 @@ export const getData = (type:string) => {
             },
           ],
         };
+        case "game-development":
+        return {
+          title: "Game Development",
+          image: "/services-cover-images/erp.png",
+          sections: [
+            {
+              title: "Custom Business Solutions",
+              description:
+                "Software for enterprise resource planning, or ERP, is becoming more and more necessary for handling corporate requirements. We are prepared to offer the best ERP systems to effectively manage departments like as finance, HR, supply chain, procurement, manufacturing, inventory, marketing, etc. Thanks to the experience and enthusiasm of our staff. It will simplify the management of your daily company operations and free up space for increased productivity",
+              image: "/erp/image-1.png",
+            },
+            {
+              title: "Real Estate Softwares",
+              description:
+                "Providing real estate agents cutting-edge digital solutions for sales, property administration, and efficient operations to boost productivity and customer satisfaction in the sector. Our innovative technologies and user-friendly platforms are designed to streamline workflows, enhance communication, and empower real estate professionals to stay ahead in a dynamic market, ensuring a seamless and successful real estate experience for both agents and clients.",
+              image: "/erp/image-2.png",
+            },
+            {
+              title: "Accounting Softwares",
+              description:
+                "Financial management may be made more efficient by using reliable and user-friendly accounting software. Our solutions provide accurate, efficient, and secure financial processes while meeting a wide range of corporate demands. With robust reporting tools and real-time insights, our accounting software empowers businesses to make informed financial decisions, fostering transparency and compliance in a rapidly evolving financial landscape.",
+              image: "/erp/image-3.png",
+            },
+          ],
+        };
     }
   };
   

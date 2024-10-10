@@ -69,12 +69,11 @@ const Header:React.FC<HeaderProps> = ({contactInfo}) => {
     return (
       <nav className="">
         <InfoHeader contactInfo={contactInfo} />
-        <div className=" flex items-center justify-between md:justify-around px-8 md:mx-0 shadow-[0_4px_4px_-2px_rgba(0,0,0,0.1)] ">
-          <div className="">
-            <Link href='/'>
-              <Image src='/logo.png' alt="Decimal Solution Logo" width={90} height={70} />
+        <div className=" flex items-center justify-between md:justify-between px-8 md:mx-0 shadow-[0_4px_4px_-2px_rgba(0,0,0,0.1)] ">
+            <Link href='/' className="ml-0 md:ml-10">
+              <Image src='/logo.png' alt="Decimal Solution Logo" width={100} height={70} />
             </Link>
-          </div>
+
 
           <div className="hidden md:block">
             <ul className=" text-[#5A5A5A] flex text-md font-semibold items-center justify-between">

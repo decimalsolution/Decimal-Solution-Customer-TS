@@ -1,10 +1,9 @@
 import AvailableJobs from "./available-jobs";
-import { Job , Metadata } from "../../../types";
+import { Job, Metadata } from "../../../types";
 import Image from "next/image";
+import Head from "next/head";
 
-
-
-export const metadata:Metadata = {
+export const metadata: Metadata = {
   title: "Careers",
   description:
     "Join the innovation journey at Decimal Solutions. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Elevate your career with us and be a part of cutting-edge solutions.",
@@ -18,16 +17,55 @@ export default async function Careers() {
   });
 
   const data = await res.json();
-
-  const jobs:Job[] = data.data;
+  const jobs: Job[] = data.data;
 
   return (
     <div>
-      <div className="flex flex-col-reverse gap-8 px-8 py-24 sm:px-12 md:px-20 lg:px-28  xl:flex-row xl:px-32 2xl:gap-16 2xl:px-36">
+      <Head>
+        {jobs.map((job, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "JobPosting",
+                "title": job.title,
+                "description": job.description,
+                "employmentType": job.category,
+                "hiringOrganization": {
+                  "@type": "Organization",
+                  "name": "Decimal Solutions",
+                  "sameAs": "https://decimalsolutions.com",
+                },
+                "jobLocation": {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": job.location,
+                    "addressCountry": 'Pakistan',
+                  },
+                },
+                "baseSalary": {
+                  "@type": "MonetaryAmount",
+                  "currency": "USD",
+                  "value": {
+                    "@type": "QuantitativeValue",
+                    "minValue": job.minimumJobSalary,
+                    "maxValue": job.maximumJobSalary,
+                    "unitText": "YEAR",
+                  },
+                },
+              }),
+            }}
+          />
+        ))}
+      </Head>
+
+      <div className="flex flex-col-reverse gap-8 px-8 py-24 sm:px-12 md:px-20 lg:px-28 xl:flex-row xl:px-32 2xl:gap-16 2xl:px-36">
         <div className="flex-[3]">
           <p className="landing-page-subheading">Job Positions</p>
           <h2 className="landing-page-heading mb-8">Start Work with Us!</h2>
-
           <p className="text-sm !leading-loose md:text-base lg:text-lg xl:text-xl 2xl:text-[25px]">
             If you are passionate about providing solutions to IT needs then
             Decimal Solution is a perfect place for you to work. We believe in
@@ -35,11 +73,11 @@ export default async function Careers() {
             have it in you to contribute to the digital world; submit your
             resume today and we&apos;ll get back to you.
           </p>
-          <h3 className="mb-4 mt-6 text-sm font-semibold md:mb-5 md:mt-8  md:text-base lg:mb-6 lg:mt-10 lg:text-lg xl:mb-8 xl:mt-12 xl:text-xl 2xl:text-[25px]">
+          <h3 className="mb-4 mt-6 text-sm font-semibold md:mb-5 md:mt-8 md:text-base lg:mb-6 lg:mt-10 lg:text-lg xl:mb-8 xl:mt-12 xl:text-xl 2xl:text-[25px]">
             Why Work with Us?
           </h3>
           <p className="text-sm !leading-loose md:text-base lg:text-lg xl:text-xl 2xl:text-[25px]">
-            Decimal Solution provide a challenging yet innovative platform for
+            Decimal Solution provides a challenging yet innovative platform for
             all the enthusiasts looking to leave a mark in the digital world. We
             provide a comfortable and friendly working environment,
             market-competitive salaries, and continuous opportunities for growth
@@ -54,7 +92,7 @@ export default async function Careers() {
             alt="Work with us"
             height={100}
             width={100}
-            className="col-span-9 col-start-1  row-span-13 row-start-5  h-full w-full object-cover"
+            className="col-span-9 col-start-1 row-span-13 row-start-5 h-full w-full object-cover"
           />
 
           <Image

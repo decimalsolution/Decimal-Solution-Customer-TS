@@ -1,6 +1,12 @@
-
 import PageIntroduction from "@/app/components/generic/page-introduction";
-import { ChevronLeft, Facebook, Linkedin, Twitter } from "lucide-react";
+import {
+  MailOpen,
+  ChevronLeft,
+  Facebook,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { Article } from "../../../../types";
 // import HtmlRender from "../HtmlRender"; // Component to handle safe HTML rendering
@@ -17,9 +23,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const slug = params.slug;
 
   // Fetch blog data with error handling
-  let blogData  = null;
+  let blogData = null;
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`);
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`
+    );
     if (response.ok) {
       blogData = await response.json();
     } else {
@@ -30,7 +38,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 
   const data = blogData?.data as Article;
-  
+
   // Default metadata if blog not found
   if (!data) {
     return {
@@ -42,10 +50,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   // Generate metadata using blog data
   return {
     title: `Decimal Solution`,
-    description: data.metaDescription ,
+    description: data.metaDescription,
     openGraph: {
-      title: data.blogTitle,
-      description: data.metaDescription ,
+      title: data.seoTitle,
+      description: data.blogData.slice(0, 30),
       url: `$www.decimalsolution.com/blogs/${slug}`,
       type: "article",
       siteName: "Decimal Solution",
@@ -62,7 +70,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: data.blogTitle,
-      description: data.metaDescription ,
+      description: data.metaDescription,
       images: [data.blogImage],
     },
   };
@@ -82,9 +90,13 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
   const blog: Article = data.data;
 
   return (
-    <div>
-      <PageIntroduction title={""} image={blog.blogImage} altText={blog.altText} />
-      <div className="lg:px-36 md:px-16 px-10 py-16">
+    <div className="">
+      <PageIntroduction
+        title={""}
+        image={blog.blogImage}
+        altText={blog.altText}
+      />
+      <div className="lg:px-36 md:px-16 px-8 py-16">
         {/* Breadcrumbs */}
         <nav className="py-4" aria-label="breadcrumb">
           <ol className="flex space-x-2 text-sm text-gray-500">
@@ -100,29 +112,43 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               </Link>
             </li>
             <li>/</li>
-            <li aria-current="page" className="text-gray-500">
+            <li
+              aria-current="page"
+              className="text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis md:truncated-title"
+            >
               {blog.blogTitle}
             </li>
           </ol>
         </nav>
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-between border-b border-gray-300 pb-4">
-          <div className="flex items-center gap-4">
-            <h2 className="landing-page-heading">{blog.blogTitle}</h2>
-            <p className="text-sm text-gray-400 md:text-base lg:text-md xl:text-md 2xl:text-xl ">
+
+        <div className="flex  flex-col md:flex-col gap-4 items-center justify-between border-b border-gray-300 pb-4">
+          <div className="flex w-full  items-center my-4 gap-4">
+            <h2 className="text-[20px] md:text-3xl   font-semibold ">
+              {blog.blogTitle}
+            </h2>
+          </div>
+
+          <div className="flex w-full justify-left gap-x-2  items-center ">
+            <div className="text-gray-400  text-[10px] md:text-sm">
+              By : {blog.authorName ? blog.authorName : "Decimal Solution"}{" "}
+            </div>
+            |
+            <div className="text-[10px]   text-gray-400 md:text-base lg:text-sm xl:text-sm 2xl:text-md ">
               {new Date(blog.createdAt).toLocaleDateString("en-GB", {
                 day: "2-digit",
                 month: "long",
                 year: "numeric",
               })}
-            </p>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
+
+          <div className="flex w-full justify- items-center gap-2">
             <Link
               href={`https://www.facebook.com/sharer/sharer.php?u=https://decimalsolution.com/blogs/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#3b5998]">
+              <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#3b5998]">
                 <Facebook
                   strokeWidth={0}
                   className="h-3/4 w-3/4 fill-white text-white"
@@ -134,7 +160,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#00acee]">
+              <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#00acee]">
                 <Twitter
                   strokeWidth={0}
                   className="h-3/4 w-3/4 fill-white text-white"
@@ -146,13 +172,33 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#0072b1]">
+              <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#0072b1]">
                 <Linkedin strokeWidth={2} className="h-3/4 w-3/4 text-white" />
+              </div>
+            </Link>
+            <Link
+              href={`mailto:?subject=Check out this blog post&body=I thought you might find this interesting: https://decimalsolution.com/blogs/${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#D54D27]">
+                <MailOpen strokeWidth={2} className="h-3/4 w-3/4 text-white" />
+              </div>
+            </Link>
+            <Link
+              href={`https://api.whatsapp.com/send?text=I thought you might find this interesting: https://decimalsolution.com/blogs/${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#25D366]">
+                <FaWhatsapp strokeWidth={2} className="h-3/4 w-3/4 text-white" />
               </div>
             </Link>
           </div>
         </div>
-        <div className="text-gray-400 mt-2">Blog Writer : {blog.authorName}</div>
+        {/* <div className="text-gray-400 mt-2">
+          By : {blog.authorName ? blog.authorName : "Decimal Solution"}{" "}
+        </div> */}
 
         {/* Render the blog's HTML content safely */}
         <div className="my-8 flex flex-col gap-4 text-base !leading-loose md:text-lg lg:text-xl xl:text-[17px]">
@@ -163,21 +209,21 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               [&>h4]:text-[16px] [&>h4]:font-bold [&>h4]:mb-2.5 [&>h4]:text-black
               [&>h5]:text-[13.28px] [&>h5]:font-bold [&>h5]:mb-2.5 [&>h5]:text-black
               [&>h6]:text-[10px] [&>h6]:font-bold [&>h6]:mb-2.5 [&>h6]:text-black
-              [&>p]:text-[16px] [&>p]:mb-1.5 [&>p]:text-black
-              [&>ul]:list-disc [&>ul]:mb-2 [&>ul]:text-black
-              [&>ol]:list-decimal [&>li]:mb-10 
-              [&>li]:list-decimal [&>ol]:mb-2 [&>ol]:text-black
+              md:[&>p]:text-[16px] [&>p]:text-[13px] [&>p]:mb-1.5 [&>p]:text-black
+              [&>ul]:list-disc [&>ul]:ml-[16px] md:[&>ul]:text-[16px] [&>ul]:text-[13px] [&>ul]:mb-1 [&>ul]:text-black
+              [&>ol]:list-decimal md:[&>ol]:text-[16px] [&>ol]:text-[13px] [&>ol]:ml-[16px]  [&>li]:mb-10 
+              [&>li]:list-decimal  [&>ol]:mb-2 [&>ol]:text-black
               [&>img]:rounded-lg`}
             dangerouslySetInnerHTML={{ __html: blog.blogData }}
           ></div>
         </div>
 
         <Link
-          className="my-16 block text-3xl font-medium uppercase text-primary hover:underline"
+          className="my-16 block text-sm md:text-xl font-medium w-32 md:w-44 uppercase text-primary hover:underline"
           href={"/blogs"}
         >
-          <div className="flex items-center gap-4">
-            <ChevronLeft className="h-10 w-10 text-primary" />
+          <div className="flex items-center gap-2">
+            <ChevronLeft className="w-8 h-8 md:h-10 md:w-10 text-primary" />
             <p>Go Back</p>
           </div>
         </Link>
@@ -187,17 +233,6 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
 };
 
 export default SpecificBlog;
-
-
-
-
-
-
-
-
-
-
-
 
 // import PageIntroduction from "@/app/components/generic/page-introduction";
 // import { ChevronLeft, Facebook, Linkedin, Twitter } from "lucide-react";
@@ -311,7 +346,7 @@ export default SpecificBlog;
 //               [&>h6]:text-[10px] [&>h6]:font-bold [&>h6]:mb-2.5 [&>h6]:text-black
 //               [&>p]:text-[16px] [&>p]:mb-1.5 [&>p]:text-black
 //               [&>ul]:list-disc [&>ul]:mb-2 [&>ul]:text-black
-//               [&>ol]:list-decimal [&>li]:mb-10 
+//               [&>ol]:list-decimal [&>li]:mb-10
 //               [&>li]:list-decimal [&>ol]:mb-2 [&>ol]:text-black
 //               [&>img]:rounded-lg`}
 //             dangerouslySetInnerHTML={{ __html: blog.blogData }}

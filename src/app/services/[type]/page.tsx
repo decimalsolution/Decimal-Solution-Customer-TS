@@ -18,7 +18,7 @@ const SpecificService:React.FC<Params> = ({ params }) => {
     <div>
       <PageIntroduction title={data?.title} image={data?.image} />
 
-      <div className=" flex flex-col gap-8">
+      <div className=" flex flex-col gap-8 ">
         {data?.sections.map((item, index) => (
           <>
             <ServiceCard

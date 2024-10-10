@@ -156,7 +156,7 @@ const Solutions = async () => {
 
           {/* Center Image */}
           <div className=" hidden lg:block lg:items-center">
-            <Image src={solution} alt="Center Image" className="w-150 h-150" />
+            <Image src={solution} alt="Services" className="w-150 h-150" />
           </div>
 
           {/* Right Column */}

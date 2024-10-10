@@ -43,13 +43,19 @@ const ServicesContent:React.FC<ServicesContentProps> = ({services , ServiceBar} 
       return "services/erp";
     } else if (title.includes("ar")) {
       return "services/ar-vr";
+    } else if (title.includes("game")) {
+      return "services/game-development";
+    } else if (title.includes("content")) {
+      return "services/content-creation";
+    }  else if (title.includes("management")) {
+      return "services/management-services";
     } else {
       return "services/website-development";
     }
   };
 
   return (
-    <div>
+    <div >
        <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
         {ServiceBar.map((service: string, index: number) => (
           <button
@@ -67,7 +73,7 @@ const ServicesContent:React.FC<ServicesContentProps> = ({services , ServiceBar} 
          ))} 
        </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 ">
         {filteredServices.map((product: Service, index: number) => {
         return (
           <ServiceCard

@@ -43,6 +43,8 @@ export default function Careers({ children }: CareersProps) {
               <div className="relative flex-1 h-full w-full">
                 <Image
                   src={step.image}
+                  // width={200}
+                  // height={200}
                   alt={step.title}
                   fill
                   className="object-contain w-full h-full"
