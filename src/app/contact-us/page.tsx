@@ -57,7 +57,7 @@ const ContactUs = async () => {
       <div className="flex flex-col items-stretch  justify-center gap-4 lg:flex-row lg:items-stretch xl:gap-16">
 
         {/* Contact Info */}
-        <div className="relative w-full lg:w-1/2 flex flex-col gap-8 bg-gray-100 p-4 px-16 py-8 md:py-12 lg:px-8 lg:py-16 xl:!px-[60px] xl:py-20">
+        <div className=" relative w-full lg:w-1/2 flex flex-col gap-8 bg-gray-100 p-4 px-16 py-8 md:py-12 lg:px-8 lg:py-16 xl:!px-[60px] xl:py-20">
           <div className="absolute right-0 top-0 hidden h-full w-[50px] py-24 xl:block">
             <div className="h-full w-full bg-primary/70"></div>
           </div>

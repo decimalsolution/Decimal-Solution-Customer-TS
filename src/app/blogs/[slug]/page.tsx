@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 const SpecificBlog: React.FC<Params> = async ({ params }) => {
   const slug: string = params.slug;
-
+  // console.log("slug : " , `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`)
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`, {
     next: {
       revalidate: 300,
@@ -88,6 +88,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
   if (!res.ok) throw new Error("Something went wrong");
   const data = await res.json();
   const blog: Article = data.data;
+  
 
   return (
     <div className="">
@@ -191,7 +192,10 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               rel="noopener noreferrer"
             >
               <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#25D366]">
-                <FaWhatsapp strokeWidth={2} className="h-3/4 w-3/4 text-white" />
+                <FaWhatsapp
+                  strokeWidth={2}
+                  className="h-3/4 w-3/4 text-white"
+                />
               </div>
             </Link>
           </div>
@@ -211,9 +215,10 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               [&>h6]:text-[10px] [&>h6]:font-bold [&>h6]:mb-2.5 [&>h6]:text-black
               md:[&>p]:text-[16px] [&>p]:text-[13px] [&>p]:mb-1.5 [&>p]:text-black
               [&>ul]:list-disc [&>ul]:ml-[16px] md:[&>ul]:text-[16px] [&>ul]:text-[13px] [&>ul]:mb-1 [&>ul]:text-black
-              [&>ol]:list-decimal md:[&>ol]:text-[16px] [&>ol]:text-[13px] [&>ol]:ml-[16px]  [&>li]:mb-10 
-              [&>li]:list-decimal  [&>ol]:mb-2 [&>ol]:text-black
-              [&>img]:rounded-lg`}
+              [&>ol]:list-decimal md:[&>ol]:text-[16px] [&>ol]:text-[13px] [&>ol]:ml-[16px] [&>li]:mb-10 
+              [&>li]:list-decimal [&>ol]:mb-2 [&>ol]:text-black
+              [&>img]:rounded-lg
+            [&_a]:text-[#A1258F] `}
             dangerouslySetInnerHTML={{ __html: blog.blogData }}
           ></div>
         </div>

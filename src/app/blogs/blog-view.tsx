@@ -18,6 +18,13 @@ const formatDate = (dateString: string): string => {
 };
 
 export default function BlogView({ blog }: BlogProps) {
+
+  console.log("Blog Slug : " , blog.slug)
+  console.log("Blog Seo Title : " , blog.seoTitle)
+  console.log("Blog Title : " , blog.blogTitle)
+  console.log(blog)
+
+  
   // Clean the blog data by removing HTML tags and non-breaking spaces
   const cleanBlogData = blog.blogData
     .replace(/<[^>]*>?/gm, "") // Remove all HTML tags
