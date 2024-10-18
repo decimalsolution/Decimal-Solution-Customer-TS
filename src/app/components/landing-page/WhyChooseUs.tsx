@@ -25,6 +25,7 @@ const WhyChooseUs:React.FC = () => {
         <Image
           src={"/why-choose-us.webp"}
           alt="Why Choose Us"
+          loading="lazy"
           fill
           className="col-span-2 col-start-1 hidden object-contain xl:block"
         />
@@ -44,7 +45,7 @@ const WhyChooseUs:React.FC = () => {
             </h4>
             <p className="lg:text-md text-sm md:text-base 2xl:text-lg">
             We suggest solutions or modifications for your product using 
-            UI/UX design to enhance creativity and interaction
+            UI/UX design to enhance creativity and interactions
             </p>
           </div>
           <div className="card card-3">

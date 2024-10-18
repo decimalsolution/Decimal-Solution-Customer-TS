@@ -11,6 +11,7 @@ import Image from "next/image";
 interface Slide {
   image: StaticImageData;
   title: string;
+  loading?: string;
 }
 
 const HeroSection: React.FC = () => {
@@ -25,10 +26,12 @@ const HeroSection: React.FC = () => {
     {
       image: slider2,
       title: "Customized ERP \nSolutions ",
+      loading: "lazy"
     },
     {
       image: slider3,
       title: "Creative Design \n(UI/UX)",
+      loading: "lazy"
     }
   ];
 
@@ -80,6 +83,7 @@ const HeroSection: React.FC = () => {
           <Image
             src={slides[currentSlide].image}
             priority={currentSlide === 0}
+            loading={slides[currentSlide]?.loading? "lazy" : "eager" }
             alt="slider-image"
             className="object-cover w-full h-full rounded-md"
           />

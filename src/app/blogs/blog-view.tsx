@@ -19,10 +19,10 @@ const formatDate = (dateString: string): string => {
 
 export default function BlogView({ blog }: BlogProps) {
 
-  console.log("Blog Slug : " , blog.slug)
-  console.log("Blog Seo Title : " , blog.seoTitle)
-  console.log("Blog Title : " , blog.blogTitle)
-  console.log(blog)
+  // console.log("Blog Slug : " , blog.slug)
+  // console.log("Blog Seo Title : " , blog.seoTitle)
+  // console.log("Blog Title : " , blog.blogTitle)
+  // console.log(blog)
 
   
   // Clean the blog data by removing HTML tags and non-breaking spaces
@@ -38,6 +38,7 @@ export default function BlogView({ blog }: BlogProps) {
           <Image
             src={blog.blogImage}
             alt={blog?.altText}
+            loading="lazy"
             width={200}
             height={200}
             className="w-full h-48 object-cover"

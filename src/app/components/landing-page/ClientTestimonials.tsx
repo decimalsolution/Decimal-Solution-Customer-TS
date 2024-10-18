@@ -21,7 +21,7 @@ const ClientTestimonials: React.FC = async () => {
     <div className="relative flex flex-col items-center justify-center gap-8 px-4 py-8 h-[500px]  lg:h-[650px]">
       <Image
         src={"/testimonial-bg.webp"}
-        alt=""
+        alt="testimonial"
         loading={"lazy"}
         fill
         className="absolute inset-0 z-[-1] object-cover"

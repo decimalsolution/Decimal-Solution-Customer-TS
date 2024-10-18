@@ -20,7 +20,7 @@ export interface Params {
 
 // Generate metadata for the specific blog
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const slug = params.slug;
+  const slug = params.slug; 
 
   // Fetch blog data with error handling
   let blogData = null;

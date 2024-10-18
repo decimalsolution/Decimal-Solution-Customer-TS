@@ -11,30 +11,30 @@ import HeadingText from "./HeadingText";
 const Stack: React.FC = () => {
 
   const images: string[] = [
-    "/Tools And Technologies/react.png",
-    "/Tools And Technologies/nextjs.png",
-    "/Tools And Technologies/vuejs.png",
-    "/Tools And Technologies/angular.png",
-    "/Tools And Technologies/nodejs.png",
-    "/Tools And Technologies/csharp.png",
-    "/Tools And Technologies/java.png",
-    "/Tools And Technologies/python.png",
-    "/Tools And Technologies/django.png",
-    "/Tools And Technologies/express.png",
-    "/Tools And Technologies/mongodb.png",
-    "/Tools And Technologies/mysql.png",
-    "/Tools And Technologies/planetscale.png",
-    "/Tools And Technologies/postgre.png",
-    "/Tools And Technologies/material.png",
-    "/Tools And Technologies/mantine.png",
-    "/Tools And Technologies/figma.png",
-    "/Tools And Technologies/illustrator.png",
-    "/Tools And Technologies/photoshop.png",
-    "/Tools And Technologies/blender.png",
-    "/Tools And Technologies/unity.png",
-    "/Tools And Technologies/godot.png",
-    "/Tools And Technologies/cypress.png",
-    "/Tools And Technologies/mocha.png",
+    "/Tools And Technologies/react.webp",
+    "/Tools And Technologies/nextjs.webp",
+    "/Tools And Technologies/vuejs.webp",
+    "/Tools And Technologies/angular.webp",
+    "/Tools And Technologies/nodejs.webp",
+    "/Tools And Technologies/csharp.webp",
+    "/Tools And Technologies/java.webp",
+    "/Tools And Technologies/python.webp",
+    "/Tools And Technologies/django.webp",
+    "/Tools And Technologies/express.webp",
+    "/Tools And Technologies/mongodb.webp",
+    "/Tools And Technologies/mysql.webp",
+    "/Tools And Technologies/planetscale.webp",
+    "/Tools And Technologies/postgre.webp",
+    "/Tools And Technologies/material.webp",
+    "/Tools And Technologies/mantine.webp",
+    "/Tools And Technologies/figma.webp",
+    "/Tools And Technologies/illustrator.webp",
+    "/Tools And Technologies/photoshop.webp",
+    "/Tools And Technologies/blender.webp",
+    "/Tools And Technologies/unity.webp",
+    "/Tools And Technologies/godot.webp",
+    "/Tools And Technologies/cypress.webp",
+    "/Tools And Technologies/mocha.webp",
   ];
 
   // Slider settings
@@ -117,6 +117,7 @@ const Stack: React.FC = () => {
                 <Image
                   src={img}
                   alt={`logo-${index}`}
+                  loading="lazy"
                   width={800} // Reduced width
                   height={200} // Reduced height
                   className=" px-2  py-16 "

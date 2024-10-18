@@ -63,8 +63,8 @@ const NumberOfAchievements:React.FC = () => {
             data-aos-once="true"
             className="before:content-[' '] relative flex aspect-square h-full w-full flex-col items-center justify-center before:absolute before:left-0 before:right-0 before:top-0 before:block before:h-2/5 before:border before:border-b-0 before:border-white after:absolute after:bottom-0 after:left-0 after:right-0 after:block after:h-2/5 after:border after:border-t-0 after:border-white after:content-['']"
           >
-            <div className="relative mb-4 h-[75px] w-[75px]">
-              <Image src={item.icon} fill alt={item?.title} />
+            <div className="relative mb-4 ">
+              <Image src={item.icon} loading="lazy" width={75} height={75} alt={item?.title} />
             </div>
             <h3 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl 2xl:text-7xl">
               <CountUp end={parseInt(item.amount)} duration={3} delay={1} />
