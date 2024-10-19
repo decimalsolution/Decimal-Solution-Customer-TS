@@ -1,5 +1,3 @@
-// import Image from "next/image";
-// import { ArrowRight } from "lucide-react";
 import HeadingText from "./HeadingText";
 import { Article } from "../../../../types";
 import Link from "next/link";
@@ -26,17 +24,7 @@ const Articles = async () => {
     }
   })
 
-  // const formatDate = (dateString: string): string => {
-  //   const options: Intl.DateTimeFormatOptions = {
-  //     year: "numeric",
-  //     month: "long",
-  //     day: "numeric",
-  //     // hour: "2-digit",
-  //     // minute: "2-digit",
-  //     // hour12: false,
-  //   };
-  //   return new Date(dateString).toLocaleDateString(undefined, options);
-  // };
+
 
   return (
     <section className="my-10 w-full">
