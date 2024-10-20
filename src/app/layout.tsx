@@ -5,9 +5,14 @@ import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
 import "./globals.css";
 import GoogleTag from "./google-tag";
+import dynamic from "next/dynamic";
 
-import Header from "./components/generic/header/Header";
-import Footer from "./components/generic/footer/Footer";
+
+
+const Header = dynamic(() => import("./components/generic/header/Header"))
+const Footer = dynamic(() => import("./components/generic/footer/Footer"))
+// import Header from "./components/generic/header/Header";
+// import Footer from "./components/generic/footer/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],

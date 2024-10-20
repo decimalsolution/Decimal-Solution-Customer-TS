@@ -1,9 +1,10 @@
 import HeadingText from "./HeadingText";
 import solution from "../../../../public/images/solutions.webp";
-import { Link } from "lucide-react";
+// import { Link } from "lucide-react";
 import { Service } from "../../../../types";
 import Image from "next/image";
-import NextLink from "next/link";
+// import NextLink from "next/link";
+import SolutionCard from "./SolutionCard";
 
 const Solutions = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
@@ -48,6 +49,8 @@ const Solutions = async () => {
           <div className="flex flex-col items-center ">
             {/* Box 1 */}
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg  p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+              <SolutionCard service={firstItem} href={"/services/website-development"}/>
+              {/* <>
               <div className="">
                 <Image
                   src={firstItem.homeImage}
@@ -67,7 +70,7 @@ const Solutions = async () => {
                 </p>
               </div>
 
-              {/* Overlay */}
+              Overlay
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <NextLink
                   href="/services/website-development"
@@ -78,12 +81,14 @@ const Solutions = async () => {
                   </div>
                 </NextLink>
               </div>
+              </> */}
             </div>
 
             {/* Box 2  */}
 
             <div className="relative flex justify-around items-center lg:mr-14 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-              <div className="">
+             <SolutionCard service={secondItem} href={"/services/erp"} />
+              {/* <div className="">
                 <Image
                   src={secondItem.homeImage}
                   width={100}
@@ -102,19 +107,21 @@ const Solutions = async () => {
                 </p>
               </div>
 
-              {/* Overlay */}
+              
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <NextLink href="/services/erp" aria-label="ERP Solutions">
                   <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
                     <Link strokeWidth={3} className="h-1/2 w-1/2" />
                   </div>
                 </NextLink>
-              </div>
+              </div> */}
             </div>
 
             {/* Box 3  */}
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-              <div className="">
+             <SolutionCard service={thirdItem} href={"/services/mobile-app-development"} />
+              
+              {/* <div className="">
                 <Image
                   src={thirdItem.homeImage}
                   width={100}
@@ -134,7 +141,6 @@ const Solutions = async () => {
                 </p>
               </div>
 
-              {/* Overlay */}
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <NextLink
                   href="/services/mobile-app-development"
@@ -144,7 +150,7 @@ const Solutions = async () => {
                     <Link strokeWidth={3} className="h-1/2 w-1/2" />
                   </div>
                 </NextLink>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -157,7 +163,9 @@ const Solutions = async () => {
           <div className="flex flex-col items-center ">
             {/* Box 4  */}
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-              <div className="">
+             <SolutionCard service={fourthItem} href={"/services/ar-vr"} />
+              
+              {/* <div className="">
                 <Image
                   src={fourthItem.homeImage}
                   width={100}
@@ -176,19 +184,21 @@ const Solutions = async () => {
                 </p>
               </div>
 
-              {/* Overlay */}
+              
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <NextLink href="/services/ar-vr" aria-label="Ar/Vr Games">
                   <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
                     <Link strokeWidth={3} className="h-1/2 w-1/2" />
                   </div>
                 </NextLink>
-              </div>
+              </div> */}
             </div>
 
             {/* Box 5  */}
             <div className="relative flex justify-around items-center lg:ml-14 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-              <div className="">
+             <SolutionCard service={fifthItem} href={"/services/graphics-designing"} />
+              
+              {/* <div className="">
                 <Image
                   src={fifthItem.homeImage}
                   width={100}
@@ -207,7 +217,6 @@ const Solutions = async () => {
                 </p>
               </div>
 
-              {/* Overlay */}
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <NextLink
                   href="/services/graphics-designing"
@@ -217,12 +226,14 @@ const Solutions = async () => {
                     <Link strokeWidth={3} className="h-1/2 w-1/2" />
                   </div>
                 </NextLink>
-              </div>
+              </div> */}
             </div>
 
             {/* Box 6 */}
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-              <div className="">
+             <SolutionCard service={sixthItem} href={"/services/digital-marketing"} />
+              
+              {/* <div className="">
                 <Image
                   src={sixthItem.homeImage}
                   width={100}
@@ -241,7 +252,6 @@ const Solutions = async () => {
                 </p>
               </div>
 
-              {/* Overlay */}
               <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <NextLink
                   href="/services/digital-marketing"
@@ -251,7 +261,7 @@ const Solutions = async () => {
                     <Link strokeWidth={3} className="h-1/2 w-1/2" />
                   </div>
                 </NextLink>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -48,6 +48,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
                       src="/icons/inverted-commas.png"
                       alt="inverted-commas"
                       fill
+                      loading="lazy"
                       className="object-contain"
                     />
                   </div>
