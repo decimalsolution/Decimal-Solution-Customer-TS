@@ -1,22 +1,32 @@
 import HeadingText from "./HeadingText";
 import solution from "../../../../public/images/solutions.webp";
-// import { Link } from "lucide-react";
 import { Service } from "../../../../types";
 import Image from "next/image";
-// import NextLink from "next/link";
 import SolutionCard from "./SolutionCard";
 
 const Solutions = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
-    next: {
-      revalidate: 300,
-    },
-  });
-  const data = await res.json();
-  const services: Service[] = data.data;
+  let services: Service[] = [];
 
-  // const firstThreeItems = services.slice(0, 3);
-  // const nextThreeItems = services.slice(3, 6);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
+      next: {
+        revalidate: 300,
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Error: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    services = data.data;
+
+  } catch (error) {
+    console.error("Failed to fetch services:", error);
+    // Optionally, you can return a fallback UI
+    return <p>Failed to load Services. Please try again later.</p>;
+
+  }
 
   const firstItem = services[0];
   const secondItem = services[1];
@@ -27,8 +37,8 @@ const Solutions = async () => {
   const sixthItem = services[5];
 
   return (
-    <section className=" mb-10  ">
-      <div className="my-4 px-16  xl:ml-14 mb-12">
+    <section className=" mb-10">
+      <div className="my-4 px-16 xl:ml-14 mb-12">
         <HeadingText text1={"Our"} text2={"Services"} />
       </div>
 
@@ -42,226 +52,37 @@ const Solutions = async () => {
           and profitability. Delivering results that matter.&quot;
         </p>
       </div>
-      {/* A1258F */}
-      <div className="flex justify-center  items-center  w-full mt-16">
-        <div className="flex flex-col md:flex-row items-center ">
-          {/* Left Column */}
-          <div className="flex flex-col items-center ">
-            {/* Box 1 */}
-            <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg  p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-              <SolutionCard service={firstItem} href={"/services/website-development"}/>
-              {/* <>
-              <div className="">
-                <Image
-                  src={firstItem.homeImage}
-                  width={100}
-                  height={100}
-                  loading="lazy"
-                  alt="Web Development"
-                  className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
-                />
-              </div>
-              <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 w-full">
-                <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">
-                  {firstItem.title}
-                </h3>
-                <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px]">
-                  {firstItem.shortDescription}
-                </p>
-              </div>
-
-              Overlay
-              <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <NextLink
-                  href="/services/website-development"
-                  aria-label="Web Development"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                  </div>
-                </NextLink>
-              </div>
-              </> */}
-            </div>
-
-            {/* Box 2  */}
-
-            <div className="relative flex justify-around items-center lg:mr-14 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-             <SolutionCard service={secondItem} href={"/services/erp"} />
-              {/* <div className="">
-                <Image
-                  src={secondItem.homeImage}
-                  width={100}
-                  height={100}
-                  loading="lazy"
-                  alt="ERP Solutions"
-                  className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
-                />
-              </div>
-              <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 mr- w-full ">
-                <h3 className="text-[17px]  md:text-[15px] xl:text-[20px] font-bold">
-                  {secondItem.title}
-                </h3>
-                <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px] ">
-                  {secondItem.shortDescription}
-                </p>
-              </div>
-
-              
-              <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <NextLink href="/services/erp" aria-label="ERP Solutions">
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                  </div>
-                </NextLink>
-              </div> */}
-            </div>
-
-            {/* Box 3  */}
+      <div className="flex justify-center items-center w-full mt-16">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="flex flex-col items-center">
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-             <SolutionCard service={thirdItem} href={"/services/mobile-app-development"} />
-              
-              {/* <div className="">
-                <Image
-                  src={thirdItem.homeImage}
-                  width={100}
-                  height={100}
-                  loading="lazy"
-                  alt="Mobile app development"
-                  className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
-                  sizes="(max-width: 640px) 80px, (max-width: 768px) 70px, (max-width: 1024px) 50px, 70px"
-                />
-              </div>
-              <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 mr- w-full ">
-                <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">
-                  {thirdItem.title}
-                </h3>
-                <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px] ">
-                  {thirdItem.shortDescription}
-                </p>
-              </div>
+              <SolutionCard service={firstItem} href={"/services/website-development"} />
+            </div>
 
-              <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <NextLink
-                  href="/services/mobile-app-development"
-                  aria-label="Mobile app development"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                  </div>
-                </NextLink>
-              </div> */}
+            <div className="relative flex justify-around items-center lg:mr-14 xl:mr-24 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+              <SolutionCard service={secondItem} href={"/services/erp"} />
+            </div>
+
+            <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+              <SolutionCard service={thirdItem} href={"/services/mobile-app-development"} />
             </div>
           </div>
 
-          {/* Center Image */}
-          <div className=" hidden lg:block lg:items-center">
+          <div className="hidden lg:block lg:items-center">
             <Image src={solution} alt="Services" loading="lazy" className="w-150 h-150" />
           </div>
 
-          {/* Right Column */}
-          <div className="flex flex-col items-center ">
-            {/* Box 4  */}
+          <div className="flex flex-col items-center">
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-             <SolutionCard service={fourthItem} href={"/services/ar-vr"} />
-              
-              {/* <div className="">
-                <Image
-                  src={fourthItem.homeImage}
-                  width={100}
-                  loading="lazy"
-                  height={100}
-                  alt="Ar/Vr Games"
-                  className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
-                />
-              </div>
-              <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 mr- w-full ">
-                <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">
-                  {fourthItem.title}
-                </h3>
-                <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px] ">
-                  {fourthItem.shortDescription}
-                </p>
-              </div>
-
-              
-              <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <NextLink href="/services/ar-vr" aria-label="Ar/Vr Games">
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                  </div>
-                </NextLink>
-              </div> */}
+              <SolutionCard service={fourthItem} href={"/services/ar-vr"} />
             </div>
 
-            {/* Box 5  */}
-            <div className="relative flex justify-around items-center lg:ml-14 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-             <SolutionCard service={fifthItem} href={"/services/graphics-designing"} />
-              
-              {/* <div className="">
-                <Image
-                  src={fifthItem.homeImage}
-                  width={100}
-                  height={100}
-                  loading="lazy"
-                  alt="Graphic Designing"
-                  className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
-                />
-              </div>
-              <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 mr- w-full ">
-                <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">
-                  {fifthItem.title}
-                </h3>
-                <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px] ">
-                  {fifthItem.shortDescription}
-                </p>
-              </div>
-
-              <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <NextLink
-                  href="/services/graphics-designing"
-                  aria-label="Graphic Designing"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                  </div>
-                </NextLink>
-              </div> */}
+            <div className="relative flex justify-around items-center lg:ml-14 xl:ml-24 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+              <SolutionCard service={fifthItem} href={"/services/graphics-designing"} />
             </div>
 
-            {/* Box 6 */}
             <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-             <SolutionCard service={sixthItem} href={"/services/digital-marketing"} />
-              
-              {/* <div className="">
-                <Image
-                  src={sixthItem.homeImage}
-                  width={100}
-                  height={100}
-                  loading="lazy"
-                  alt="Digital Marketing"
-                  className="w-[80px] md:w-[70px] lg:w-[50px] xl:w-[70px]"
-                />
-              </div>
-              <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 mr- w-full ">
-                <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">
-                  {sixthItem.title}
-                </h3>
-                <p className="text-[#616060]  text-[14px] md:text-[12px] xl:text-[15px] ">
-                  {sixthItem.shortDescription}
-                </p>
-              </div>
-
-              <div className="flex justify-center items-center text-white absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <NextLink
-                  href="/services/digital-marketing"
-                  aria-label="Digital Marketing"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                    <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                  </div>
-                </NextLink>
-              </div> */}
+              <SolutionCard service={sixthItem} href={"/services/digital-marketing"} />
             </div>
           </div>
         </div>

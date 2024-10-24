@@ -59,6 +59,8 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(slideInterval);
   }, [currentSlide]);
 
+
+  
   return (
     <section className="p-4 md:p-20">
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-x-8 gap-y-8">
