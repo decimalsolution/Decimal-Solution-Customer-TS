@@ -5,12 +5,12 @@ import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
 import "./globals.css";
 import GoogleTag from "./google-tag";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
 
 
-const Header = dynamic(() => import("./components/generic/header/Header"))
-const Footer = dynamic(() => import("./components/generic/footer/Footer"))
+// const Header = dynamic(() => import("./components/generic/header/Header"))
+// const Footer = dynamic(() => import("./components/generic/footer/Footer"))
 // import Header from "./components/generic/header/Header";
 // import Footer from "./components/generic/footer/Footer";
 
@@ -105,9 +105,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
-        <Header contactInfo={contactInfo} />
+        {/* <Header contactInfo={contactInfo} /> */}
         {children}
-        <Footer contactInfo={contactInfo} />
+        {/* <Footer contactInfo={contactInfo} /> */}
         <HowCanWeHelpYou contactInfo={contactInfo} />
       </body>
     </html>
