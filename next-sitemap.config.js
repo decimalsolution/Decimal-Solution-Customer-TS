@@ -4,4 +4,5 @@ module.exports = {
     changefreq: 'monthly',
     priority: 0.7,
     sitemapSize: 5000,
+    generateIndexSitemap: false
   }

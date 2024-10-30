@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -6,57 +7,188 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://www.decimalsolution.com/blogs</loc>
-        <lastmod>2024-10-29T15:53:41.842Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/LandingPage</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/careers</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/about-us</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/services</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/products</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/portfolio</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.decimalsolution.com/contact-us</loc>
-        <lastmod>2024-10-29T15:53:41.843Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+<loc>https://decimalsolution.com/</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/contact-us</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/portfolio</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/products</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/about-us</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/website-development</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/erp</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/mobile-app-development</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/ar-vr</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/graphics-designing</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/digital-marketing</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs/understanding-software-quality-assurance-importance-and-benefits</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs/how-mern-stack-and-next-js-work-together-to-build-modern-web-apps</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs/how-can-erp-and-pos-solutions-help-your-business-succeed</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/services/game-development</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/64afd5e777c085484232bc33</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572fd48c742a6709c681975</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/657305c0cd4538b8db12362e</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/65730247cd4538b8db1235fc</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572fb26c742a6709c681960</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572f6f1c742a6709c681929</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572ff85c742a6709c68198a</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/657300eac742a6709c681997</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs/mobile-app-development-services-unlocking-digital-potential</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs/what-is-custom-software-development</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/blogs/how-software-company-services-drive-business-growth</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/64afd5e777c085484232bc33/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572fd48c742a6709c681975/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/657305c0cd4538b8db12362e/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/65730247cd4538b8db1235fc/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572fb26c742a6709c681960/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572f6f1c742a6709c681929/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/6572ff85c742a6709c68198a/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://decimalsolution.com/careers/657300eac742a6709c681997/apply-for-job</loc>
+<lastmod>2024-10-29T16:12:26+00:00</lastmod>
+<priority>0.51</priority>
+</url>
 </urlset>
