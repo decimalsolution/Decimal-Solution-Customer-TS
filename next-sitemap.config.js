@@ -2,8 +2,12 @@ const fetchDynamicRoutes = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`);
     const data = await response.json();
-    if (data && data.data) {
-      return data.data.reverse().map((post) => `/blog/${post.slug}`);
+    const jobs = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/jobs`);
+    const jobsdata = await jobs.json();
+    if (jobsdata && jobsdata.data && data && data.data) {
+      const blogRoutes = data.data.reverse().map((post) => `/blog/${post.slug}`);
+      const jobRoutes = jobsdata.data.map((job) => `/careers/${job._id}`);
+      return [...blogRoutes, ...jobRoutes];
     } else {
       console.error("No data found in response");
       return [];
@@ -13,9 +17,12 @@ const fetchDynamicRoutes = async () => {
     return [];
   }
 };
+
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: 'https://www.decimalsolution.com',
+  // siteUrl: 'http://localhost:3000/',
   changefreq: 'monthly',
     priority: 0.7,
     sitemapSize: 5000,
@@ -30,3 +37,4 @@ module.exports = {
       }));
     },
   }
+
