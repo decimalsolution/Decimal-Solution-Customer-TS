@@ -1,11 +1,5 @@
 import PageIntroduction from "@/app/components/generic/page-introduction";
-import {
-  MailOpen,
-  ChevronLeft,
-  Facebook,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { MailOpen, ChevronLeft, Facebook, Linkedin, Twitter } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { Article } from "../../../../types";
@@ -20,14 +14,12 @@ export interface Params {
 
 // Generate metadata for the specific blog
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const slug = params.slug; 
+  const slug = params.slug;
 
   // Fetch blog data with error handling
   let blogData = null;
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`
-    );
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`);
     if (response.ok) {
       blogData = await response.json();
     } else {
@@ -88,15 +80,10 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
   if (!res.ok) throw new Error("Something went wrong");
   const data = await res.json();
   const blog: Article = data.data;
-  
 
   return (
     <div className="">
-      <PageIntroduction
-        title={""}
-        image={blog.blogImage}
-        altText={blog.altText}
-      />
+      <PageIntroduction title={""} image={blog.blogImage} altText={blog.altText} />
       <div className="lg:px-36 md:px-16 px-8 py-16">
         {/* Breadcrumbs */}
         <nav className="py-4" aria-label="breadcrumb">
@@ -124,9 +111,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
 
         <div className="flex  flex-col md:flex-col gap-4 items-center justify-between border-b border-gray-300 pb-4">
           <div className="flex w-full  items-center my-4 gap-4">
-            <h2 className="text-[20px] md:text-3xl   font-semibold ">
-              {blog.blogTitle}
-            </h2>
+            <h2 className="text-[20px] md:text-3xl   font-semibold ">{blog.blogTitle}</h2>
           </div>
 
           <div className="flex w-full justify-left gap-x-2  items-center ">
@@ -150,10 +135,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               rel="noopener noreferrer"
             >
               <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#3b5998]">
-                <Facebook
-                  strokeWidth={0}
-                  className="h-3/4 w-3/4 fill-white text-white"
-                />
+                <Facebook strokeWidth={0} className="h-3/4 w-3/4 fill-white text-white" />
               </div>
             </Link>
             <Link
@@ -162,10 +144,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               rel="noopener noreferrer"
             >
               <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#00acee]">
-                <Twitter
-                  strokeWidth={0}
-                  className="h-3/4 w-3/4 fill-white text-white"
-                />
+                <Twitter strokeWidth={0} className="h-3/4 w-3/4 fill-white text-white" />
               </div>
             </Link>
             <Link
@@ -192,10 +171,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               rel="noopener noreferrer"
             >
               <div className="grid h-6 w-6 place-items-center rounded-full bg-gray-300 transition-all duration-300 hover:bg-[#25D366]">
-                <FaWhatsapp
-                  strokeWidth={2}
-                  className="h-3/4 w-3/4 text-white"
-                />
+                <FaWhatsapp strokeWidth={2} className="h-3/4 w-3/4 text-white" />
               </div>
             </Link>
           </div>
@@ -215,10 +191,10 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               [&>h6]:text-[10px] [&>h6]:font-bold [&>h6]:mb-2.5 [&>h6]:text-black
               md:[&>p]:text-[16px] [&>p]:text-[13px] [&>p]:mb-1.5 [&>p]:text-black
               [&>ul]:list-disc [&>ul]:ml-[16px] md:[&>ul]:text-[16px] [&>ul]:text-[13px] [&>ul]:mb-1 [&>ul]:text-black
-              [&>ol]:list-decimal md:[&>ol]:text-[16px] [&>ol]:text-[13px] [&>ol]:ml-[16px] [&>li]:mb-10 
+              [&>ol]:list-decimal md:[&>ol]:text-[16px] [&>ol]:text-[13px] [&>ol]:ml-[16px] [&>li]:mb-10
               [&>li]:list-decimal [&>ol]:mb-2 [&>ol]:text-black
               [&>img]:rounded-lg
-            [&_a]:text-[#A1258F] `}
+            [&_a]:text-primary `}
             dangerouslySetInnerHTML={{ __html: blog.blogData }}
           ></div>
         </div>

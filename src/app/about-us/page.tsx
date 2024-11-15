@@ -8,7 +8,7 @@ import Head from "next/head";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Discover the essence of Decimal Solutions on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Learn about our journey, values, and commitment to shaping a digital future.",
+    "Discover the essence of Decimal Solution on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Learn about our journey, values, and commitment to shaping a digital future.",
 };
 
 interface Stats {
@@ -41,7 +41,7 @@ export default async function AboutUs() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Decimal Solutions",
+              name: "Decimal Solution",
               url: "https://decimalsolution.com",
               logo: "https://decimalsolution.com/logo.png",
               description:
@@ -58,7 +58,7 @@ export default async function AboutUs() {
                 image: member.teamMemberImage,
                 worksFor: {
                   "@type": "Organization",
-                  name: "Decimal Solutions",
+                  name: "Decimal Solution",
                 },
               })),
               foundingDate: "2010",
@@ -87,18 +87,11 @@ export default async function AboutUs() {
 
         <div className="flex max-w-7xl flex-col items-center justify-center gap-8 text-center text-base lg:text-lg xl:text-2xl">
           <div className="relative">
-            <Image
-              src="/icons/quote.png"
-              alt="commas"
-              width={100}
-              height={100}
-              className="absolute -left-16 -top-20"
-            />
+            <Image src="/icons/quote.png" alt="commas" width={100} height={100} className="absolute -left-16 -top-20" />
             <p>
-              Our mission is to provide all sorts of IT solutions and services
-              to clients under one umbrella. We aim to provide quality products
-              and perform strict testing so clients can have a product that is
-              ready to use without further updates.
+              Our mission is to provide all sorts of IT solutions and services to clients under one umbrella. We aim to
+              provide quality products and perform strict testing so clients can have a product that is ready to use
+              without further updates.
             </p>
             <Image
               src="/icons/quote.png"
@@ -116,39 +109,26 @@ export default async function AboutUs() {
         <div className="mt-24 grid w-full max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 lg:gap-16">
           <div className="flex flex-col items-center">
             <div className="relative grid h-24 w-24 place-items-center rounded-full lg:h-[150px] lg:w-[150px] ">
-              <Image
-                src="/icons/account-search.png"
-                alt="Who-we-are"
-                quality={100}
-                fill
-                className="h-full w-full"
-              />
+              <Image src="/icons/account-search.png" alt="Who-we-are" quality={100} fill className="h-full w-full" />
             </div>
             <h3 className="mt-8 text-center text-xl font-semibold uppercase lg:text-2xl xl:text-3xl 2xl:text-[40px]">
               Who We Are
             </h3>
             <p className="mt-2 text-center text-base !leading-loose lg:mt-8 lg:text-lg xl:text-2xl">
-              We are a team of software development and testing enthusiasts,
-              working tirelessly on software quality assurance.
+              We are a team of software development and testing enthusiasts, working tirelessly on software quality
+              assurance.
             </p>
           </div>
           <div className="flex flex-col items-center">
             <div className="relative grid h-24 w-24 place-items-center rounded-full lg:h-[150px] lg:w-[150px]">
-              <Image
-                src="/icons/diamond.png"
-                alt="What-we-do"
-                quality={100}
-                fill
-                className="h-full w-full"
-              />
+              <Image src="/icons/diamond.png" alt="What-we-do" quality={100} fill className="h-full w-full" />
             </div>
             <h3 className="mt-8 text-center text-xl font-semibold uppercase lg:text-2xl xl:text-3xl 2xl:text-[40px]">
               What We Do
             </h3>
             <p className="mt-2 text-center text-base !leading-loose lg:mt-8 lg:text-lg xl:text-2xl">
-              We help set up and maintain a digital presence of your brand or
-              product. Our creative team ensures you have the latest technology
-              to grow your business.
+              We help set up and maintain a digital presence of your brand or product. Our creative team ensures you
+              have the latest technology to grow your business.
             </p>
           </div>
         </div>
@@ -158,9 +138,7 @@ export default async function AboutUs() {
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center justify-between gap-4">
             <CircularProgress progress={stat.progress} />
-            <p className="text-center text-lg font-medium xl:text-2xl">
-              {stat.title}
-            </p>
+            <p className="text-center text-lg font-medium xl:text-2xl">{stat.title}</p>
           </div>
         ))}
       </div>

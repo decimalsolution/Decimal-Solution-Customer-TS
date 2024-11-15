@@ -4,18 +4,13 @@
 
 body {
   overflow-x: hidden;
-  
 }
-
 
 /* Add this to your global styles or component styles */
 .skeleton {
   background-color: #e0e0e0; /* Light gray color */
   border-radius: 0.5rem; /* Rounded corners */
 }
-
-
-
 
 @layer base {
   :root {
@@ -96,11 +91,9 @@ body {
   }
 }
 
-
 .truncated-title {
   max-width: 150px; /* Adjust this value as needed */
 }
-
 
 @layer base {
   body {
@@ -109,54 +102,45 @@ body {
 }
 
 .landing-page-heading {
-    @apply text-xl font-semibold md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[40px];
-  }
-  
-  .landing-page-subheading {
-    @apply mb-1 text-base text-primary md:text-[17px] lg:text-lg xl:text-xl 2xl:text-[26px];
-  }
-  
-  .landing-page-subheading::before {
-    content: "<";
-    margin-right: 1rem;
-    display: inline-block;
-  }
-  
-  .landing-page-subheading::after {
-    content: ">";
-    margin-left: 1rem;
-    display: inline-block;
-  }
-  
-  .landing-page-paragraph {
-    @apply mt-2 text-base text-gray-500 md:mt-4 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
-  }
-  
-  .navbar-link {
-    @apply text-lg text-gray-700 transition-colors duration-300 hover:text-primary 2xl:text-xl;
-  }
-  
+  @apply text-xl font-semibold md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[40px];
+}
 
+.landing-page-subheading {
+  @apply mb-1 text-base text-primary md:text-[17px] lg:text-lg xl:text-xl 2xl:text-[26px];
+}
 
+.landing-page-subheading::before {
+  content: "<";
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.landing-page-subheading::after {
+  content: ">";
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.landing-page-paragraph {
+  @apply mt-2 text-base text-gray-500 md:mt-4 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
+}
+
+.navbar-link {
+  @apply text-lg text-gray-700 transition-colors duration-300 hover:text-primary 2xl:text-xl;
+}
 
 :root {
-    --primary: 311 65% 39%; /* Ensure this matches the format used in tailwind.config.ts */
-    --primary-foreground: 210 40% 98%;
-    /* other variables */
-  }
-  
-
-
+  --primary: 311 65% 39%; /* Ensure this matches the format used in tailwind.config.ts */
+  --primary-foreground: 210 40% 98%;
+  /* other variables */
+  color: #a4238c;
+}
 
 @layer base {
   * {
     @apply border-border;
-  
   }
   body {
     @apply bg-background text-foreground;
-  
   }
-  
 }
-  

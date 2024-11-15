@@ -6,7 +6,7 @@ import Head from "next/head";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the innovation journey at Decimal Solutions. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Elevate your career with us and be a part of cutting-edge solutions.",
+    "Join the innovation journey at Decimal Solution. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Elevate your career with us and be a part of cutting-edge solutions.",
 };
 
 export default async function Careers() {
@@ -30,30 +30,30 @@ export default async function Careers() {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "JobPosting",
-                "title": job.title,
-                "description": job.description,
-                "employmentType": job.category,
-                "hiringOrganization": {
+                title: job.title,
+                description: job.description,
+                employmentType: job.category,
+                hiringOrganization: {
                   "@type": "Organization",
-                  "name": "Decimal Solutions",
-                  "sameAs": "https://decimalsolutions.com",
+                  name: "Decimal Solution",
+                  sameAs: "https://decimalsolutions.com",
                 },
-                "jobLocation": {
+                jobLocation: {
                   "@type": "Place",
-                  "address": {
+                  address: {
                     "@type": "PostalAddress",
-                    "addressLocality": job.location,
-                    "addressCountry": 'Pakistan',
+                    addressLocality: job.location,
+                    addressCountry: "Pakistan",
                   },
                 },
-                "baseSalary": {
+                baseSalary: {
                   "@type": "MonetaryAmount",
-                  "currency": "USD",
-                  "value": {
+                  currency: "USD",
+                  value: {
                     "@type": "QuantitativeValue",
-                    "minValue": job.minimumJobSalary,
-                    "maxValue": job.maximumJobSalary,
-                    "unitText": "YEAR",
+                    minValue: job.minimumJobSalary,
+                    maxValue: job.maximumJobSalary,
+                    unitText: "YEAR",
                   },
                 },
               }),
@@ -67,21 +67,17 @@ export default async function Careers() {
           <p className="landing-page-subheading">Job Positions</p>
           <h2 className="landing-page-heading mb-8">Start Work with Us!</h2>
           <p className="text-sm !leading-loose md:text-base lg:text-lg xl:text-xl 2xl:text-[25px]">
-            If you are passionate about providing solutions to IT needs then
-            Decimal Solution is a perfect place for you to work. We believe in
-            serving our customers with the best by using the right tools. If you
-            have it in you to contribute to the digital world; submit your
-            resume today and we&apos;ll get back to you.
+            If you are passionate about providing solutions to IT needs then Decimal Solution is a perfect place for you
+            to work. We believe in serving our customers with the best by using the right tools. If you have it in you
+            to contribute to the digital world; submit your resume today and we&apos;ll get back to you.
           </p>
           <h3 className="mb-4 mt-6 text-sm font-semibold md:mb-5 md:mt-8 md:text-base lg:mb-6 lg:mt-10 lg:text-lg xl:mb-8 xl:mt-12 xl:text-xl 2xl:text-[25px]">
             Why Work with Us?
           </h3>
           <p className="text-sm !leading-loose md:text-base lg:text-lg xl:text-xl 2xl:text-[25px]">
-            Decimal Solution provides a challenging yet innovative platform for
-            all the enthusiasts looking to leave a mark in the digital world. We
-            provide a comfortable and friendly working environment,
-            market-competitive salaries, and continuous opportunities for growth
-            by increasing your learning while working with us.
+            Decimal Solution provides a challenging yet innovative platform for all the enthusiasts looking to leave a
+            mark in the digital world. We provide a comfortable and friendly working environment, market-competitive
+            salaries, and continuous opportunities for growth by increasing your learning while working with us.
           </p>
         </div>
 

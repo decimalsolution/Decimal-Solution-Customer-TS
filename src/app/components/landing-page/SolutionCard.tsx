@@ -5,14 +5,14 @@ import { Service } from "../../../../types";
 import { Link } from "lucide-react"; // Don't forget to import Link from lucide-react
 
 interface SolutionCardProps {
-    service: Service; // Rename to 'service' to match the usage
-    href: string
+  service: Service; // Rename to 'service' to match the usage
+  href: string;
 }
 
-const SolutionCard: React.FC<SolutionCardProps> = ({ service , href }) => {
+const SolutionCard: React.FC<SolutionCardProps> = ({ service, href }) => {
   return (
-    // <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
-      <>
+    // <div className="relative flex justify-around items-center border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+    <>
       <div className="">
         <Image
           src={service.homeImage}
@@ -24,12 +24,8 @@ const SolutionCard: React.FC<SolutionCardProps> = ({ service , href }) => {
         />
       </div>
       <div className="text-left ml-6 sm:ml-4 lg:ml-8 xl:ml-6 w-full">
-        <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">
-          {service.title}
-        </h3>
-        <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px]">
-          {service.shortDescription}
-        </p>
+        <h3 className="text-[17px] md:text-[15px] xl:text-[20px] font-bold">{service.title}</h3>
+        <p className="text-[#616060] text-[14px] md:text-[12px] xl:text-[15px]">{service.shortDescription}</p>
       </div>
 
       {/* Overlay */}
@@ -40,7 +36,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({ service , href }) => {
           </div>
         </NextLink>
       </div>
-    {/* </div> */}
+      {/* </div> */}
     </>
   );
 };

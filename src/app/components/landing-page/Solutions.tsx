@@ -20,12 +20,10 @@ const Solutions = async () => {
 
     const data = await res.json();
     services = data.data;
-
   } catch (error) {
     console.error("Failed to fetch services:", error);
     // Optionally, you can return a fallback UI
     return <p>Failed to load Services. Please try again later.</p>;
-
   }
 
   const firstItem = services[0];
@@ -38,32 +36,29 @@ const Solutions = async () => {
 
   return (
     <section className=" mb-10">
-      <div className="my-4 px-16 xl:ml-14 mb-12">
-        <HeadingText text1={"Our"} text2={"Services"} />
+      <div className="my-4 px-2 sm:px-16 xl:ml-14 mb-12">
+      <HeadingText text1={"Our"} text2={"Services"} />
       </div>
 
       <div className="text-center">
-        <h2 className=" text-2xl md:text-4xl font-medium">
-          We Provide IT & Business Solutions
-        </h2>
+        <h2 className=" text-2xl md:text-4xl font-medium">We Provide IT & Business Solutions</h2>
         <p className="text-[#616060] mt-4">
-          &quot;Providing cutting-edge IT solutions and business services.
-          Enhancing efficiency, productivity, <br />
+          &quot;Providing cutting-edge IT solutions and business services. Enhancing efficiency, productivity, <br />
           and profitability. Delivering results that matter.&quot;
         </p>
       </div>
       <div className="flex justify-center items-center w-full mt-16">
         <div className="flex flex-col md:flex-row items-center">
           <div className="flex flex-col items-center">
-            <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+            <div className="relative flex justify-around items-center border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
               <SolutionCard service={firstItem} href={"/services/website-development"} />
             </div>
 
-            <div className="relative flex justify-around items-center lg:mr-14 xl:mr-24 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+            <div className="relative flex justify-around items-center lg:mr-14 xl:mr-24 border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
               <SolutionCard service={secondItem} href={"/services/erp"} />
             </div>
 
-            <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+            <div className="relative flex justify-around items-center border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
               <SolutionCard service={thirdItem} href={"/services/mobile-app-development"} />
             </div>
           </div>
@@ -73,15 +68,15 @@ const Solutions = async () => {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+            <div className="relative flex justify-around items-center border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
               <SolutionCard service={fourthItem} href={"/services/ar-vr"} />
             </div>
 
-            <div className="relative flex justify-around items-center lg:ml-14 xl:ml-24 border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+            <div className="relative flex justify-around items-center lg:ml-14 xl:ml-24 border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
               <SolutionCard service={fifthItem} href={"/services/graphics-designing"} />
             </div>
 
-            <div className="relative flex justify-around items-center border-2 border-[#A1258F] shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
+            <div className="relative flex justify-around items-center border-2 border-primary shadow-lg p-3 w-[340px] sm:w-[400px] md:w-[300px] lg:w-[250px] xl:w-[340px] h-[130px] text-center m-6 sm:mt-6 group overflow-hidden">
               <SolutionCard service={sixthItem} href={"/services/digital-marketing"} />
             </div>
           </div>

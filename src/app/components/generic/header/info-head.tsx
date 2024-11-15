@@ -1,43 +1,42 @@
-import {  Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
-import { ContactInfo } from '../../../../../types';
+import { ContactInfo } from "../../../../../types";
 import Image from "next/image";
 
 interface InfoHeaderProps {
-    contactInfo: ContactInfo;
+  contactInfo: ContactInfo;
 }
 
-const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
+const InfoHeader: React.FC<InfoHeaderProps> = ({ contactInfo }) => {
   const socialsData = [
     {
       name: "Youtube",
-    //   href: '',
+      //   href: '',
       href: contactInfo.youtube,
       src: "/Social Icons/purple/youtube.png",
     },
     {
       name: "facebook",
-    //   href: '',
+      //   href: '',
       href: contactInfo.facebook,
       src: "/Social Icons/purple/facebook.png",
     },
     {
       name: "Instagram",
-    //   href: '',
+      //   href: '',
       href: contactInfo.instagram,
       src: "/Social Icons/purple/instagram-2.png",
     },
     {
       name: "LinkedIn",
-    //   href: '',
+      //   href: '',
       href: contactInfo.linkedIn,
       src: "/Social Icons/purple/linkedin.png",
     },
-   
   ];
-  
+
   return (
-    <div className="flex flex-col items-center justify-between gap-4 xl:flex-row xl:items-stretch sm:px-6 border-b border-gray-400 ">
+    <div className="hidden md:flex flex-col items-center justify-between gap-4 md:flex-row xl:items-stretch sm:px-6 border-b border-primary">
       <div className="flex flex-row items-center gap-2 max-[500px]:flex-col md:gap-4">
         <div className="mr-4 mt-2 flex items-center">
           <Phone className="text-primary" fill="currentColor" strokeWidth={0} />
@@ -51,7 +50,6 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
                 <span>, {contactInfo.otherContacts[0]}</span>
               </Link>
             ) : null}
-
           </p>
         </div>
 
@@ -59,29 +57,26 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
           <Mail className="text-primary" />
           <p className="ml-2 text-base text-gray-700 md:text-lg 2xl:text-xl">
             <Link href={`mailto:${contactInfo.primaryEmail}`}>
-
               {contactInfo.primaryEmail}
               {/* info@decimalsolution */}
-
             </Link>
           </p>
         </div>
-
       </div>
 
-      <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
+      <div className="flex items-center gap-4 xl:gap-6">
         {socialsData.map((social, index) => (
           <>
             {/* {index !== socials.length - 1 && ( */}
-              <div key={index} className="hidden h-full w-[1px] bg-gray-400  xl:block"></div>
+            {/* <div key={index} className="hidden h-full w-[1px] bg-gray-400  xl:block"></div> */}
             {/* )} */}
-            <Link href={social.href} target="_blank" rel="noopener noreferrer">
+            <Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
               <Image
                 // key={index}
-                width={36}  // Set explicit width
+                width={36} // Set explicit width
                 height={36}
                 src={social.src}
-                className="h-8 w-8 xl:h-8 xl:w-8 2xl:h-9 2xl:w-9 "
+                className="h-8 w-8 xl:h-8 xl:w-8 "
                 alt={social.name}
               />
             </Link>
@@ -99,15 +94,14 @@ const InfoHeader:React.FC<InfoHeaderProps> = ({contactInfo}) => {
             className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
           />
         </Link> */}
-        <Link href="/contact-us">
+        {/* <Link href="/contact-us">
           <button className="font-500 h-10 w-[120px]  bg-primary text-white lg:w-48 xl:h-16 xl:w-64 xl:text-xl 2xl:h-20 2xl:w-80 2xl:text-2xl">
             Contact Us
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
-}
-
+};
 
 export default InfoHeader;

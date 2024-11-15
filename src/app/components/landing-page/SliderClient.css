@@ -1,0 +1,11 @@
+#slider .swiper-pagination-bullet {
+  @apply w-5 h-5 lg:w-8 lg:h-8 bg-primary flex items-center justify-center rounded-full transition-all duration-200 relative  before:absolute before:content-['']  before:block before:w-[65%] before:h-[65%] before:bg-white before:rounded-full before:transition-all before:duration-200;
+}
+
+#slider .swiper-pagination-bullet-active {
+  @apply bg-primary;
+}
+
+#slider .swiper-pagination {
+  @apply bottom-8 w-fit right-8 left-auto gap-1 lg:gap-6 flex;
+}

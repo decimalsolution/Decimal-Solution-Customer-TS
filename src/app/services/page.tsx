@@ -11,7 +11,7 @@ import { Metadata } from "../../../types";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Unlock innovation with Decimal Solutions - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
+    "Unlock innovation with Decimal Solution - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
 };
 
 const Services = async () => {
@@ -29,7 +29,18 @@ const Services = async () => {
   const data = await res.json();
   const services = data.data;
 
-  const ServiceBar = ["All" , "Web Development " , "ERP Solutions" , "Mobile Development" , "AR/VR Game" ,  "Graphic Design" , "Digital Marketing" , "Game Development" , "Content Creation" , "Management Services"  ]
+  const ServiceBar = [
+    "All",
+    "Web Development ",
+    "ERP Solutions",
+    "Mobile Development",
+    "AR/VR Game",
+    "Graphic Design",
+    "Digital Marketing",
+    "Game Development",
+    "Content Creation",
+    "Management Services",
+  ];
 
   const getLink = (service: Service) => {
     const title = service.title.toLowerCase();
@@ -49,7 +60,7 @@ const Services = async () => {
       return "services/game-development";
     } else if (title.includes("content-creation")) {
       return "services/content-creation";
-    }  else if (title.includes("management-services")) {
+    } else if (title.includes("management-services")) {
       return "services/management-services";
     } else {
       return "services/website-development";
@@ -58,7 +69,6 @@ const Services = async () => {
 
   return (
     <div className="flex flex-col gap-20">
-
       <Head>
         {services.map((service: Service, index: number) => (
           <script
@@ -89,7 +99,7 @@ const Services = async () => {
 
       <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
-      <ServicesContent services={services} ServiceBar={ServiceBar}/>
+      <ServicesContent services={services} ServiceBar={ServiceBar} />
 
       {/* <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
         {ServiceBar.map((service: string, index: number) => (
@@ -106,12 +116,12 @@ const Services = async () => {
           >
             {service}
           </button>
-         ))} 
+         ))}
        </div>
 
       <div className="flex flex-col gap-8">
         {services.map((product: Service, index: number) => {
-        
+
         return (
 
           <ServiceCard
@@ -128,7 +138,6 @@ const Services = async () => {
           />
         )})}
       </div> */}
-
     </div>
   );
 };

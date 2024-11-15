@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Swiper,  SwiperProps } from "swiper/react";
+import { Swiper, SwiperProps } from "swiper/react";
 import { Swiper as SwiperInstance } from "swiper";
 
 import "swiper/css";
@@ -14,17 +14,16 @@ interface CarouselProps extends SwiperProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
-    const [swiperRef, setSwiperRef] = useState<SwiperInstance | null>(null);
+  const [swiperRef, setSwiperRef] = useState<SwiperInstance | null>(null);
 
-
-    const goNext = useCallback(() => {
-      if (swiperRef !== null) {
-        // console.log("Swiper ref instance:", swiperRef);
-        swiperRef.slideNext();
-      } else {
-        // console.log("Swiper ref is null or undefined");
-      }
-    }, [swiperRef]);
+  const goNext = useCallback(() => {
+    if (swiperRef !== null) {
+      // console.log("Swiper ref instance:", swiperRef);
+      swiperRef.slideNext();
+    } else {
+      // console.log("Swiper ref is null or undefined");
+    }
+  }, [swiperRef]);
 
   const goPrev = useCallback(() => {
     if (swiperRef) {
@@ -42,25 +41,25 @@ const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
         <ArrowLeft strokeWidth={3} className="h-3/4 w-3/4" />
       </button>
       <Swiper
-  spaceBetween={30}
-  onSwiper={(swiper) => {
-    // console.log("Swiper instance received:", swiper);
-    setSwiperRef(swiper);
-  }}
-  loop
-  navigation={false} // Make sure you aren't accidentally overriding your buttons with Swiper's navigation
-  breakpoints={{
-    600: {
-      slidesPerView: 2,
-    },
-    1000: {
-      slidesPerView: 3,
-    },
-  }}
-  {...props}
->
-  {children}
-</Swiper>
+        spaceBetween={30}
+        onSwiper={(swiper) => {
+          // console.log("Swiper instance received:", swiper);
+          setSwiperRef(swiper);
+        }}
+        loop
+        navigation={false} // Make sure you aren't accidentally overriding your buttons with Swiper's navigation
+        breakpoints={{
+          600: {
+            slidesPerView: 2,
+          },
+          1000: {
+            slidesPerView: 3,
+          },
+        }}
+        {...props}
+      >
+        {children}
+      </Swiper>
       <button
         onClick={goNext}
         aria-label="Next carousel slide"

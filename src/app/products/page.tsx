@@ -1,12 +1,12 @@
 import PageIntroduction from "../components/generic/page-introduction";
 import ServiceCard from "../components/generic/service-card";
-import { Product , Metadata} from "../../../types";
+import { Product, Metadata } from "../../../types";
 import Head from "next/head";
 
-export const metadata:Metadata = {
+export const metadata: Metadata = {
   title: "Products",
   description:
-    "Discover innovation at its finest on Decimal Solutions' Products Page. Explore our cutting-edge solutions in Web and Mobile Development, ERP, AR/VR, Game Development, Graphics Designing, and Digital Marketing - tailored for success in the digital realm.",
+    "Discover innovation at its finest on Decimal Solution' Products Page. Explore our cutting-edge solutions in Web and Mobile Development, ERP, AR/VR, Game Development, Graphics Designing, and Digital Marketing - tailored for success in the digital realm.",
 };
 
 export default async function Products() {
@@ -17,15 +17,14 @@ export default async function Products() {
       next: {
         revalidate: 300,
       },
-    },
+    }
   );
 
   const data = await res.json();
-  const products:Product[] = data.data;
+  const products: Product[] = data.data;
 
   return (
     <div className="flex flex-col gap-20">
-
       <Head>
         {products.map((product, index) => (
           <script
@@ -35,19 +34,19 @@ export default async function Products() {
               __html: JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "Product",
-                "name": product.title,
-                "description": product.description,
-                "image": product.coverImage,
-                "brand": {
+                name: product.title,
+                description: product.description,
+                image: product.coverImage,
+                brand: {
                   "@type": "Organization",
-                  "name": "Decimal Solution",
+                  name: "Decimal Solution",
                 },
-                "offers": {
+                offers: {
                   "@type": "Offer",
-                  "url": product.link,
-                  "priceCurrency": "USD", 
-                  "itemCondition": "https://schema.org/NewCondition",
-                  "availability": "https://schema.org/InStock",
+                  url: product.link,
+                  priceCurrency: "USD",
+                  itemCondition: "https://schema.org/NewCondition",
+                  availability: "https://schema.org/InStock",
                 },
               }),
             }}
@@ -66,7 +65,7 @@ export default async function Products() {
             image={product.coverImage}
             showBackground
             showButton
-            buttonText='View Demo'
+            buttonText="View Demo"
             reverse={index % 2 !== 0}
             link={product.link}
             externalLink

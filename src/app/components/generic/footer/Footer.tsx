@@ -63,9 +63,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
             key={i}
             className={cn(
               "text-base font-medium text-white transition-all hover:text-white/75 md:text-lg lg:text-xl xl:text-xl",
-              i !== navigationLinks.length - 1
-                ? "border-r border-white pr-2 md:pr-4 lg:pr-8"
-                : ""
+              i !== navigationLinks.length - 1 ? "border-r border-white pr-2 md:pr-4 lg:pr-8" : ""
             )}
             href={link.href}
           >
@@ -100,11 +98,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
       </div>
 
       <div className="flex items-center gap-4 xl:gap-6 2xl:gap-8">
-        <Link
-          href={contactInfo.facebook}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={contactInfo.facebook} target="_blank" rel="noopener noreferrer">
           <Image
             src="/Social Icons/white/facebook.png"
             width={36} // Set explicit width
@@ -114,11 +108,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
           />
         </Link>
 
-        <Link
-          href={contactInfo.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={contactInfo.instagram} target="_blank" rel="noopener noreferrer">
           <Image
             src="/Social Icons/white/instagram-2.png"
             width={36}
@@ -128,11 +118,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
           />
         </Link>
 
-        <Link
-          href={contactInfo.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={contactInfo.linkedIn} target="_blank" rel="noopener noreferrer">
           <Image
             src="/Social Icons/white/linkedin.png"
             width={36}
@@ -142,11 +128,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
           />
         </Link>
 
-        <Link
-          href={contactInfo.youtube}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={contactInfo.youtube} target="_blank" rel="noopener noreferrer">
           <Image
             src="/Social Icons/white/youtube.png"
             width={36}
@@ -160,8 +142,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
       <div className="mx-32 h-[1px] w-full bg-white/50"></div>
 
       <p className="text-center text-xs font-medium text-white sm:text-sm md:text-base lg:text-lg">
-        CopyRight © {new Date().getFullYear()} Decimal Solution. All Rights
-        Reserved.{" "}
+        CopyRight © {new Date().getFullYear()} Decimal Solution. All Rights Reserved.{" "}
       </p>
     </div>
   );

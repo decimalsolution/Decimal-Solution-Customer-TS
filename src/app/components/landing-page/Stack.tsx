@@ -9,7 +9,6 @@ import Image from "next/image";
 import HeadingText from "./HeadingText";
 
 const Stack: React.FC = () => {
-
   const images: string[] = [
     "/Tools And Technologies/react.webp",
     "/Tools And Technologies/nextjs.webp",
@@ -45,7 +44,7 @@ const Stack: React.FC = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1,
-    cssEase: 'linear',
+    cssEase: "linear",
     arrows: false,
     responsive: [
       {
@@ -77,57 +76,52 @@ const Stack: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#E3F0FF] p-6 lg:px-[100px] h-[400px]  ">
-      <div className="flex flex-col items-left w-full p-6 rounded-md">
-      <div className="mb-12 ml-">
-        <HeadingText text1="Technology" text2="Stack"/>
+    <div className="bg-[#E3F0FF] py-6">
+      <div className="my-4 px-2 sm:px-16 xl:ml-14 mb-12">
+        <HeadingText text1="Technology" text2="Stack" />
       </div>
-
-        <style jsx>{`
-          .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 120px; 
-            width: 100%;
-            overflow: hidden;
-          }
-
-          .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            // border-radius: 10px;
-            object-fit: contain; 
-          }
-
-          // /* Adding margin between the slides */
-          // .slick-slide > div {
-          //   margin: 10px 10px; 
-          //   border: 1px black solid;
-          // }
-        `}</style>
-
-        <Slider {...settings} className=" py-6 mt-0 md:mt-4">
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className="  w-[300px]  p-8 rounded-lg"
-            >
-              <div className="image-container py-4">
-                <Image
-                  src={img}
-                  alt={`logo-${index}`}
-                  loading="lazy"
-                  width={800} // Reduced width
-                  height={200} // Reduced height
-                  className=" px-2  py-16 "
-                />
+      <section className="px-6 lg:px-[100px] h-[400px]  ">
+        <div className="flex flex-col items-left w-full p-6 rounded-md">
+          <style jsx>{`
+            .image-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 120px;
+              width: 100%;
+              overflow: hidden;
+            }
+            .image-container img {
+              max-width: 100%;
+              max-height: 100%;
+              // border-radius: 10px;
+              object-fit: contain;
+            }
+            // /* Adding margin between the slides */
+            // .slick-slide > div {
+            //   margin: 10px 10px;
+            //   border: 1px black solid;
+            // }
+          `}</style>
+          <Slider {...settings} className=" py-6 mt-0 md:mt-4">
+            {images.map((img, index) => (
+              <div key={index} className="  w-[300px]  p-8 rounded-lg">
+                <div className="image-container py-4">
+                  <Image
+                    src={img}
+                    alt={`logo-${index}`}
+                    loading="lazy"
+                    width={800} // Reduced width
+                    height={200} // Reduced height
+                    className=" px-2  py-16 "
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+            ))}
+          </Slider>
+        </div>
+      </section>
+    </div>
   );
 };
 

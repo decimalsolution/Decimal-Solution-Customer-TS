@@ -24,8 +24,8 @@ const OurProjects = async () => {
 
   return (
     <div className="flex flex-col flex-wrap justify-center w-full gap-4 py-8 sm:gap-8 lg:gap- lg:py-">
-      <div className="ml-16 lg:ml-28 mb-8">
-        <HeadingText text1="Our" text2="Portfolio" />
+      <div className="my-4 px-2 sm:px-16 xl:ml-14 mb-12">
+      <HeadingText text1="Our" text2="Portfolio" />
       </div>
       <div className="flex flex-col items-center">
         <h2 className="landing-page-heading">Some Latest Client Projects</h2>
