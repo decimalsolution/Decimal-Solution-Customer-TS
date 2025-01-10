@@ -1,4 +1,11 @@
 User-Agent: *
+Disallow: /media/           # If your media files are in a directory named 'media'
+Disallow: *.jpg$            # Blocks all .jpg files
+Disallow: *.png$            # Blocks all .png files
+Disallow: *.gif$            # Blocks all .gif files
+Disallow: *.mp4$            # Blocks all .mp4 files
+Disallow: *.svg$            # Blocks all .svg files
+Disallow: *.webp$            # Blocks all .webp files
 Disallow: https://webmail.decimalsolution.com/*
 Disallow: https://admin.decimalsolution.com/*
 
