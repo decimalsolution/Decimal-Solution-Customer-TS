@@ -1,7 +1,5 @@
 User-Agent: *
-Disallow: https://webmail.decimalsolution.com/
-Disallow: https://webmail.decimalsolution.com/?locale=en
-Disallow: https://webmail.decimalsolution.com/?locale=pt_br
-Disallow: https://admin.decimalsolution.com
+Disallow: https://webmail.decimalsolution.com/*
+Disallow: https://admin.decimalsolution.com/*
 
 Sitemap: https://www.decimalsolution.com/sitemap.xml
