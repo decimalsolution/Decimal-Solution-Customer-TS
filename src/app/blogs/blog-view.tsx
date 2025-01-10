@@ -37,7 +37,7 @@ export default function BlogView({ blog }: BlogProps) {
             src={blog.blogImage}
             alt={blog?.altText}
             loading="lazy"
-            width={200}
+            width={500}
             height={200}
             className="w-full h-48 object-cover"
           />

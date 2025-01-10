@@ -1,10 +1,10 @@
-import PageIntroduction from "@/app/components/generic/page-introduction";
 import { MailOpen, ChevronLeft, Facebook, Linkedin, Twitter } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { Article } from "../../../../types";
 // import HtmlRender from "../HtmlRender"; // Component to handle safe HTML rendering
 import { Metadata } from "next";
+import Image from "next/image";
 
 export interface Params {
   params: {
@@ -83,7 +83,19 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
 
   return (
     <div className="">
-      <PageIntroduction title={""} image={blog.blogImage} altText={blog.altText} />
+      <Image
+        src={blog.blogImage}
+        alt={blog.altText ? blog.altText : "Image"} // Use altText if provided, otherwise default to "Image"
+        priority={true}
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto",
+        }}
+        className="z-0 object-cover"
+      />
       <div className="lg:px-36 md:px-16 px-8 py-16">
         {/* Breadcrumbs */}
         <nav className="py-4" aria-label="breadcrumb">
