@@ -18,23 +18,20 @@ const fetchDynamicRoutes = async () => {
   }
 };
 
-
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.decimalsolution.com',
-  // siteUrl: 'http://localhost:3000/',
-  changefreq: 'monthly',
-    priority: 0.7,
-    sitemapSize: 5000,
-    generateIndexSitemap: false,
-    exclude: ['/LandingPage'],
-    additionalPaths: async (config) => {
-      const dynamicRoutes = await fetchDynamicRoutes();
-      return dynamicRoutes.map((route) => ({
-        loc: `${config.siteUrl}${route}`,
-        changefreq: 'weekly',
-        priority: 0.8,
-      }));
-    },
-  }
-
+  siteUrl: "https://www.decimalsolution.com",
+  changefreq: "daily",
+  priority: 0.7,
+  sitemapSize: 5000,
+  generateIndexSitemap: false,
+  exclude: ["/LandingPage"],
+  additionalPaths: async (config) => {
+    const dynamicRoutes = await fetchDynamicRoutes();
+    return dynamicRoutes.map((route) => ({
+      loc: `${config.siteUrl}${route}`,
+      changefreq: "daily",
+      priority: 0.8,
+    }));
+  },
+};
