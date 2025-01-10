@@ -88,9 +88,9 @@ const Header: React.FC<HeaderProps> = ({ contactInfo }) => {
 
         <div className="hidden md:block">
           <ul className=" text-[#5A5A5A] flex text-md font-semibold items-center justify-between">
-            {navigationLinks.map((item, index) => {
+            {navigationLinks.map((item) => {
               return (
-                <li key={index} className={cn(`mx-2  hover:text-primary`, item.highlight ? "text-primary" : "")}>
+                <li key={item.href} className={cn(`mx-2  hover:text-primary`, item.highlight ? "text-primary" : "")}>
                   <Link
                     href={item.href}
                     className={clsx(item.href.toLocaleLowerCase() === pathname.toLowerCase() && "!text-primary")}

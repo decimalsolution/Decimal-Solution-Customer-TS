@@ -11,25 +11,21 @@ const InfoHeader: React.FC<InfoHeaderProps> = ({ contactInfo }) => {
   const socialsData = [
     {
       name: "Youtube",
-      //   href: '',
       href: contactInfo.youtube,
       src: "/Social Icons/purple/youtube.png",
     },
     {
       name: "facebook",
-      //   href: '',
       href: contactInfo.facebook,
       src: "/Social Icons/purple/facebook.png",
     },
     {
       name: "Instagram",
-      //   href: '',
       href: contactInfo.instagram,
       src: "/Social Icons/purple/instagram-2.png",
     },
     {
       name: "LinkedIn",
-      //   href: '',
       href: contactInfo.linkedIn,
       src: "/Social Icons/purple/linkedin.png",
     },
@@ -56,49 +52,17 @@ const InfoHeader: React.FC<InfoHeaderProps> = ({ contactInfo }) => {
         <div className="mr-4 flex items-center">
           <Mail className="text-primary" />
           <p className="ml-2 text-base text-gray-700 md:text-lg 2xl:text-xl">
-            <Link href={`mailto:${contactInfo.primaryEmail}`}>
-              {contactInfo.primaryEmail}
-              {/* info@decimalsolution */}
-            </Link>
+            <Link href={`mailto:${contactInfo.primaryEmail}`}>{contactInfo.primaryEmail}</Link>
           </p>
         </div>
       </div>
 
       <div className="flex items-center gap-4 xl:gap-6">
-        {socialsData.map((social, index) => (
-          <>
-            {/* {index !== socials.length - 1 && ( */}
-            {/* <div key={index} className="hidden h-full w-[1px] bg-gray-400  xl:block"></div> */}
-            {/* )} */}
-            <Link key={index} href={social.href} target="_blank" rel="noopener noreferrer">
-              <Image
-                // key={index}
-                width={36} // Set explicit width
-                height={36}
-                src={social.src}
-                className="h-8 w-8 xl:h-8 xl:w-8 "
-                alt={social.name}
-              />
-            </Link>
-          </>
+        {socialsData.map((social) => (
+          <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
+            <Image width={36} height={36} src={social.src} className="h-8 w-8 xl:h-8 xl:w-8 " alt={social.name} />
+          </Link>
         ))}
-        {/* <div className="hidden xl:block w-[1px] h-full bg-gray-400"></div>
-
-        <Link
-          href={contactInfo.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/Social Icons/purple/twitter.png"
-            className="w-9 h-9 xl:w-8 2xl:w-9 xl:h-8 2xl:h-9"
-          />
-        </Link> */}
-        {/* <Link href="/contact-us">
-          <button className="font-500 h-10 w-[120px]  bg-primary text-white lg:w-48 xl:h-16 xl:w-64 xl:text-xl 2xl:h-20 2xl:w-80 2xl:text-2xl">
-            Contact Us
-          </button>
-        </Link> */}
       </div>
     </div>
   );
