@@ -134,7 +134,7 @@ const ContactUs = async () => {
       {/* Google Map */}
       <div className="relative aspect-[1.5] md:aspect-[2.5] lg:aspect-[3]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.8853167590564!2d73.0739308740979!3d33.66013333833592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa21b669c4f87bdff%3A0xb82073d15173bbc5!2sDecimal%20Solution!5e0!3m2!1sen!2s!4v1727802532626!5m2!1sen!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5994721256425!2d-118.33404619999999!3d33.8226478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd4ac32f07b35f%3A0x980ebae9a215cf0f!2s2768%20Sepulveda%20Blvd%20%231062%2C%20Torrance%2C%20CA%2090505%2C%20USA!5e0!3m2!1sen!2s!4v1741201949721!5m2!1sen!2s"
           width="100%"
           height="100%"
           loading="lazy"

@@ -93,7 +93,7 @@ const Footer: React.FC<HeaderProps> = ({ contactInfo }) => {
           rel="noopener noreferrer"
           className="text-center text-base font-medium text-white transition-colors md:text-lg lg:text-xl xl:text-2xl"
         >
-          I-8/4, Islamabad, Pakistan
+          {contactInfo.shortAddress}
         </a>
       </div>
 

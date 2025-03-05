@@ -7,10 +7,8 @@ import "./globals.css";
 import GoogleTag from "./google-tag";
 import dynamic from "next/dynamic";
 
-
-
-const Header = dynamic(() => import("./components/generic/header/Header"))
-const Footer = dynamic(() => import("./components/generic/footer/Footer"))
+const Header = dynamic(() => import("./components/generic/header/Header"));
+const Footer = dynamic(() => import("./components/generic/footer/Footer"));
 // import Header from "./components/generic/header/Header";
 // import Footer from "./components/generic/footer/Footer";
 
@@ -22,7 +20,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Decimal Solution",
-  description: "Decimal Solution: Your partner for full-stack development, QA engineering, and Unity expertise. Elevate your digital presence with precision and innovation",
+  description:
+    "Decimal Solution: Your partner for full-stack development, QA engineering, and Unity expertise. Elevate your digital presence with precision and innovation",
   openGraph: {
     title: "Decimal Solution",
     siteName: "Decimal Solution",
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode;}>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/contactUs`, {
     next: {
       revalidate: 300,
@@ -47,62 +46,66 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   const response = await data.json();
   const contactInfo: ContactInfo = response.data[0];
-  // console.log("Contact Info : " ,contactInfo);
+  console.log("Contact Info : ", contactInfo);
 
   return (
     <html lang="en">
       <head>
         <link rel="canonical" href="https://decimalsolution.com" />
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          as="style"
+        />
         <meta name="google-site-verification" content="p2wciI-nq5J_HR6l1_V40ujUDlPjtYRILg20dclno8o" />
         {/*  Schema Markup Code  */}
         <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Decimal Solution",
-                "url": "https://decimalsolution.com",
-                "logo": "https://.decimalsolution.com/logo.png",
-                "description": "Decimal Solution provides full-stack development, QA engineering, and Unity expertise.",
-                "founders": [
-                  {
-                    "@type": "Person",
-                    "name": "Dr. Tehseen Riaz Abbasi",
-                    "jobTitle": "CEO"
-                  }
-                ],
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": contactInfo.primaryAddress,
-                  "addressLocality": "Islamabad",
-                  "addressRegion": "Pakistan",
-                  "postalCode": "44790 ",
-                  "addressCountry": "PK"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Decimal Solution",
+              url: "https://decimalsolution.com",
+              logo: "https://.decimalsolution.com/logo.png",
+              description: "Decimal Solution provides full-stack development, QA engineering, and Unity expertise.",
+              founders: [
+                {
+                  "@type": "Person",
+                  name: "Dr. Tehseen Riaz Abbasi",
+                  jobTitle: "CEO",
                 },
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": contactInfo.primaryContact,
-                  "contactType": "Customer Support",
-                  "areaServed": "PK and US",
-                  "availableLanguage": "English and Urdu"
-                },
-                "sameAs": [
-                  contactInfo.facebook || "https://www.facebook.com/decimalsolution",
-                  contactInfo.instagram ||"https://www.instagram.com/decimalsolution",
-                  contactInfo.linkedIn ||"https://www.linkedin.com/company/decimalsolution",
-                  contactInfo.youtube ||"https://www.youtube.com/@decimalsolution",
-                ]
-              })
-            }}
+              ],
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: contactInfo.primaryAddress,
+                addressLocality: "Islamabad",
+                addressRegion: "Pakistan",
+                postalCode: "44790 ",
+                addressCountry: "PK",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: contactInfo.primaryContact,
+                contactType: "Customer Support",
+                areaServed: "PK and US",
+                availableLanguage: "English and Urdu",
+              },
+              sameAs: [
+                contactInfo.facebook || "https://www.facebook.com/decimalsolution",
+                contactInfo.instagram || "https://www.instagram.com/decimalsolution",
+                contactInfo.linkedIn || "https://www.linkedin.com/company/decimalsolution",
+                contactInfo.youtube || "https://www.youtube.com/@decimalsolution",
+              ],
+            }),
+          }}
         />
       </head>
-      
+
       <AOSInit />
       {/* <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} /> */}
       <body className={`${poppins.className} overflow-x-hidden w-full`}>
-      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
         <Header contactInfo={contactInfo} />
