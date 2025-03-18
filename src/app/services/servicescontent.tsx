@@ -41,9 +41,9 @@ const ServicesContent: React.FC<ServicesContentProps> = ({ services, ServiceBar 
     } else if (title.includes("game")) {
       return "services/game-development";
     } else if (title.includes("content")) {
-      return "services/content-creation";
+      return "#";
     } else if (title.includes("management")) {
-      return "services/management-services";
+      return "#";
     } else {
       return "services/website-development";
     }
