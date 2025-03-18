@@ -18,11 +18,6 @@ const formatDate = (dateString: string): string => {
 };
 
 export default function BlogView({ blog }: BlogProps) {
-  // console.log("Blog Slug : " , blog.slug)
-  // console.log("Blog Seo Title : " , blog.seoTitle)
-  // console.log("Blog Title : " , blog.blogTitle)
-  // console.log(blog)
-
   // Clean the blog data by removing HTML tags and non-breaking spaces
   const cleanBlogData = blog.blogData
     .replace(/<[^>]*>?/gm, "") // Remove all HTML tags
@@ -46,10 +41,13 @@ export default function BlogView({ blog }: BlogProps) {
           <div className="flex justify-between text-[rgba(137,137,137,0.8)] text-[10px]">
             <p>{formatDate(blog.createdAt)}</p>
           </div>
-          <h2 className="text-sm font-semibold my-[16px]">{blog.blogTitle}</h2>
-          <div className="text-sm text-gray-700 line-clamp-3">{he.decode(cleanBlogData)}...</div>
+          <h2 className="text-sm font-semibold my-[16px] sm:text-base">{blog.blogTitle}</h2>
+          {/* Hide description on mobile */}
+          <div className="text-sm text-gray-700 line-clamp-3 sm:text-base hidden sm:block">
+            {he.decode(cleanBlogData)}...
+          </div>
           <div className="flex justify-between mt-3">
-            <button className="text-[14px] text-primary flex items-center">
+            <button className="text-[14px] text-primary flex items-center sm:text-base">
               Read More <ArrowRight size={13} className="mx-1" />
             </button>
           </div>
