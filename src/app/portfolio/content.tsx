@@ -5,29 +5,22 @@ import { cn } from "../../../lib/utils";
 import { Link } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import NextLink from "next/link";
 import ServiceCard from "../components/generic/service-card";
 import { ProjectGroup, Project } from "../../../types";
 
 interface PortfolioContentProps {
-    groups:ProjectGroup[];
-    recentProjects: Project[];
-    categories: string[];
+  groups: ProjectGroup[];
+  recentProjects: Project[];
+  categories: string[];
 }
 
-const PortfolioContent:React.FC<PortfolioContentProps> = ({
-  groups,
-  recentProjects,
-  categories,
-}) => {
-
+const PortfolioContent: React.FC<PortfolioContentProps> = ({ groups, recentProjects, categories }) => {
   const [selected, setSelected] = useState<string>("All");
 
   const filteredGroups = useMemo(() => {
-    return groups.filter(
-      (group) => group.category === selected || selected === "All",
-    );
+    return groups.filter((group) => group.category === selected || selected === "All");
   }, [selected, groups]);
 
   return (
@@ -38,7 +31,7 @@ const PortfolioContent:React.FC<PortfolioContentProps> = ({
             key={"our-projects-buttons-" + index + "-key" + category}
             className={cn(
               "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-lg xl:text-xl",
-              selected === category ? "bg-primary text-white" : '',
+              selected === category ? "bg-primary text-white" : ""
             )}
             onClick={() => {
               setSelected(category);
@@ -54,46 +47,51 @@ const PortfolioContent:React.FC<PortfolioContentProps> = ({
           className="mb-16 flex w-full flex-col items-center"
           key={"our-projects-group-" + index + "-key" + group.category}
         >
-          <p
-            className={cn(
-              "landing-page-subheading",
-              "!mb-8 w-full px-24 text-center",
-            )}
-          >
-            {group.category}
-          </p>
+          <p className={cn("landing-page-subheading", "!mb-8 w-full px-24 text-center")}>{group.category}</p>
           <Carousel>
-            {group.projects.map((item, i) => (
-              <SwiperSlide key={"our-projects-" + i + "-key" + item.title}>
-                <div className="group relative flex h-full w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border-[3px] border-primary ">
-                  <div>
-                    <Image
-                      src={item.coverImage}
-                      alt={item.title}
-                      fill
-                      className="h-full w-full object-cover"
-                    />
+            <Swiper
+              spaceBetween={30} // Space between slides
+              slidesPerView={1} // Default: 1 item per view for mobile
+              centeredSlides={group.projects.length === 1} // Center the slide if only 1 item
+              loop={group.projects.length > 1} // Loop only if more than 1 item
+              navigation={group.projects.length > 1} // Disable navigation if only 1 item
+              breakpoints={{
+                // Custom breakpoints for responsiveness
+                640: {
+                  slidesPerView: 1, // 1 slide for small screens
+                },
+                768: {
+                  slidesPerView: 2, // 2 slides for medium screens
+                },
+                1024: {
+                  slidesPerView: group.projects.length === 1 ? 1 : 3, // If only one slide, show 1 slide centered
+                  centeredSlides: group.projects.length === 1, // Center the slide if only one item
+                },
+              }}
+            >
+              {group.projects.map((item, i) => (
+                <SwiperSlide key={"our-projects-" + i + "-key" + item.title}>
+                  <div className="group relative flex h-full w-full flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border-[3px] border-primary">
+                    <div className="relative w-full h-60 sm:h-80 md:h-96">
+                      <Image src={item.coverImage} alt={item.title} fill className="object-cover w-full h-full" />
+                    </div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-primary/90 p-8 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                      <h4 className="text-center text-lg font-bold uppercase text-white md:text-xl lg:text-2xl xl:text-3xl">
+                        {item.title}
+                      </h4>
+                      <p className="md:text-md line-clamp-6 text-center text-sm text-white lg:text-lg xl:text-xl">
+                        {item.shortDescription}
+                      </p>
+                      <a href={item.link} target="_blank" rel="noopener noreferrer">
+                        <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
+                          <Link strokeWidth={3} className="h-1/2 w-1/2" />
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-primary/90 p-8 opacity-0 transition-all duration-500 group-hover:opacity-100">
-                    <h4 className="text-center text-lg font-bold uppercase text-white md:text-xl lg:text-2xl xl:text-3xl">
-                      {item.title}
-                    </h4>
-                    <p className="md:text-md line-clamp-6 text-center text-sm text-white lg:text-lg xl:text-xl">
-                      {item.shortDescription}
-                    </p>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div className="grid h-10 w-10 place-items-center rounded-full bg-white text-primary 2xl:h-16 2xl:w-16">
-                        <Link strokeWidth={3} className="h-1/2 w-1/2" />
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </Carousel>
         </div>
       ))}
@@ -111,7 +109,7 @@ const PortfolioContent:React.FC<PortfolioContentProps> = ({
           image={project.coverImage}
           showBackground
           showButton
-          buttonText='View Demo'
+          buttonText="View Demo"
           reverse={index % 2 !== 0}
           link={project.link}
           externalLink
@@ -119,6 +117,6 @@ const PortfolioContent:React.FC<PortfolioContentProps> = ({
       ))}
     </div>
   );
-}
+};
 
 export default PortfolioContent;
