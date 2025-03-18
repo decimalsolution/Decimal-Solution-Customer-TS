@@ -24,7 +24,7 @@ export default async function Products() {
   const products: Product[] = data.data;
 
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col ">
       <Head>
         {products.map((product, index) => (
           <script
