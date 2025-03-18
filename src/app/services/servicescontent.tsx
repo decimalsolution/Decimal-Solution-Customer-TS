@@ -70,7 +70,7 @@ const ServicesContent:React.FC<ServicesContentProps> = ({services , ServiceBar} 
           >
             {service}
           </button>
-         ))} 
+         ))}
        </div>
 
       <div className="flex flex-col gap-8 ">
@@ -90,7 +90,7 @@ const ServicesContent:React.FC<ServicesContentProps> = ({services , ServiceBar} 
           />
         )})}
       </div>
-      
+
     </div>
   )
 }

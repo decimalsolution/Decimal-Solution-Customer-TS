@@ -1,11 +1,9 @@
 // 'use client'
 
 import PageIntroduction from "../components/generic/page-introduction/index";
-// import ServiceCard from "../components/generic/service-card/index";
 import ServicesContent from "./servicescontent";
 import { Service } from "../../../types";
 import Head from "next/head";
-// import { cn } from "../../../lib/utils";
 import { Metadata } from "../../../types";
 
 export const metadata: Metadata = {
@@ -15,11 +13,6 @@ export const metadata: Metadata = {
 };
 
 const Services = async () => {
-  // const [selected, setSelected] = useState<string>("All");
-  // const [services, setServices] = useState<Service[]>([]);
-
-  // useEffect(  ()=>{
-  //     const fetchData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/services`, {
     next: {
       revalidate: 300,
@@ -100,44 +93,6 @@ const Services = async () => {
       <PageIntroduction title="Our Services" image={"/our-services.webp"} />
 
       <ServicesContent services={services} ServiceBar={ServiceBar} />
-
-      {/* <div className=" flex flex-wrap items-center  justify-center gap-2 sm:gap-4">
-        {ServiceBar.map((service: string, index: number) => (
-          <button
-            key={"our-projects-buttons-" + index + "-key"}
-            className={cn(
-              "rounded-lg border px-4 py-2 text-xs transition-all duration-200 hover:bg-primary hover:text-white sm:text-sm md:text-base lg:text-md",
-              selected === service.title ? "bg-primary text-white" : ""
-            )}
-
-            onClick={() => {
-              setSelected(service.title);
-            }}
-          >
-            {service}
-          </button>
-         ))}
-       </div>
-
-      <div className="flex flex-col gap-8">
-        {services.map((product: Service, index: number) => {
-
-        return (
-
-          <ServiceCard
-            key={"our-services-card-" + index + "-key"}
-            title={product.title}
-            description={product.description}
-            image={product.coverImage}
-            showButton
-            showBackground={false}
-            buttonText={"View More"}
-            reverse={index % 2 !== 0}
-            link={getLink(product)}
-            externalLink={false}
-          />
-        )})}
-      </div> */}
     </div>
   );
 };
