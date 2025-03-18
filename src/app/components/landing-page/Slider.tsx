@@ -4,7 +4,7 @@ import Link from "next/link";
 const headings = [
   "Web and Mobile Application Development",
   "Customized CRM Solutions",
-  "Creative Design for Interactive User Experiences",
+  "Creative Design for \n Interactive User Experiences",
   "Your One-Stop Shop for Software Solutions   ",
 ];
 export default function Slider() {

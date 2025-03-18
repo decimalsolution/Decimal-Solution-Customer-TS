@@ -76,7 +76,7 @@ const HeroSection: React.FC = () => {
               </span>{" "}
               and We Offer Services
             </p>
-            <h2 className="my-6 whitespace-pre-line">
+            <h2 className="my-6 whitespace-pre-line text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[45px] font-bold leading-[1.2]">
               {slides[currentSlide].title.split("\n").map((line, index) => (
                 <React.Fragment key={index}>
                   {line}
@@ -96,7 +96,7 @@ const HeroSection: React.FC = () => {
                 href={"/portfolio"}
                 className="block rounded-xl bg-transparent border-2  border-primary text-primary px-6 py-3 text-base font-bold"
               >
-                Our Portolio
+                Our Portfolio
               </Link>
             </div>
           </div>
