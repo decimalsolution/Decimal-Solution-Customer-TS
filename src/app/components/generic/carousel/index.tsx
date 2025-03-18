@@ -32,7 +32,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
   }, [swiperRef]);
 
   return (
-    <div className="relative h-[200px] w-full max-w-[1750px] px-8 sm:h-[240px] md:h-[260px] lg:h-[300px] xl:h-[340px] 2xl:h-[380px]">
+    <div className="relative h-[210px] w-full max-w-[1750px] px-8 sm:h-[240px] md:h-[260px] lg:h-[300px] xl:h-[340px] 2xl:h-[380px]">
       <button
         aria-label="Previous carousel slide"
         onClick={goPrev}
