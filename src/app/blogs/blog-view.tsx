@@ -26,29 +26,25 @@ export default function BlogView({ blog }: BlogProps) {
 
   return (
     <Link href={`/blogs/${blog.slug}`}>
-      <div className="shadow-[0_6px_6px_0_rgba(0,0,0,0.2)] flex flex-col h-full transition-transform duration-200 transform hover:scale-105 hover:shadow-lg cursor-pointer">
-        <div className="relative flex-grow">
-          <Image
-            src={blog.blogImage}
-            alt={blog?.altText}
-            loading="lazy"
-            width={500}
-            height={200}
-            className="w-full h-48 object-cover"
-          />
+      <div className="shadow-lg flex flex-col h-full transition-transform duration-200 transform hover:scale-105 hover:shadow-xl cursor-pointer rounded-lg overflow-hidden sm:w-full">
+        {/* Responsive Image Container */}
+        <div className="relative w-full aspect-[16/9] sm:aspect-[3/1]">
+          <Image src={blog.blogImage} alt={blog?.altText} loading="lazy" fill className="object-cover" />
         </div>
+
         <div className="p-4 flex flex-col justify-between flex-grow">
-          <div className="flex justify-between text-[rgba(137,137,137,0.8)] text-[10px]">
+          <div className="flex justify-between text-gray-500 text-xs sm:text-sm">
             <p>{formatDate(blog.createdAt)}</p>
           </div>
-          <h2 className="text-sm font-semibold my-[16px] sm:text-base">{blog.blogTitle}</h2>
-          {/* Hide description on mobile */}
-          <div className="text-sm text-gray-700 line-clamp-3 sm:text-base hidden sm:block">
-            {he.decode(cleanBlogData)}...
-          </div>
+
+          <h2 className="text-sm font-semibold my-2 sm:text-base">{blog.blogTitle}</h2>
+
+          {/* Description - Visible on all screens */}
+          <div className="text-xs text-gray-700 line-clamp-3 sm:text-sm">{he.decode(cleanBlogData)}...</div>
+
           <div className="flex justify-between mt-3">
-            <button className="text-[14px] text-primary flex items-center sm:text-base">
-              Read More <ArrowRight size={13} className="mx-1" />
+            <button className="text-xs text-primary flex items-center sm:text-sm">
+              Read More <ArrowRight size={16} className="mx-1" />
             </button>
           </div>
         </div>
