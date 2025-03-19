@@ -66,7 +66,7 @@ export default function SliderClient() {
               <Image src="/slider-overlay.png" alt="Slider Overlay" fill loading="eager" className="absolute inset-0" />
 
               <div className="absolute inset-0 mx-4 flex flex-col items-start justify-center md:mx-8 lg:mx-10 xl:mx-14 2xl:mx-18">
-                <h1 className="text-md max-w-[150px] font-bold leading-none text-white sm:text-2xl md:max-w-xs md:text-3xl lg:max-w-md lg:text-4xl xl:max-w-xl">
+                <h1 className="text-md max-w-[150px] font-bold leading-none text-white sm:text-[10px] md:max-w-xs md:text-3xl  lg:max-w-md lg:text-4xl xl:max-w-xl">
                   {headings[i]}
                 </h1>
                 <div className="flex-col sm:flex-row flex sm:gap-2">
