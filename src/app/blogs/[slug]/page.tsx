@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 const SpecificBlog: React.FC<Params> = async ({ params }) => {
   const slug: string = params.slug;
-  // console.log("slug : " , `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`)
+
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`, {
     next: {
       revalidate: 300,

@@ -18,10 +18,7 @@ const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
 
   const goNext = useCallback(() => {
     if (swiperRef !== null) {
-      // console.log("Swiper ref instance:", swiperRef);
       swiperRef.slideNext();
-    } else {
-      // console.log("Swiper ref is null or undefined");
     }
   }, [swiperRef]);
 
@@ -43,7 +40,6 @@ const Carousel: React.FC<CarouselProps> = ({ children, ...props }) => {
       <Swiper
         spaceBetween={30}
         onSwiper={(swiper) => {
-          // console.log("Swiper instance received:", swiper);
           setSwiperRef(swiper);
         }}
         loop

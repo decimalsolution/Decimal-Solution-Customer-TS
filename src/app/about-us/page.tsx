@@ -2,13 +2,74 @@ import CircularProgress from "../components/generic/circular-progress";
 import PageIntroduction from "../components/generic/page-introduction";
 import Image from "next/image";
 import EmployeeCard from "./employe-card";
-import { Metadata, TeamMember } from "../../../types";
+import { TeamMember } from "../../../types";
 import Head from "next/head";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Decimal Solution - Our Story & Team",
   description:
     "Discover the essence of Decimal Solution on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Learn about our journey, values, and commitment to shaping a digital future.",
+  keywords: [
+    "about us",
+    "our story",
+    "company history",
+    "team members",
+    "software development team",
+    "web development experts",
+    "mobile app developers",
+    "ERP specialists",
+    "AR/VR developers",
+    "game developers",
+    "graphics designers",
+    "digital marketing experts",
+    "decimal solution team",
+    "company mission",
+    "company values",
+  ].join(", "),
+  authors: [{ name: "Decimal Solution" }],
+  creator: "Decimal Solution",
+  publisher: "Decimal Solution",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://decimalsolution.com/about-us",
+    title: "About Us | Decimal Solution - Our Story & Team",
+    description:
+      "Discover the essence of Decimal Solution on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    siteName: "Decimal Solution",
+    images: [
+      {
+        url: "https://decimalsolution.com/about-us.png",
+        width: 1200,
+        height: 630,
+        alt: "About Decimal Solution - Our Story & Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Decimal Solution - Our Story & Team",
+    description:
+      "Discover the essence of Decimal Solution on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    images: ["https://decimalsolution.com/about-us.png"],
+    creator: "@decimalsolution",
+    site: "@decimalsolution",
+  },
+  alternates: {
+    canonical: "https://decimalsolution.com/about-us",
+  },
 };
 
 interface Stats {

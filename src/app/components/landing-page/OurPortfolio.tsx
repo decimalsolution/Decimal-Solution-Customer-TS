@@ -1,6 +1,6 @@
 import Link from "next/link";
 import OurPortfolioContent from "./OurPortfolioContent";
-import {  Project } from "../../../../types"; // Assuming these are the correct types
+import { Project } from "../../../../types"; // Assuming these are the correct types
 import HeadingText from "./HeadingText";
 
 const OurProjects = async () => {
@@ -17,15 +17,13 @@ const OurProjects = async () => {
   const data2 = await res2.json();
 
   const projects: Project[] = data1.data;
-  const services= data2.data;
-  services.unshift({ title : "All" });
-  // console.log(projects);
-
+  const services = data2.data;
+  services.unshift({ title: "All" });
 
   return (
     <div className="flex flex-col flex-wrap justify-center w-full gap-4 py-8 sm:gap-8 lg:gap- lg:py-">
       <div className="my-4 px-2 sm:px-16 xl:ml-14 mb-12">
-      <HeadingText text1="Our" text2="Portfolio" />
+        <HeadingText text1="Our" text2="Portfolio" />
       </div>
       <div className="flex flex-col items-center">
         <h2 className="landing-page-heading">Some Latest Client Projects</h2>
@@ -40,9 +38,7 @@ const OurProjects = async () => {
           href="/portfolio"
           className="flex justify-center sm:w-36 md:w-40 md:text-base lg:w-40 lg:py-3 lg:text-lg xl:w-35 xl:text-xl 2xl:w-50 2xl:text-2xl"
         >
-          <button className="block rounded-xl bg-primary  px-4 py-2 text-sm font-medium text-white ">
-            View All
-          </button>
+          <button className="block rounded-xl bg-primary  px-4 py-2 text-sm font-medium text-white ">View All</button>
         </Link>
       </div>
     </div>

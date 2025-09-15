@@ -4,12 +4,72 @@ import PageIntroduction from "../components/generic/page-introduction/index";
 import ServicesContent from "./servicescontent";
 import { Service } from "../../../types";
 import Head from "next/head";
-import { Metadata } from "../../../types";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services | Decimal Solution - Our Digital Solutions",
   description:
     "Unlock innovation with Decimal Solution - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
+  keywords: [
+    "services",
+    "software development services",
+    "web development services",
+    "mobile app development",
+    "ERP solutions",
+    "AR/VR development",
+    "game development",
+    "graphics design services",
+    "digital marketing services",
+    "custom software development",
+    "business solutions",
+    "digital transformation",
+    "decimal solution services",
+    "IT services",
+    "technology solutions",
+  ].join(", "),
+  authors: [{ name: "Decimal Solution" }],
+  creator: "Decimal Solution",
+  publisher: "Decimal Solution",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://decimalsolution.com/services",
+    title: "Services | Decimal Solution - Our Digital Solutions",
+    description:
+      "Unlock innovation with Decimal Solution - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
+    siteName: "Decimal Solution",
+    images: [
+      {
+        url: "https://decimalsolution.com/our-services.webp",
+        width: 1200,
+        height: 630,
+        alt: "Decimal Solution Services - Our Digital Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Decimal Solution - Our Digital Solutions",
+    description:
+      "Unlock innovation with Decimal Solution - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
+    images: ["https://decimalsolution.com/our-services.webp"],
+    creator: "@decimalsolution",
+    site: "@decimalsolution",
+  },
+  alternates: {
+    canonical: "https://decimalsolution.com/services",
+  },
 };
 
 const Services = async () => {

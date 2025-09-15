@@ -2,13 +2,72 @@ import Image from "next/image";
 import PageIntroduction from "../components/generic/page-introduction";
 import { ContactInfo } from "../../../types";
 import Form from "./Form";
-import { Metadata } from "../../../types";
 import Head from "next/head";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Us | Decimal Solution - Get In Touch",
   description:
-    "Connect with Decimal Solution - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Reach out for a seamless collaboration and elevate your digital presence",
+    "Connect with Decimal Solution - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Reach out for a seamless collaboration and elevate your digital presence.",
+  keywords: [
+    "contact us",
+    "get in touch",
+    "contact decimal solution",
+    "software development contact",
+    "web development consultation",
+    "mobile app development contact",
+    "ERP solutions contact",
+    "AR/VR development contact",
+    "game development contact",
+    "graphics design contact",
+    "digital marketing contact",
+    "business consultation",
+    "project inquiry",
+    "support contact",
+  ].join(", "),
+  authors: [{ name: "Decimal Solution" }],
+  creator: "Decimal Solution",
+  publisher: "Decimal Solution",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://decimalsolution.com/contact-us",
+    title: "Contact Us | Decimal Solution - Get In Touch",
+    description:
+      "Connect with Decimal Solution - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    siteName: "Decimal Solution",
+    images: [
+      {
+        url: "https://decimalsolution.com/contact-us.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Decimal Solution - Get In Touch",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Decimal Solution - Get In Touch",
+    description:
+      "Connect with Decimal Solution - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    images: ["https://decimalsolution.com/contact-us.png"],
+    creator: "@decimalsolution",
+    site: "@decimalsolution",
+  },
+  alternates: {
+    canonical: "https://decimalsolution.com/contact-us",
+  },
 };
 
 const ContactUs = async () => {

@@ -1,0 +1,40 @@
+[2025-09-15T15:13:40.890Z] [INFO] === Sitemap Generation Script Started ===
+[2025-09-15T15:13:40.895Z] [INFO] Starting sitemap generation (attempt 1/3)
+[2025-09-15T15:13:46.082Z] [INFO] Sitemap generated successfully! Size: 36683 bytes
+[2025-09-15T15:13:46.082Z] [INFO] Sitemap location: public/sitemap.xml
+[2025-09-15T15:13:46.082Z] [INFO] === Sitemap Generation Completed Successfully ===
+[2025-09-15T15:14:04.117Z] [INFO] === Advanced Sitemap Generation Started ===
+[2025-09-15T15:14:04.120Z] [INFO] Checkpoint 'start': 0ms
+[2025-09-15T15:14:04.120Z] [INFO] Starting sitemap generation (attempt 1/3)
+[2025-09-15T15:14:04.120Z] [INFO] Checkpoint 'pre_checks': 0ms
+[2025-09-15T15:14:04.121Z] [INFO] Pre-generation checks completed
+[2025-09-15T15:14:04.121Z] [INFO] Checkpoint 'generation_start': 1ms
+[2025-09-15T15:14:08.565Z] [INFO] Sitemap generation command completed
+[2025-09-15T15:14:08.566Z] [INFO] Checkpoint 'validation_start': 4446ms
+[2025-09-15T15:14:08.566Z] [INFO] Sitemap validation passed. Found 203 URLs
+[2025-09-15T15:14:08.567Z] [INFO] Checkpoint 'post_tasks': 4447ms
+[2025-09-15T15:14:08.567Z] [INFO] Post-generation tasks completed
+[2025-09-15T15:14:08.567Z] [INFO] Checkpoint 'complete': 4447ms
+[2025-09-15T15:14:08.567Z] [SUCCESS] Sitemap generation completed successfully in 4447ms
+[2025-09-15T15:14:08.568Z] [INFO] No webhook URL configured, skipping notification
+[2025-09-15T15:14:08.568Z] [SUCCESS] === Sitemap Generation Completed Successfully ===
+[2025-09-15T15:16:35.171Z] [INFO] === Sitemap Generation Script Started ===
+[2025-09-15T15:16:35.175Z] [INFO] Starting sitemap generation (attempt 1/3)
+[2025-09-15T15:16:39.837Z] [INFO] Sitemap generated successfully! Size: 36683 bytes
+[2025-09-15T15:16:39.837Z] [INFO] Sitemap location: public/sitemap.xml
+[2025-09-15T15:16:39.838Z] [INFO] === Sitemap Generation Completed Successfully ===
+[2025-09-15T15:16:45.706Z] [INFO] === Advanced Sitemap Generation Started ===
+[2025-09-15T15:16:45.710Z] [INFO] Checkpoint 'start': 0ms
+[2025-09-15T15:16:45.710Z] [INFO] Starting sitemap generation (attempt 1/3)
+[2025-09-15T15:16:45.711Z] [INFO] Checkpoint 'pre_checks': 1ms
+[2025-09-15T15:16:45.711Z] [INFO] Pre-generation checks completed
+[2025-09-15T15:16:45.711Z] [INFO] Checkpoint 'generation_start': 1ms
+[2025-09-15T15:16:50.197Z] [INFO] Sitemap generation command completed
+[2025-09-15T15:16:50.198Z] [INFO] Checkpoint 'validation_start': 4488ms
+[2025-09-15T15:16:50.199Z] [INFO] Sitemap validation passed. Found 203 URLs
+[2025-09-15T15:16:50.199Z] [INFO] Checkpoint 'post_tasks': 4489ms
+[2025-09-15T15:16:50.200Z] [INFO] Post-generation tasks completed
+[2025-09-15T15:16:50.200Z] [INFO] Checkpoint 'complete': 4490ms
+[2025-09-15T15:16:50.200Z] [SUCCESS] Sitemap generation completed successfully in 4490ms
+[2025-09-15T15:16:50.200Z] [INFO] No webhook URL configured, skipping notification
+[2025-09-15T15:16:50.200Z] [SUCCESS] === Sitemap Generation Completed Successfully ===

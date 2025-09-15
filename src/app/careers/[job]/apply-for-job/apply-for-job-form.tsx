@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -30,23 +30,25 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
     city: z.string().nonempty({ message: "City is required" }),
 
     cellNumber: z
-    .string({
-      message:"Phone Number cannot be empty"
-    }).transform(value=> value.replace(/\_/g, "")).pipe(
-    z.string().min(
-      15, "Cell Number must be exactly 11 digits"
-    ).max(15, "Cell Number must be exactly 11 digits")),
+      .string({
+        message: "Phone Number cannot be empty",
+      })
+      .transform((value) => value.replace(/\_/g, ""))
+      .pipe(
+        z.string().min(15, "Cell Number must be exactly 11 digits").max(15, "Cell Number must be exactly 11 digits")
+      ),
     // .minLength(15 , {message: "Cell Number must be exactly 11 digits" })
     // .maxLength(15 , {message: "Cell Number must be exactly 11 digits" }),
     // .length(15, { message: "Cell Number must be exactly 11 digits" }),
-    
+
     whatsappNumber: z
-    .string({
-      message:"Phone Number cannot be empty"
-    }).transform(value=> value.replace(/\_/g, "")).pipe(
-    z.string().min(
-      15, "Cell Number must be exactly 11 digits"
-    ).max(15, "Cell Number must be exactly 11 digits")), 
+      .string({
+        message: "Phone Number cannot be empty",
+      })
+      .transform((value) => value.replace(/\_/g, ""))
+      .pipe(
+        z.string().min(15, "Cell Number must be exactly 11 digits").max(15, "Cell Number must be exactly 11 digits")
+      ),
 
     experience: z.string().nonempty({ message: "Experience is required" }),
     comments: z.string().optional(),
@@ -56,7 +58,7 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
         if (file.type !== "application/pdf") return false;
         return true;
       },
-      { message:"Invalid Resume. Only PDF files are allowed" }
+      { message: "Invalid Resume. Only PDF files are allowed" }
     ),
     applyingFor: z.string(),
     // errors: z.string().optional(),
@@ -80,11 +82,6 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
     },
   });
 
-  console.log("Form Data : " , form.getValues());
-
-
-  console.log("Form errors", form.formState.errors)
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       setLoading(true);
@@ -104,8 +101,6 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
         resume: url,
         applicantComments: values.comments,
       };
-
-      // console.log(submissionData);
 
       const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/jobApplications`, {
         method: "POST",
@@ -193,7 +188,6 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
                 control={form.control}
                 name={"email"}
                 // error={form.formState.errors}
-
               />
 
               <SelectMenuFromControlled
@@ -208,7 +202,6 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
                 control={form.control}
                 name={"city"}
                 // error={form.formState.errors}
-
               />
 
               <TextInputFormControlled
@@ -217,7 +210,6 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
                 name={"cellNumber"}
                 mask="+\92 999 9999999"
                 // error={form.formState.errors}
-
               />
 
               <TextInputFormControlled
@@ -280,10 +272,7 @@ export default function ApplyForJobForm({ job }: ApplyForJobFormProps) {
               </div>
             </div>
           ) : (
-            <div
-              role="status"
-              className="absolute inset-0 flex flex-col items-center justify-center gap-4"
-            >
+            <div role="status" className="absolute inset-0 flex flex-col items-center justify-center gap-4">
               <svg
                 aria-hidden="true"
                 className="mr-2 h-20 w-20 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"

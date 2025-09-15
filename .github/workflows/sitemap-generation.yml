@@ -1,0 +1,71 @@
+name: Automated Sitemap Generation
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch: # Allow manual triggering
+  push:
+    branches: [main]
+    paths:
+      - "src/app/**"
+      - "next-sitemap.config.js"
+      - "package.json"
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL || 'https://www.decimalsolution.com' }}
+
+      - name: Generate sitemap
+        run: node scripts/generate-sitemap.js
+
+      - name: Validate sitemap
+        run: |
+          if [ -f "public/sitemap.xml" ]; then
+            echo "✓ Sitemap generated successfully"
+            echo "Sitemap size: $(wc -c < public/sitemap.xml) bytes"
+            echo "URL count: $(grep -c '<url>' public/sitemap.xml)"
+          else
+            echo "✗ Sitemap generation failed"
+            exit 1
+          fi
+
+      - name: Upload sitemap artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitemap-files
+          path: |
+            public/sitemap.xml
+            public/sitemap-*.xml
+            public/robots.txt
+          retention-days: 30
+
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "✅ Sitemap generated successfully at $(date)"
+          echo "📊 Sitemap contains $(grep -c '<url>' public/sitemap.xml) URLs"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Sitemap generation failed at $(date)"
+          echo "Check the logs above for details"

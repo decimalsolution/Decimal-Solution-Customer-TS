@@ -1,12 +1,73 @@
 import AvailableJobs from "./available-jobs";
-import { Job, Metadata } from "../../../types";
+import { Job } from "../../../types";
 import Image from "next/image";
 import Head from "next/head";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers | Decimal Solution - Join Our Team",
   description:
     "Join the innovation journey at Decimal Solution. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Elevate your career with us and be a part of cutting-edge solutions.",
+  keywords: [
+    "careers",
+    "jobs",
+    "employment opportunities",
+    "software development jobs",
+    "web development careers",
+    "mobile app development jobs",
+    "ERP developer jobs",
+    "AR/VR developer positions",
+    "game development careers",
+    "graphics design jobs",
+    "digital marketing careers",
+    "IT jobs",
+    "tech careers",
+    "decimal solution careers",
+    "join our team",
+  ].join(", "),
+  authors: [{ name: "Decimal Solution" }],
+  creator: "Decimal Solution",
+  publisher: "Decimal Solution",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://decimalsolution.com/careers",
+    title: "Careers | Decimal Solution - Join Our Team",
+    description:
+      "Join the innovation journey at Decimal Solution. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    siteName: "Decimal Solution",
+    images: [
+      {
+        url: "https://decimalsolution.com/work-with-us/image-1.png",
+        width: 1200,
+        height: 630,
+        alt: "Decimal Solution Careers - Join Our Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers | Decimal Solution - Join Our Team",
+    description:
+      "Join the innovation journey at Decimal Solution. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    images: ["https://decimalsolution.com/work-with-us/image-1.png"],
+    creator: "@decimalsolution",
+    site: "@decimalsolution",
+  },
+  alternates: {
+    canonical: "https://decimalsolution.com/careers",
+  },
 };
 
 export default async function Careers() {

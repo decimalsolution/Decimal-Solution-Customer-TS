@@ -62,8 +62,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ contactInfo }) => {
   const pathname = usePathname();
 
-  // console.log(contactInfo);
-
   const [isMobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prevState) => !prevState);

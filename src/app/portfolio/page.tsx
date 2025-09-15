@@ -1,12 +1,70 @@
 import PageIntroduction from "../components/generic/page-introduction";
 import PortfolioContent from "./content";
-import { ProjectGroup, Metadata, Project } from "../../../types";
+import { ProjectGroup, Project } from "../../../types";
 import Head from "next/head";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Portfolio | Decimal Solution - Our Work & Projects",
   description:
-    "Dive into the world of insights and expertise on Decimal Solution' Blogs Page. Explore thought-provoking content covering Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. Stay informed, inspired, and ahead in the ever-evolving tech landscape.",
+    "Explore our impressive portfolio showcasing successful projects in Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing. See how we've helped businesses achieve their digital goals.",
+  keywords: [
+    "portfolio",
+    "projects",
+    "case studies",
+    "web development projects",
+    "mobile app projects",
+    "ERP solutions",
+    "AR/VR projects",
+    "game development",
+    "graphics design portfolio",
+    "digital marketing campaigns",
+    "decimal solution work",
+    "client projects",
+  ].join(", "),
+  authors: [{ name: "Decimal Solution" }],
+  creator: "Decimal Solution",
+  publisher: "Decimal Solution",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://decimalsolution.com/portfolio",
+    title: "Portfolio | Decimal Solution - Our Work & Projects",
+    description:
+      "Explore our impressive portfolio showcasing successful projects in Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    siteName: "Decimal Solution",
+    images: [
+      {
+        url: "https://decimalsolution.com/portfolio.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Decimal Solution Portfolio - Our Work & Projects",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | Decimal Solution - Our Work & Projects",
+    description:
+      "Explore our impressive portfolio showcasing successful projects in Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
+    images: ["https://decimalsolution.com/portfolio.jpg"],
+    creator: "@decimalsolution",
+    site: "@decimalsolution",
+  },
+  alternates: {
+    canonical: "https://decimalsolution.com/portfolio",
+  },
 };
 
 export default async function Portfolio() {

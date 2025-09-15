@@ -22,8 +22,6 @@ const ServicesContent: React.FC<ServicesContentProps> = ({ services, ServiceBar 
     }
   }, [selected, services]);
 
-  //   console.log(filteredServices)
-
   const getLink = (service: Service) => {
     const title = service.title.toLowerCase();
     if (title.includes("web")) {

@@ -43,7 +43,6 @@ const PortfolioContent: React.FC<PortfolioContentProps> = ({ groups, recentProje
       </div>
 
       {filteredGroups.map((group, index) => {
-        console.log("group.projects.length", group.projects.length);
         return (
           <div
             className="mb-16 flex w-full flex-col items-center"

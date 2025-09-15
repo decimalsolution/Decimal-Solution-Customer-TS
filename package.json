@@ -7,7 +7,11 @@
     "build": "next build ",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "sitemap:advanced": "node scripts/advanced-sitemap-generator.js",
+    "sitemap:test": "./scripts/test-sitemap.sh",
+    "sitemap:setup": "./scripts/setup-sitemap-cron.sh"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",
