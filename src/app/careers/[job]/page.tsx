@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       };
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://decimalsolution.com";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.decimalsolution.com";
     const jobUrl = `${baseUrl}/careers/${job}`;
 
     return {

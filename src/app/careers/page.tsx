@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decimalsolution.com/careers",
+    url: "https://www.decimalsolution.com/careers",
     title: "Careers | Decimal Solution - Join Our Team",
     description:
       "Join the innovation journey at Decimal Solution. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
     siteName: "Decimal Solution",
     images: [
       {
-        url: "https://decimalsolution.com/work-with-us/image-1.png",
+        url: "https://www.decimalsolution.com/work-with-us/image-1.png",
         width: 1200,
         height: 630,
         alt: "Decimal Solution Careers - Join Our Team",
@@ -61,12 +61,12 @@ export const metadata: Metadata = {
     title: "Careers | Decimal Solution - Join Our Team",
     description:
       "Join the innovation journey at Decimal Solution. Explore exciting career opportunities in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
-    images: ["https://decimalsolution.com/work-with-us/image-1.png"],
+    images: ["https://www.decimalsolution.com/work-with-us/image-1.png"],
     creator: "@decimalsolution",
     site: "@decimalsolution",
   },
   alternates: {
-    canonical: "https://decimalsolution.com/careers",
+    canonical: "https://www.decimalsolution.com/careers",
   },
 };
 

@@ -6,7 +6,7 @@ Disallow: *.gif$            # Blocks all .gif files
 Disallow: *.mp4$            # Blocks all .mp4 files
 Disallow: *.svg$            # Blocks all .svg files
 Disallow: *.webp$            # Blocks all .webp files
-Disallow: https://webmail.decimalsolution.com/*
-Disallow: https://admin.decimalsolution.com/*
+Disallow: /webmail/
+Disallow: /admin/
 
 Sitemap: https://www.decimalsolution.com/sitemap.xml

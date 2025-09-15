@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decimalsolution.com/blogs",
+    url: "https://www.decimalsolution.com/blogs",
     title: "Blogs | Decimal Solution - Tech Insights & Industry News",
     description:
       "Explore our comprehensive blog covering Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
     siteName: "Decimal Solution",
     images: [
       {
-        url: "https://decimalsolution.com/blogs.png",
+        url: "https://www.decimalsolution.com/blogs.png",
         width: 1200,
         height: 630,
         alt: "Decimal Solution Blogs - Tech Insights & Industry News",
@@ -58,12 +58,12 @@ export const metadata: Metadata = {
     title: "Blogs | Decimal Solution - Tech Insights & Industry News",
     description:
       "Explore our comprehensive blog covering Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
-    images: ["https://decimalsolution.com/blogs.png"],
+    images: ["https://www.decimalsolution.com/blogs.png"],
     creator: "@decimalsolution",
     site: "@decimalsolution",
   },
   alternates: {
-    canonical: "https://decimalsolution.com/blogs",
+    canonical: "https://www.decimalsolution.com/blogs",
   },
 };
 
@@ -103,11 +103,11 @@ const Blogs = async () => {
                 publisher: {
                   "@type": "Organization",
                   name: "Decimal Solution",
-                  url: "https://decimalsolution.com",
+                  url: "https://www.decimalsolution.com",
                 },
                 mainEntityOfPage: {
                   "@type": "WebPage",
-                  "@id": `https://decimalsolution.com/blogs/${blog.slug}`,
+                  "@id": `https://www.decimalsolution.com/blogs/${blog.slug}`,
                 },
                 image: blog.blogImage, // assuming each blog has a cover image
               }),

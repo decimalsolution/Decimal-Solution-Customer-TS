@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decimalsolution.com/about-us",
+    url: "https://www.decimalsolution.com/about-us",
     title: "About Us | Decimal Solution - Our Story & Team",
     description:
       "Discover the essence of Decimal Solution on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
     siteName: "Decimal Solution",
     images: [
       {
-        url: "https://decimalsolution.com/about-us.png",
+        url: "https://www.decimalsolution.com/about-us.png",
         width: 1200,
         height: 630,
         alt: "About Decimal Solution - Our Story & Team",
@@ -63,12 +63,12 @@ export const metadata: Metadata = {
     title: "About Us | Decimal Solution - Our Story & Team",
     description:
       "Discover the essence of Decimal Solution on our About Us page. We're more than a software house; we're a passionate team driving excellence in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
-    images: ["https://decimalsolution.com/about-us.png"],
+    images: ["https://www.decimalsolution.com/about-us.png"],
     creator: "@decimalsolution",
     site: "@decimalsolution",
   },
   alternates: {
-    canonical: "https://decimalsolution.com/about-us",
+    canonical: "https://www.decimalsolution.com/about-us",
   },
 };
 
@@ -103,8 +103,8 @@ export default async function AboutUs() {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Decimal Solution",
-              url: "https://decimalsolution.com",
-              logo: "https://decimalsolution.com/logo.png",
+              url: "https://www.decimalsolution.com",
+              logo: "https://www.decimalsolution.com/logo.png",
               description:
                 "A passionate software house excelling in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
               sameAs: [

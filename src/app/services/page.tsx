@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decimalsolution.com/services",
+    url: "https://www.decimalsolution.com/services",
     title: "Services | Decimal Solution - Our Digital Solutions",
     description:
       "Unlock innovation with Decimal Solution - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
     siteName: "Decimal Solution",
     images: [
       {
-        url: "https://decimalsolution.com/our-services.webp",
+        url: "https://www.decimalsolution.com/our-services.webp",
         width: 1200,
         height: 630,
         alt: "Decimal Solution Services - Our Digital Solutions",
@@ -63,12 +63,12 @@ export const metadata: Metadata = {
     title: "Services | Decimal Solution - Our Digital Solutions",
     description:
       "Unlock innovation with Decimal Solution - Your go-to software house for cutting-edge Web and Mobile Development, powerful ERP Solutions, immersive AR/VR experiences, captivating Game Development, stunning Graphics Designing, and result-driven Digital Marketing services.",
-    images: ["https://decimalsolution.com/our-services.webp"],
+    images: ["https://www.decimalsolution.com/our-services.webp"],
     creator: "@decimalsolution",
     site: "@decimalsolution",
   },
   alternates: {
-    canonical: "https://decimalsolution.com/services",
+    canonical: "https://www.decimalsolution.com/services",
   },
 };
 
@@ -136,11 +136,11 @@ const Services = async () => {
                 provider: {
                   "@type": "Organization",
                   name: "Decimal Solution",
-                  url: "https://decimalsolution.com",
+                  url: "https://www.decimalsolution.com",
                 },
                 offers: {
                   "@type": "Offer",
-                  url: `https://decimalsolution.com/${getLink(service)}`,
+                  url: `https://www.decimalsolution.com/${getLink(service)}`,
                   priceCurrency: "USD",
                   eligibleRegion: "Worldwide",
                 },

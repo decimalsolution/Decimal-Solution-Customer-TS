@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       };
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://decimalsolution.com";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.decimalsolution.com";
     const applicationUrl = `${baseUrl}/careers/${job}/apply-for-job`;
 
     return {

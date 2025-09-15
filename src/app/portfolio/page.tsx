@@ -39,14 +39,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decimalsolution.com/portfolio",
+    url: "https://www.decimalsolution.com/portfolio",
     title: "Portfolio | Decimal Solution - Our Work & Projects",
     description:
       "Explore our impressive portfolio showcasing successful projects in Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
     siteName: "Decimal Solution",
     images: [
       {
-        url: "https://decimalsolution.com/portfolio.jpg",
+        url: "https://www.decimalsolution.com/portfolio.jpg",
         width: 1200,
         height: 630,
         alt: "Decimal Solution Portfolio - Our Work & Projects",
@@ -58,12 +58,12 @@ export const metadata: Metadata = {
     title: "Portfolio | Decimal Solution - Our Work & Projects",
     description:
       "Explore our impressive portfolio showcasing successful projects in Web Development, Mobile App Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
-    images: ["https://decimalsolution.com/portfolio.jpg"],
+    images: ["https://www.decimalsolution.com/portfolio.jpg"],
     creator: "@decimalsolution",
     site: "@decimalsolution",
   },
   alternates: {
-    canonical: "https://decimalsolution.com/portfolio",
+    canonical: "https://www.decimalsolution.com/portfolio",
   },
 };
 

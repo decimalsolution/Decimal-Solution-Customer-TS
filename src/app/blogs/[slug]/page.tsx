@@ -142,7 +142,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
 
           <div className="flex w-full justify- items-center gap-2">
             <Link
-              href={`https://www.facebook.com/sharer/sharer.php?u=https://decimalsolution.com/blogs/${slug}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://www.decimalsolution.com/blogs/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -151,7 +151,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               </div>
             </Link>
             <Link
-              href={`https://twitter.com/intent/tweet?url=https://decimalsolution.com/blogs/${slug}`}
+              href={`https://twitter.com/intent/tweet?url=https://www.decimalsolution.com/blogs/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -160,7 +160,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               </div>
             </Link>
             <Link
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://decimalsolution.com/blogs/${slug}`}
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://www.decimalsolution.com/blogs/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -169,7 +169,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               </div>
             </Link>
             <Link
-              href={`mailto:?subject=Check out this blog post&body=I thought you might find this interesting: https://decimalsolution.com/blogs/${slug}`}
+              href={`mailto:?subject=Check out this blog post&body=I thought you might find this interesting: https://www.decimalsolution.com/blogs/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -178,7 +178,7 @@ const SpecificBlog: React.FC<Params> = async ({ params }) => {
               </div>
             </Link>
             <Link
-              href={`https://api.whatsapp.com/send?text=I thought you might find this interesting: https://decimalsolution.com/blogs/${slug}`}
+              href={`https://api.whatsapp.com/send?text=I thought you might find this interesting: https://www.decimalsolution.com/blogs/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
             >

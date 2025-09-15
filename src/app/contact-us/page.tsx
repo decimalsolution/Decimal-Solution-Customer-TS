@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decimalsolution.com/contact-us",
+    url: "https://www.decimalsolution.com/contact-us",
     title: "Contact Us | Decimal Solution - Get In Touch",
     description:
       "Connect with Decimal Solution - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
     siteName: "Decimal Solution",
     images: [
       {
-        url: "https://decimalsolution.com/contact-us.png",
+        url: "https://www.decimalsolution.com/contact-us.png",
         width: 1200,
         height: 630,
         alt: "Contact Decimal Solution - Get In Touch",
@@ -61,12 +61,12 @@ export const metadata: Metadata = {
     title: "Contact Us | Decimal Solution - Get In Touch",
     description:
       "Connect with Decimal Solution - Your gateway to unparalleled expertise in Web and Mobile Development, ERP Solutions, AR/VR, Game Development, Graphics Designing, and Digital Marketing.",
-    images: ["https://decimalsolution.com/contact-us.png"],
+    images: ["https://www.decimalsolution.com/contact-us.png"],
     creator: "@decimalsolution",
     site: "@decimalsolution",
   },
   alternates: {
-    canonical: "https://decimalsolution.com/contact-us",
+    canonical: "https://www.decimalsolution.com/contact-us",
   },
 };
 
@@ -87,7 +87,7 @@ const ContactUs = async () => {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Decimal Solution",
-              url: "https://decimalsolution.com",
+              url: "https://www.decimalsolution.com",
               contactPoint: [
                 {
                   "@type": "ContactPoint",
