@@ -35,6 +35,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  verification: {
+    other: {
+      'ahrefs-site-verification': 'd11dbb3b06a7b610c2b45d1f6582db4f9a543bb5977c6d095c0656ec204c92e6'
+    }
+  }
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
