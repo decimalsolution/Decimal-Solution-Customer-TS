@@ -92,7 +92,7 @@ const Services = async () => {
     "Digital Marketing",
     "Game Development",
     "Content Creation",
-    "Management Services",
+    // "Management Services", // Commented out as it has no sub-fields
   ];
 
   const getLink = (service: Service) => {
