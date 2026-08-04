@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        hostname: "firebasestorage.googleapis.com",
-        protocol: "https",
-      },
-    ],
+   remotePatterns: [ 
+     { protocol: 'https', 
+                    hostname: 'res.cloudinary.com', port: '', pathname: '/**', // Allows all sub-directories and images }, ],
     dangerouslyAllowSVG: true,
   },
 };
