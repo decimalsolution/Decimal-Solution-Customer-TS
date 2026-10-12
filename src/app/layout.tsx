@@ -3,7 +3,6 @@ import { AOSInit } from "./aos";
 import HowCanWeHelpYou from "./how-can-we-help-you";
 import { ContactInfo } from "../../types";
 import "./globals.css";
-import GoogleTag from "./google-tag";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 
@@ -198,15 +197,54 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/contactUs`, {
-    next: {
-      revalidate: 300,
-    },
-  });
+const fallbackContactInfo: ContactInfo = {
+  _id: "",
+  __v: 0,
+  facebook: "https://www.facebook.com/decimalsolution",
+  googleMapLink: "https://www.google.com/maps",
+  instagram: "https://www.instagram.com/decimalsolution",
+  linkedIn: "https://www.linkedin.com/company/decimalsolution",
+  otherAddresses: [],
+  otherContacts: [],
+  otherEmails: [],
+  primaryAddress: "2768 Sepulveda Blvd #1062, Torrance, CA 90505",
+  primaryContact: "+1 (424) 475-1713",
+  primaryEmail: "info@decimalsolution.com",
+  twitter: "",
+  whatsapp: "",
+  youtube: "https://www.youtube.com/@decimalsolution",
+  googleMapImage: "",
+  shortAddress: "Torrance, CA",
+};
 
-  const response = await data.json();
-  const contactInfo: ContactInfo = response.data[0];
+async function getContactInfo(): Promise<ContactInfo> {
+  try {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/contactUs`, {
+      next: {
+        revalidate: 300,
+      },
+    });
+
+    const contentType = data.headers.get("content-type") ?? "";
+    if (!data.ok || !contentType.includes("application/json")) {
+      return fallbackContactInfo;
+    }
+
+    const response = await data.json();
+    const contactInfo = response?.data?.[0];
+    if (!contactInfo?.primaryContact) {
+      return fallbackContactInfo;
+    }
+
+    return contactInfo;
+  } catch (error) {
+    console.error("Failed to load contact info for layout:", error);
+    return fallbackContactInfo;
+  }
+}
+
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const contactInfo = await getContactInfo();
 
   return (
     <html lang="en">
@@ -258,11 +296,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       </head>
 
       <AOSInit />
-      {/* <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} /> */}
       <body className={`${poppins.className} overflow-x-hidden w-full`}>
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-          <GoogleTag ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
-        ) : null}
         <Header contactInfo={contactInfo} />
         {children}
         <Footer contactInfo={contactInfo} />
