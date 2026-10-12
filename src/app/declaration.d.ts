@@ -1,4 +1,6 @@
 // src/declaration.d.ts
+declare module "*.css";
+
 declare module 'aos' {
     const AOS: {
       init: (options?: {
